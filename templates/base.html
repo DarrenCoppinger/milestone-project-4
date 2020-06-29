@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>BarTender - {% block page_title %}{% endblock %}</title>
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}"/>   
         <!-- Bootswatch cdn css -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous">
         <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/lux/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" type="text/css">
@@ -69,6 +71,13 @@
         <!-- Messages -->
         <main>
             <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-12 col-md-10 ">
+                        <h2>
+                        {% block page_heading %}{% endblock %}
+                        </h2>
+                    </div>
+                </div>
                 {% block content %}{% endblock %}
             </div>
         </main>
