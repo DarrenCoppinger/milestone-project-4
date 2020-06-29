@@ -16,5 +16,7 @@
       "**/.DS_Store": true,
       "**/.theia": true,
    },
-   "emmet.extensionsPath": ".theia"
+"emmet.extensionsPath": ".theia",
+"beautify.config": null,
+"editor.wordWrap": "off",
 }
