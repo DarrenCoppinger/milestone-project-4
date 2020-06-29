@@ -7,12 +7,16 @@
 {% block page_heading %}User Registration{% endblock %}
 
 {% block content %}
-<p>If you have already created an account <a href="{% url 'login' %}">sign in here</a></p>
+<div class="row">
+    <div class="col-12 col-md-8">
+        <p>If you have already created an account <a href="{% url 'login' %}">sign in here</a></p>
 
-<form method="POST" action="">
-    {% csrf_token %}
-    {{ registration_form | as_bootstrap }}
-    <button type="submit" class="btn btn-primary">Register</button>
-</form>
+        <form method="POST" action="">
+            {% csrf_token %}
+            {{ registration_form | as_bootstrap }}
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+</div>
 
 {% endblock %}
