@@ -22,7 +22,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost',
-                '8000-e14692b1-a8a0-451c-b8dc-9bc94ecb0c70.ws-eu01.gitpod.io',]
+                '8000-e14692b1-a8a0-451c-b8dc-9bc94ecb0c70.ws-eu01.gitpod.io',
+                'bartender-ms4.herokuapp.com',]
 
 
 # Application definition
