@@ -40,6 +40,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log Out</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href=""><i class="fas fa-shopping-cart"></i> Cart</a>
+                    </li>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'register' %}"><i class="fas fa-user-plus"></i> Register</a>
@@ -48,6 +51,7 @@
                         <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Log In</a>
                     </li>
                     {% endif %}
+
                 </ul>
                 <form class="form-inline">
                     <div class="input-group">
