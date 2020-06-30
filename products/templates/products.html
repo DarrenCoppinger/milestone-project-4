@@ -1,16 +1,33 @@
 {% extends 'base.html' %} 
 
-{% load bootstrap_tags %}
-
 {% block page_title %}Products{% endblock %} 
 
 {% block page_heading %}Products{% endblock %} 
 
 {% block content %}
 <div class="row">
-    <div class="col-12 col-md-8">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, totam dignissimos? Amet aperiam consectetur sapiente! Repellat eaque illo sunt sit. Nostrum facilis aperiam deleniti cumque totam mollitia eaque, blanditiis voluptate.</p>
-   </div>
+	{% for product in products %}
+
+	<div class="card-default col-12 col-sm-6 col-md-3 ">
+		<div class="card">
+			<img class="card-img-top img-responsive" src="{{ MEDIA_URL }}{{ product.image }}" alt="Card image cap">
+			<div class="card-body">
+				<h5 class="card-title">{{ product.name }}</h5>
+				<p class="card-text">{{ product.description|truncatechars:100 }}</p>
+				<p>{{ product.price }}</p>
+				<form method="post" action="">
+					{% csrf_token %}
+					<div class="input-group">
+						<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+						<div class="input-group-append">
+							<button class="btn btn-success" type="submit">Add</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
 </div>
 
 {% endblock %}

@@ -7,14 +7,14 @@ class Product(models.Model):
     BOTTLES = 'Bottles'
     SOFT_DRINKS = 'Soft-Drinks'
     COCKTAILS = 'Cocktails'
-    SHORTS = 'Spirits'
+    SPIRITS = 'Spirits'
 
     CATEGORY_CHOICES = [
         (PINTS, 'Pints'),
         (BOTTLES, 'Bottles'),
         (SOFT_DRINKS, 'Soft-Drinks'),
         (COCKTAILS, 'Cocktails'),
-        (SHORTS, 'Spirits'),
+        (SPIRITS, 'Spirits'),
     ]
     category = models.CharField(
         max_length=20,
