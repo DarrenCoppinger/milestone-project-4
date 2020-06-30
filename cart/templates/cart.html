@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% load bootstrap_tags %}
+
+{% block content %}
+<div class="row no-gutters">
+    {% for item in cart_items %}
+    <div class="col-10">
+        <div class="card ">
+            <div class="row no-gutters cart-item">
+                <div class="col-auto">
+                    <img class="img-responsive card-img cart-img" src="{{ MEDIA_URL }}{{  item.product.image }}" alt="Product Image">
+                    <!-- <p class="product-description">{{ item.product.description }}</p> -->
+                </div>
+                <div class="col"> 
+                    <div class="card-body">
+                        <div class="row cart-item">
+                            <div class="card-title">
+                                <h3>{{ item.product.name }}</h3>
+                            </div>
+                        </div>
+                        <div class="row cart-item">
+                            <div class="col card-text"> 
+                                <p>{{ item.product.price }}</p>
+                            </div>
+                            <div class="col">
+                                <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                        <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                                        <div class="input-group">
+                                            <div class="input-group-addon">Qty</div>
+                                            <input name="quantity" type="number" min="0" max="999" class="form-control">
+                                            <div class="input-group-addon">{{item.quantity}}</div>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary"><span><i class="fas fa-edit"></i></span>Amend</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div class="row no-gutters checkout-line">
+    <div class="">
+        Total <span><i class="fas fa-euro-sign"></i></span>{{ total }}
+    </div>
+    <div>
+        <a href="" class="btn btn-success" role="button">
+            <i class="fas fa-check"></i> Checkout
+        </a>
+    </div>
+</div>
+
+{% endblock %}
