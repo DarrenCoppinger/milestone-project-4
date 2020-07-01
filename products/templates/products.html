@@ -8,7 +8,7 @@
 <div class="row">
 	{% for product in products %}
 
-	<div class="card-default col-12 col-sm-6 col-md-3 ">
+	<div class="card-default col-12 col-sm-6 col-md-4 ">
 		<div class="card">
 			<img class="card-img-top img-responsive" src="{{ MEDIA_URL }}{{ product.image }}" alt="Card image cap">
 			<div class="card-body">
@@ -18,7 +18,7 @@
 				<form method="post" action="{% url 'add_to_cart' product.id %}">
 					{% csrf_token %}
 					<div class="input-group">
-						<input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
+						<input name="quantity" type="number" min="1" max="999" class="form-control" value="1" placeholder="Quantity">
 						<div class="input-group-append">
 							<button class="btn btn-success" type="submit">Add</button>
 						</div>
