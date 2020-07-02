@@ -35,10 +35,10 @@
                         <a class="nav-link" href="{% url 'products' %}"><i class="fas fa-glass-martini-alt"></i> Drinks</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=""><i class="far fa-calendar-check"></i> Reservation</a>
+                        <a class="nav-link" href=""><i class="far fa-calendar-check"></i> Booking</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                        <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i> Cart</a>
@@ -74,7 +74,7 @@
         {% endif %}
         <!-- Messages -->
         <main>
-            <div class="container">
+            <div class="container home">
                 <div class="row no-gutters">
                     <div class="col-12 col-md-10 ">
                         <h2>
@@ -84,10 +84,28 @@
                 </div>
                 {% block content %}{% endblock %}
             </div>
+            
         </main>
         <footer class="bg-primary">
             <div class="container">
-                BarTender
+                <div class="row">
+                    <div class="col-4 text-white">
+                        <h5 class="text-white">Our Company</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="col-4 text-white">
+                        <h5 class="text-white">Opening Hours</h5>
+                        <p>12:30 - 23:00, 7 days a week</p>
+                    </div>
+                    <div class="col-4 text-white">
+                        <h5 class="text-white">Our Location</h5>
+                        <p>Steamship House</p>
+                        <p>Dock St</p>
+                        <p>The Docks</p>
+                        <p>Galway</p>
+                        <p><a class="footer-link" href="https://www.google.com/maps/dir//Steamship+House,+Dock+St,+The+Docks,+Galway/@53.2696955,-9.0526132,19.08z/data=!4m9!4m8!1m0!1m5!1m1!1s0x485b96fb4c5bad1f:0x8a1a17c0abb5285!2m2!1d-9.0522496!2d53.2696129!3e0">Get Directions</a></p>
+                    </div>
+                </div>
             </div>
         </footer>
     </body>
