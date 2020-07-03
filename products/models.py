@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 
 class Product(models.Model):
     """ Model for drinks available """
@@ -25,6 +25,10 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(upload_to='images')
+
+    # def get_product_url(self):
+    #     """ Gets product url iusing id as pk """
+    #     return reverse('product-description', kwargs={'pk': self.id})
 
     def __str__(self):
         return self.name

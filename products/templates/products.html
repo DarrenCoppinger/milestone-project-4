@@ -18,12 +18,12 @@
             {% for product in products %}
 
             <div class="card-default col-12 col-sm-6 col-md-4 ">
-                <div class="card">
+                <a class="card" href="{% url 'product_desc' product.id %}">
                     <img class="card-img-top img-responsive" src="{{ MEDIA_URL }}{{ product.image }}" alt="Card image cap">
                     <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
-                        <p class="card-text">{{ product.description|truncatechars:100 }}</p>
-                        <p>{{ product.price }}</p>
+                        <p class="card-text">{{ product.description|truncatechars:25 }}</p>
+                        <p>Price: <span><i class="fas fa-euro-sign"></i></span>{{ product.price }}</p>
                         <form method="post" action="{% url 'add_to_cart' product.id %}">
                             {% csrf_token %}
                             <div class="input-group">
@@ -34,7 +34,7 @@
                             </div>
                         </form>
                     </div>
-                </div>
+                </a>
             </div>
             {% endfor %}
         </div>
