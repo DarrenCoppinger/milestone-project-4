@@ -73,19 +73,9 @@
             </div>
         {% endif %}
         <!-- Messages -->
-        <main>
-            <div class="container home">
-                <div class="row no-gutters">
-                    <div class="col-12 col-md-10 ">
-                        <h2>
-                        {% block page_heading %}{% endblock %}
-                        </h2>
-                    </div>
-                </div>
-                {% block content %}{% endblock %}
-            </div>
-            
-        </main>
+        <!-- <main> -->
+            {% block content %}{% endblock %}
+        <!-- </main> -->
         <footer class="bg-primary">
             <div class="container">
                 <div class="row">

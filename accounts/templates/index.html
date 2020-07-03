@@ -2,31 +2,45 @@
 
 {% block page_title %}Home{% endblock %}
 
-{% block page_heading %}Welcome to BarTender{% endblock %}
-
 {% block content %}
-
-<div class="row">
-    <div class="col-12 offset-md-1 col-md-10">
-        {% if user.is_authenticated %}
-            <div class="row d-flex justify-content-center">
-                <div class="col-6">
-                    <a href="{% url 'view_cart' %}" class="btn btn-home rounded px-0">Your Cart</a>
-                </div>
-                <div class="col-6">
-                    <a href="{% url 'products' %}" class="btn btn-home rounded px-0">Drinks</a>
-                </div>
+<main class="background">
+    <div class="container home">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-md-10 text-center">
+                <h2 class="text-white">
+                    Welcome to BarTender
+                </h2>
+                <p>BarTender allows you to book at table and order drinks at the best Cocktail Bar in the City</p>
+                {% if user.is_authenticated %}
+                    <p>Book at place or order a drink and it will be delivered to your table!</p>
+                {% else %}
+                    <p>Sign In and take a look at out availablity and the drinks we have on offer!</p>
+                {% endif %}
             </div>
-        {% else %}
-            <div class="row d-flex justify-content-center">
-                <div class="col-6">
-                    <a href="{% url 'login' %}" class="btn btn-home rounded px-0">Sign In</a>
-                </div>
-                <div class="col-6">
-                    <a href="{% url 'products' %}" class="btn btn-home rounded px-0">Drinks</a>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-12 offset-md-1 col-md-10">
+                {% if user.is_authenticated %}
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-6">
+                            <a href="{% url 'view_cart' %}" class="btn btn-home rounded px-0">Your Cart</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="{% url 'products' %}" class="btn btn-home rounded px-0">Drinks</a>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-6">
+                            <a href="{% url 'login' %}" class="btn btn-home rounded px-0">Sign In</a>
+                        </div>
+                        <div class="col-6">
+                            <a href="{% url 'products' %}" class="btn btn-home rounded px-0">Drinks</a>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
-        {% endif %}
+        </div>
     </div>
-</div>
+</main>
 {% endblock %}

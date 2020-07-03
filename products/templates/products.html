@@ -1,33 +1,44 @@
 {% extends 'base.html' %} 
 
-{% block page_title %}Products{% endblock %} 
-
-{% block page_heading %}Products{% endblock %} 
+{% block page_title %}Drinks{% endblock %} 
 
 {% block content %}
-<div class="row">
-	{% for product in products %}
+<main>
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-12 col-md-10 text-center">
+                <h2>
+                    Drinks
+                </h2>
+            </div>
+         </div>
+     </div>
+    <div class="container">
+        <div class="row">
+            {% for product in products %}
 
-	<div class="card-default col-12 col-sm-6 col-md-4 ">
-		<div class="card">
-			<img class="card-img-top img-responsive" src="{{ MEDIA_URL }}{{ product.image }}" alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">{{ product.name }}</h5>
-				<p class="card-text">{{ product.description|truncatechars:100 }}</p>
-				<p>{{ product.price }}</p>
-				<form method="post" action="{% url 'add_to_cart' product.id %}">
-					{% csrf_token %}
-					<div class="input-group">
-						<input name="quantity" type="number" min="1" max="999" class="form-control" value="1" placeholder="Quantity">
-						<div class="input-group-append">
-							<button class="btn btn-success" type="submit">Add</button>
-						</div>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	{% endfor %}
-</div>
+            <div class="card-default col-12 col-sm-6 col-md-4 ">
+                <div class="card">
+                    <img class="card-img-top img-responsive" src="{{ MEDIA_URL }}{{ product.image }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p class="card-text">{{ product.description|truncatechars:100 }}</p>
+                        <p>{{ product.price }}</p>
+                        <form method="post" action="{% url 'add_to_cart' product.id %}">
+                            {% csrf_token %}
+                            <div class="input-group">
+                                <input name="quantity" type="number" min="1" max="999" class="form-control" value="1" placeholder="Quantity">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success" type="submit">Add</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
 
 {% endblock %}
