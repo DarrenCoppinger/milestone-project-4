@@ -7,73 +7,77 @@
 {% block page_heading %}Shopping Cart{% endblock %} 
 
 {% block content %}
-<div class="row no-gutters justify-content-center">
-    
-    <div id="shopping-cart" class="col-12 col-sm-10">
-    {% for item in cart_items %}
-        <div class="card">
-            <div class="row no-gutters cart-item">
-                <div class="col-12 col-md-4">
-                    <img class="img-fluid rounded" src="{{ MEDIA_URL }}{{  item.product.image }}" alt="Product Image">
-                    <!-- <p class="product-description">{{ item.product.description }}</p> -->
-                </div>
-                <div class="col-12 col-md-8"> 
-                    <div class="card-body">
-                        <div class="row cart-item">
-                            <div class="card-title">
-                                <h3>{{ item.product.name }}</h3>
+<main>
+    <div class="container">
+
+        <div class="row no-gutters justify-content-center">
+            
+            <div id="shopping-cart" class="col-12 col-sm-10">
+            {% for item in cart_items %}
+                <!-- <div class="card"> -->
+                    <div class="row no-gutters cart-item">
+                        <div class="col-12 col-md-4">
+                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}{{  item.product.image }}" alt="Product Image">
+                            <!-- <p class="product-description">{{ item.product.description }}</p> -->
+                        </div>
+                        <div class="col-12 col-md-8"> 
+                            <div class="cart-body">
+                                <div class="row cart-item">
+                                    <div class="card-title">
+                                        <h3>{{ item.product.name }}</h3>
+                                    </div>
+                                </div>
+                                <div class="cart-item checkout-line">
+                                    <div class="row no-gutters d-flex justify-content-end">
+                                        <div class="col-12 col-md-6 card-text text-right"> 
+                                            <p>Price: <span><i class="fas fa-euro-sign"></i></span>{{ item.product.price }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row no-gutters d-flex justify-content-end">   
+                                        <div class="col-12 justify-content-end">
+                                            <form class="" method="post" action="{% url 'adjust_cart' item.id %}">
+                                                {% csrf_token %}
+                                                <div class="form-group">
+                                                    <div class="input-group justify-content-end">
+                                                        <!-- <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="">Quantity</span>
+                                                        </div> -->
+                                                        <div class="mr-2">Qty</div>
+                                                        <input name="quantity" type="number" min="0" max="999" class="form-control col-12 col-md-6" value="{{ item.quantity }}">
+                                                        <div class="input-group-append">
+                                                            <button type="submit" class="btn btn-primary"><span><i class="fas fa-edit"></i></span>Amend</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="cart-item checkout-line">
-                            <div class="row no-gutters d-flex justify-content-end">
-                                <div class="col-12 col-md-6 card-text text-right"> 
-                                    <p>Price: <span><i class="fas fa-euro-sign"></i></span>{{ item.product.price }}</p>
-                                </div>
-                            </div>
-                            <div class="row no-gutters d-flex justify-content-end">   
-                                <div class="col-12 justify-content-end">
-                                    <form class="" method="post" action="{% url 'adjust_cart' item.id %}">
-                                        {% csrf_token %}
-                                        <div class="form-group">
-                                            <div class="input-group justify-content-end">
-                                                <!-- <div class="input-group-prepend">
-                                                    <span class="input-group-text" id="">Quantity</span>
-                                                </div> -->
-                                                <div class="mr-2">Qty</div>
-                                                <input name="quantity" type="number" min="0" max="999" class="form-control col-12 col-md-6" value="{{ item.quantity }}">
-                                                <div class="input-group-append">
-                                                    <button type="submit" class="btn btn-primary"><span><i class="fas fa-edit"></i></span>Amend</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-
-                            </div>
+                        <div class="col-12">
+                            <hr>
                         </div>
                     </div>
-                </div>
-                <div class="col-12">
-                    <hr>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-        <div class="card">
-            <div class="row checkout-line justify-content-end">
-                <div class="col-10 text-right">
-                    Total <span><i class="fas fa-euro-sign"></i></span>{{ total }}
-                </div>
-            </div>
-            <div class="row checkout-line justify-content-end">
-                <div class="col-10 text-right">
-                    <a href="" class="btn btn-success" role="button">
-                        <i class="fas fa-check"></i> Checkout
-                    </a>
+                <!-- </div> -->
+                {% endfor %}
+                <div class="">
+                    <div class="row checkout-line justify-content-end">
+                        <div class="col-10 text-right">
+                            Total <span><i class="fas fa-euro-sign"></i></span>{{ total }}
+                        </div>
+                    </div>
+                    <div class="row checkout-line justify-content-end">
+                        <div class="col-10 text-right">
+                            <a href="" class="btn btn-success" role="button">
+                                <i class="fas fa-check"></i> Checkout
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
+</main>
 {% endblock %}
