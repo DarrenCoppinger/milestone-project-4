@@ -3,14 +3,11 @@ from .models import Reservation
 from .form import ReservationForm
 from django.core.mail import send_mail
 from django.conf import settings
-# Register your models here.
 
 
 class ReservationAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'date', 'status')
-    # add_form = ReservationForm()
     readonly_fields = ('full_name', 'phone_number', 'email')
-    print('ReservationAdmin')
 
     def save_model(self, request, obj, form, change):
         if change:
@@ -31,5 +28,6 @@ class ReservationAdmin(admin.ModelAdmin):
                 to_list,
                 fail_silently=False)
         return super().save_model(request, obj, form, change)
+
 
 admin.site.register(Reservation, ReservationAdmin)

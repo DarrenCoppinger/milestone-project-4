@@ -39,10 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'products',
-    'cart',
     'booking',
+    'cart',
+    'checkout',
     'django_forms_bootstrap',
-
 ]
 
 MIDDLEWARE = [
@@ -154,6 +154,11 @@ MESSAGE_TAGS = {
     messages.WARNING: 'alert-warning',
     messages.ERROR: 'alert-danger',
 }
+
+# --- Stripe Keys ---
+
+STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
+STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 # --- Sending Emails ---
 
