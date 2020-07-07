@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'accounts',
     'products',
     'cart',
+    'booking',
     'django_forms_bootstrap',
 
 ]
