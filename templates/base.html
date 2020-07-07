@@ -41,7 +41,7 @@
                         <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i> Cart</a>
+                        <a class="nav-link" href="{% url 'view_cart' %}"><i class="fas fa-shopping-cart"></i> Cart {% if product_count > 0 %}<label class="badge badge-pill badge-light">{{ product_count }}</label>{% endif %}</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -93,7 +93,7 @@
                         <p>Dock St</p>
                         <p>The Docks</p>
                         <p>Galway</p>
-                        <p><a class="footer-link" href="https://www.google.com/maps/dir//Steamship+House,+Dock+St,+The+Docks,+Galway/@53.2696955,-9.0526132,19.08z/data=!4m9!4m8!1m0!1m5!1m1!1s0x485b96fb4c5bad1f:0x8a1a17c0abb5285!2m2!1d-9.0522496!2d53.2696129!3e0">Get Directions</a></p>
+                        <p><a class="footer-link" target="_blank" href="https://www.google.com/maps/dir//Steamship+House,+Dock+St,+The+Docks,+Galway/@53.2696955,-9.0526132,19.08z/data=!4m9!4m8!1m0!1m5!1m1!1s0x485b96fb4c5bad1f:0x8a1a17c0abb5285!2m2!1d-9.0522496!2d53.2696129!3e0">Get Directions</a></p>
                     </div>
                 </div>
             </div>
