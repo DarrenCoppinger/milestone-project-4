@@ -5,6 +5,7 @@ from products import urls as urls_products
 from cart import urls as urls_cart
 from search import urls as urls_search
 from booking import urls as urls_booking
+from checkout import urls as urls_checkout
 from django.views import static
 from .settings import MEDIA_ROOT
 from accounts.views import index
@@ -17,5 +18,6 @@ urlpatterns = [
     url(r'^cart/', include(urls_cart)),
     url(r'^search/', include(urls_search)),
     url(r'^booking/', include(urls_booking)),
+    url(r'^checkout/', include(urls_checkout)),
     url(r'media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT}),
 ]
