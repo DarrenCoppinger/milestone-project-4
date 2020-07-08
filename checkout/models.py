@@ -2,26 +2,26 @@ from django.db import models
 from products.models import Product
 
 class Order(models.Model):
-    STOOL_1 = "1"
-    STOOL_2 = "2"
-    STOOL_3 = "3"
-    STOOL_4 = "4"
-    STOOL_5 = "5"
-    WINDOW_1 = "6"
-    WINDOW_2 = "7"
-    WINDOW_3 = "8"
-    WINDOW_4 = "9"
-    WINDOW_5 = "10"
-    BOOTH_1 = "11"
-    BOOTH_2 = "12"
-    BOOTH_3 = "13"
-    BOOTH_4 = "14"
-    BOOTH_5 = "15"
-    TABLE_1 = "16"
-    TABLE_2 = "17"
-    TABLE_3 = "18"
-    TABLE_4 = "19"
-    TABLE_5 = "20"
+    STOOL_1 = 1
+    STOOL_2 = 2
+    STOOL_3 = 3
+    STOOL_4 = 4
+    STOOL_5 = 5
+    WINDOW_1 = 6
+    WINDOW_2 = 7
+    WINDOW_3 = 8
+    WINDOW_4 = 9
+    WINDOW_5 = 10
+    BOOTH_1 = 11
+    BOOTH_2 = 12
+    BOOTH_3 = 13
+    BOOTH_4 = 14
+    BOOTH_5 = 15
+    TABLE_1 = 16
+    TABLE_2 = 17
+    TABLE_3 = 18
+    TABLE_4 = 19
+    TABLE_5 = 20
     TABLE_CHOICE = (
         (STOOL_1, 'Stool No.1'),
         (STOOL_2, 'Stool No.2'),
