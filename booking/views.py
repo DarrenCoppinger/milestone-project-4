@@ -1,8 +1,7 @@
-from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.shortcuts import render, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .form import ReservationForm
-from .models import Reservation
 from django.conf import settings
 from django.core.mail import send_mail
 
@@ -30,8 +29,11 @@ def booking(request):
                 )
             return redirect(reverse('index'))
         else:
-            print(reservation_form.errors)
             messages.error(request, "We were unable to make this reservation")
     else:
         reservation_form = ReservationForm()
-    return render(request, "booking.html", {'reservation_form': reservation_form})
+    return render(
+        request,
+        "booking.html",
+        {'reservation_form': reservation_form}
+        )

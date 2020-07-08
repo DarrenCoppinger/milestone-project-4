@@ -12,12 +12,12 @@ class Reservation(models.Model):
     )
     STOOL = 1
     WINDOW = 2
-    SNUG = 3
+    BOOTH = 3
     TABLE = 4
     SEAT_TYPE = (
         (STOOL, "Bar Stool"),
         (WINDOW, "Window Seat"),
-        (SNUG, "Snug"),
+        (BOOTH, "Booth"),
         (TABLE, "Table"),
     )
 

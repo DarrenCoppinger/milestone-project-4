@@ -10,7 +10,7 @@ class MakePaymentForm(forms.Form):
     credit_card_number = forms.CharField(
         label="Credit card number",
         required=False)
-    cvv = forms.CharField(
+    cvc = forms.CharField(
         label="Security Code",
         required=False)
     expiry_month = forms.ChoiceField(
@@ -28,12 +28,8 @@ class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
         fields = (
+            'table_number',
             'full_name',
-            'phone_number',
-            'country',
-            'postcode',
-            'town_or_city',
-            'street_address1',
-            'street_address2',
-            'county'
+            'phone_number'
             )
+        exclude = ['date']
