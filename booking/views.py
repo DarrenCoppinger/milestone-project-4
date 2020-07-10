@@ -4,6 +4,12 @@ from django.contrib import messages
 from .form import ReservationForm
 from django.conf import settings
 from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.contrib.auth.models import User
+from django.contrib.sites.shortcuts import get_current_site
+from django.contrib.auth import get_user_model
+from django.utils.encoding import force_text
+from django.utils.http import urlsafe_base64_decode
 
 
 @login_required()
@@ -13,13 +19,26 @@ def booking(request):
         if reservation_form.is_valid():
             reservation = reservation_form.save(commit=False)
             reservation.save()
+            user = User(request)
+            current_site = get_current_site(request)
             subject = "Thank you for requesting a booking at Barstool"
-            message = "Welcome to barstool. We appreciate your business. /n We will be in touch soon!"
+            template = 'mail/request.txt'
+            current_site = get_current_site(request)
+            user = User.objects.get(username=request.user.username)
+            html_message = render_to_string(
+                template,
+                {
+                    'reservation': reservation,
+                    'user': user,
+                    'site_name': current_site.name,
+                }
+                )
+            # html_message = message
             from_email = settings.EMAIL_HOST_USER
             to_list = [reservation.email, settings.EMAIL_HOST_USER]
             send_mail(
                 subject,
-                message,
+                html_message,
                 from_email,
                 to_list,
                 fail_silently=True)

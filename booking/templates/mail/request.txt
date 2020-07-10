@@ -1,0 +1,7 @@
+{% extends 'mail/email_base.html' %}
+
+{% block content %}
+
+<p>A member of our staff will be in touch shortly to confirm your booking.</p>
+
+{% endblock %}
