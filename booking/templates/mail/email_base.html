@@ -2,7 +2,7 @@ Hi {{ reservation.full_name }},
 
 Thank you for making a booking with BarTender. We appreciate your business.
 
-<strong> Booking Details: </strong>
+<b> Booking Details: </b>
 Status: {{ reservation.get_status_display }}
 Date: {{ reservation.date }}
 Start Time: {{ reservation.reserved_start_time }}
@@ -17,4 +17,3 @@ End Time: {{ reservation.reserved_end_time }}
 Thanks for using BarTender!
 
 {{ site_name }}
-
