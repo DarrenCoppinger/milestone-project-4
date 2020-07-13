@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Reservation(models.Model):
@@ -28,6 +29,8 @@ class Reservation(models.Model):
     reserved_start_time = models.TimeField()
     reserved_end_time = models.TimeField()
     status = models.SmallIntegerField(choices=STATUS, default=REQUESTED)
+
+    customer = models.ForeignKey(User, null=False, default="1")
 
     def __str__(self):
         return "{0} for {1}  ({2} to {3})".format(
