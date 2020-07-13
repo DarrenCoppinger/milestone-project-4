@@ -1,19 +1,22 @@
-Hi {{ reservation.full_name }},
+<p>{{ reservation.full_name }},</p>
 
-Thank you for making a booking with BarTender. We appreciate your business.
+<p>Thank you for making a booking with BarTender. We appreciate your business.</p>
 
-<b> Booking Details: </b>
+<p>
+<b>Booking Details: </b>
 Status: {{ reservation.get_status_display }}
 Date: {{ reservation.date }}
 Start Time: {{ reservation.reserved_start_time }}
 End Time: {{ reservation.reserved_end_time }}
-
+</p>
 
 {% block content %}
 
 {% endblock %}
 
-
+<p>
 Thanks for using BarTender!
-
+</p>
+<p>
 {{ site_name }}
+</p>
