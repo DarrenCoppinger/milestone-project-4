@@ -1,0 +1,7 @@
+{% extends 'mail/email_base.html' %}
+
+{% block content %}
+
+<p>We are please to confirmed your booking. We look forward to seeing you!</p>
+
+{% endblock %}

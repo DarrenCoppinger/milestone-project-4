@@ -7,9 +7,6 @@ from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 from django.contrib.sites.shortcuts import get_current_site
-from django.contrib.auth import get_user_model
-from django.utils.encoding import force_text
-from django.utils.http import urlsafe_base64_decode
 
 
 @login_required()
@@ -19,9 +16,7 @@ def booking(request):
         if reservation_form.is_valid():
             reservation = reservation_form.save(commit=False)
             reservation.save()
-            user = User(request)
-            current_site = get_current_site(request)
-            subject = "Thank you for requesting a booking at Barstool"
+            subject = "Booking Request at BarTender"
             template = 'mail/request.txt'
             current_site = get_current_site(request)
             user = User.objects.get(username=request.user.username)

@@ -1,0 +1,7 @@
+{% extends 'mail/email_base.html' %}
+
+{% block content %}
+
+<p>We are unable to make your requested booking at this time. Please book with us some other time!</p>
+
+{% endblock %}
