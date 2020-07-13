@@ -30,7 +30,7 @@ def booking(request):
                 )
             # html_message = message
             from_email = settings.EMAIL_HOST_USER
-            to_list = [reservation.email, settings.EMAIL_HOST_USER]
+            to_list = [user.email, settings.EMAIL_HOST_USER]
             send_mail(
                 subject,
                 html_message,

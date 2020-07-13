@@ -16,7 +16,6 @@ class ReservationForm(forms.ModelForm):
         fields = (
             'seat_type',
             'full_name', 'phone_number',
-            'email',
             'date',
             'reserved_start_time',
             'reserved_end_time'

@@ -9,7 +9,7 @@ from django.contrib.sites.shortcuts import get_current_site
 
 class ReservationAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'date', 'status')
-    readonly_fields = ('full_name', 'phone_number', 'email')
+    readonly_fields = ('full_name', 'phone_number')
 
     def save_model(self, request, obj, form, change):
         current_site = get_current_site(request)
@@ -32,7 +32,7 @@ class ReservationAdmin(admin.ModelAdmin):
                 }
                 )
             from_email = settings.EMAIL_HOST_USER
-            to_list = [obj.email, settings.EMAIL_HOST_USER]
+            to_list = [user.email, settings.EMAIL_HOST_USER]
             send_mail(
                 subject,
                 html_message,
