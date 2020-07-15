@@ -8,6 +8,8 @@ from django.template.loader import render_to_string
 from django.contrib.auth.models import User
 from django.contrib.sites.shortcuts import get_current_site
 from django.utils.html import strip_tags
+from .models import Reservation
+
 
 @login_required()
 def booking(request):
@@ -15,14 +17,14 @@ def booking(request):
         reservation_form = ReservationForm(request.POST)
         if reservation_form.is_valid():
             reservation = reservation_form.save(commit=False)
-            user = User.objects.get(username=request.user.username)
+            user = request.user
             reservation.email = user.email
             reservation.save()
-            subject = "Booking Request at BarTender - REQUEST"
-            template = 'mail/request.txt'
             current_site = get_current_site(request)
+            subject = "Booking Request at BarTender - REQUEST"
+            mail = 'mail/request.txt'
             html_message = render_to_string(
-                template,
+                mail,
                 {
                     'reservation': reservation,
                     'user': user,
@@ -40,7 +42,11 @@ def booking(request):
                 html_message=html_message)
             messages.success(
                 request,
-                "Your have requested a booking. A member of our staff will be in touch shortly to confirm your booking."
+                """
+                Your have requested a booking.
+                A member of our staff will be in touch
+                shortly to confirm your booking.
+                """
                 )
             return redirect(reverse('index'))
         else:
@@ -48,7 +54,4 @@ def booking(request):
     else:
         reservation_form = ReservationForm()
     return render(
-        request,
-        "booking.html",
-        {'reservation_form': reservation_form}
-        )
+        request, "booking.html", {'reservation_form': reservation_form})

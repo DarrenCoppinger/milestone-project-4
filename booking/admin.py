@@ -16,8 +16,6 @@ class ReservationAdmin(admin.ModelAdmin):
         current_site = get_current_site(request)
         user = User.objects.get(username=request.user.username)
         if change:
-            print('Inside check loop 1')
-            print(obj)
             if(obj.status == 1):
                 subject = "Booking Request at BarTender - REQUEST ALTERED"
                 template = 'mail/request.txt'

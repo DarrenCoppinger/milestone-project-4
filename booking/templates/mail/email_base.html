@@ -2,13 +2,11 @@
 
 <p>Thank you for making a booking with BarTender. We appreciate your business.</p>
 
-<p>
-<b>Booking Details: </b>
-Status: {{ reservation.get_status_display }}
-Date: {{ reservation.date }}
-Start Time: {{ reservation.reserved_start_time }}
-End Time: {{ reservation.reserved_end_time }}
-</p>
+<p><b>Booking Details: </b></p>
+<p>Status: {{ reservation.get_status_display }}</p>
+<p>Date: {{ reservation.date }}</p>
+<p>Start Time: {{ reservation.reserved_start_time }}</p>
+<p>End Time: {{ reservation.reserved_end_time }}</p>
 
 {% block content %}
 

@@ -35,6 +35,6 @@ class Reservation(models.Model):
         return "{0} for {1}  ({2} to {3})".format(
             self.status,
             self.date,
-            self.reserved_start_time.strftime("%H:%M"),
-            self.reserved_end_time.strftime("%H:%M"),
+            self.reserved_start_time,
+            self.reserved_end_time,
         )

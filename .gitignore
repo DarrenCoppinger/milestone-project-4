@@ -2,5 +2,7 @@ env.py
 *.py[cod]
 __pycache__/
 *.sqlite3
+.coverage
 static/
 media/
+htmlcov/

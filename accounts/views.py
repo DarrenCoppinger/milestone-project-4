@@ -46,7 +46,6 @@ def logout(request):
 def registration(request):
     """Render the registration page"""
     if request.user.is_authenticated:
-        print('loop1')
         return redirect(reverse('index'))
 
     if request.method == "POST":
