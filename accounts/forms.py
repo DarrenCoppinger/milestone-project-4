@@ -22,6 +22,10 @@ class UserRegistrationForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['email', 'username', 'password1', 'password2']
+        help_texts = {
+            'username': None,
+            'email': None,
+        }
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
@@ -35,9 +39,15 @@ class UserRegistrationForm(UserCreationForm):
         password2 = self.cleaned_data.get('password2')
 
         if not password1 or not password2:
-            raise ValidationError("Please confirm your password")
+            raise forms.ValidationError(u'Please confirm your password')
 
         if password1 != password2:
-            raise ValidationError("Passwords must match")
+            raise forms.ValidationError(u'Passwords must match')
 
         return password2
+
+    def __init__(self, *args, **kwargs):
+        """ Make email field required """
+        super(UserRegistrationForm, self).__init__(*args, **kwargs)
+
+        self.fields['email'].required = True

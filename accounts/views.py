@@ -66,9 +66,7 @@ def registration(request):
                 messages.error(
                     request,
                     "Unable to register your account at this time")
-                print('loop3')
     else:
-        print('loop2')
         registration_form = UserRegistrationForm()
     return render(
         request,

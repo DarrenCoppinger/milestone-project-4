@@ -8,11 +8,11 @@ class Testviews(TestCase):
         self.user = User.objects.create_user(
             username='person',
             email='fake@email.com',
-            password='Jksdjfskdf1321@_password',
+            password='test12345@_password',
             )
         self.client.login(
             username='person',
-            password='Jksdjfskdf1321@_password')
+            password='test12345@_password')
         self.client.post("/booking/", {
             "seat_type": 1,
             "full_name": "Test Name",
@@ -39,3 +39,4 @@ class Testviews(TestCase):
         page = self.client.get("/booking/")
         self.assertEqual(page.status_code, 200)
         self.assertTemplateUsed(page, "booking.html")
+    
