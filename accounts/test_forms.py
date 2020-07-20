@@ -1,7 +1,6 @@
 from django.test import TestCase
 from accounts.forms import UserRegistrationForm, UserLoginForm
-from django.core.exceptions import ValidationError
-from django.contrib import auth, messages
+from django.contrib import messages
 
 
 class TestUserRegistrationForm(TestCase):
@@ -38,5 +37,4 @@ class TestUserLoginForm(TestCase):
         self.assertRaisesMessage(
             messages.success,
             "You have successfully logged in!")
-
 

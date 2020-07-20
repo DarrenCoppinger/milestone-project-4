@@ -72,6 +72,7 @@ class TestLoginViewLoggedIn(TestCase):
         self.assertEqual(page.status_code, 302)
         self.assertEqual(page.url, "/")
 
+
 class TestLogoutSuccesful(TestCase):
     def setUp(self):
         self.user = User.objects.create_user(

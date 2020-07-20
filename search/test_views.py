@@ -4,7 +4,7 @@ from products.models import Product
 # Create your tests here.
 
 
-class TestCartViewLoggedOut(TestCase):
+class TestSearchView(TestCase):
     """ Test for cart view when user is logged out """
 
     def setUp(self):
