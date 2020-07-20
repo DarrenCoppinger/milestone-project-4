@@ -1,7 +1,5 @@
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404
-from products.models import Product
 
 
 class TestCartViewLoggedOut(TestCase):
