@@ -1,6 +1,7 @@
 from django.db import models
 from products.models import Product
 
+
 class Order(models.Model):
     STOOL_1 = 1
     STOOL_2 = 2
@@ -53,10 +54,11 @@ class Order(models.Model):
     time = models.TimeField(auto_now=True)
 
     def __str__(self):
-        return "{0}-{1}-{2}".format(
+        return "{0}-{1}-{2}-{3}".format(
             self.table_number,
             self.full_name,
-            self.date)
+            self.date,
+            self.time.strftime("%H:%M"))
 
 
 class OrderLineItem(models.Model):

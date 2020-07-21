@@ -32,4 +32,4 @@ class OrderForm(forms.ModelForm):
             'full_name',
             'phone_number'
             )
-        exclude = ['date']
+        exclude = ['date', 'time']

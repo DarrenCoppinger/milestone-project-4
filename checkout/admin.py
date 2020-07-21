@@ -7,6 +7,8 @@ class OrderLineAdminInLine(admin.TabularInline):
 
 
 class OrderAdmin(admin.ModelAdmin):
+    list_display = ('table_number', 'full_name', 'date', 'time')
+    readonly_fields = ('date', 'time')
     inlines = (OrderLineAdminInLine, )
 
 
