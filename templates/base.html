@@ -76,27 +76,33 @@
         <!-- <main> -->
             {% block content %}{% endblock %}
         <!-- </main> -->
+        </body>
         <footer class="bg-primary">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-4 text-white">
+                    <div class="col-12 col-md-3 text-white">
                         <h5 class="text-white">Our Company</h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>  
                     </div>
-                    <div class="col-4 text-white">
+                    <div class="col-12 col-md-3 text-white">
                         <h5 class="text-white">Opening Hours</h5>
                         <p>12:30 - 23:00, 7 days a week</p>
                     </div>
-                    <div class="col-4 text-white">
-                        <h5 class="text-white">Our Location</h5>
-                        <p>Steamship House</p>
-                        <p>Dock St</p>
-                        <p>The Docks</p>
-                        <p>Galway</p>
-                        <p><a class="footer-link" target="_blank" href="https://www.google.com/maps/dir//Steamship+House,+Dock+St,+The+Docks,+Galway/@53.2696955,-9.0526132,19.08z/data=!4m9!4m8!1m0!1m5!1m1!1s0x485b96fb4c5bad1f:0x8a1a17c0abb5285!2m2!1d-9.0522496!2d53.2696129!3e0">Get Directions</a></p>
+                    <div class="col-12 col-md-3 text-white">
+                        <div>
+                            <h5 class="text-white">Our Location</h5>
+                            <p>Steamship House <br> Dock St <br> The Docks <br> Galway</p>
+                            <p><a class="footer-link" target="_blank" href="
+                            https://www.google.com/maps/dir/53.26975,-9.0518889/53.2698142,-9.0518728/@53.2695552,-9.0519528,19z/data=!3m1!4b1!4m2!4m1!3e0">Get Directions</a></p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3 map-footer">
+                        <div id="map"></div>
                     </div>
                 </div>
             </div>
         </footer>
-    </body>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBci_DZ8MxhviM1s0wYGQ12dQGzraGx2E&callback=initMap"></script>
+        <script type="text/javascript" src="{% static 'js/maps.js' %}"></script>
+    
 </html>

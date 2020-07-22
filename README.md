@@ -73,16 +73,27 @@ This website, [BarTender](https://bartender-ms4.herokuapp.com/), is an online to
 ---
 
 ## UX
+This website was designed as a part of my Code Institute Full Stack Development course, specifically the Full Stack Framewords with Django module.
 
+The website provides users with a tool that allows them to book a seat in a bar on the "Booking" page. Through the admin functionality of the website the the bar staff can approve, deny or amend the booking request (potentially after contacting the customer directly). 
+
+The website also provides the customer with a list of the products available in the bar on the "Drinks".
 ### Design Objectives
+The following are the main design objectives for the project:
+
 #### Deign a Application Appropriate for Audience
 #### Content Relevance and Accuracy
 #### Content Grouping
 #### Technology 
 
 ### User stories
+A user who visits the website might follow one of these forms:
+- A user wants to book a particular type of seat for a certain date and time in the bar.
+- A user wants to look through the drinks/products that are available on from the bar.
+- A user wants to order drinks to a table that they are sitting at through a completely contactless means.
 
 ### Design
+The style of the site is inspired by a classic cocktail 
 #### Framework
 #### Colors
 #### Icons
