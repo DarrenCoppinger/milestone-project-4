@@ -4,12 +4,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
 
-# Create your views here.
-
 
 def index(request):
     """Return index.html file"""
-    return render(request, 'index.html') 
+    return render(request, 'index.html')
 
 
 def login(request):

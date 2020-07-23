@@ -153,7 +153,7 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 # ------ Static Storage ------ #
 
 STATICFILES_LOCATION = 'static'
-# STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 STATIC_URL = '/static/'
 # List of locations where static files can be found
@@ -184,6 +184,9 @@ MESSAGE_TAGS = {
 
 STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
+
+# --- EmailJS ---
+EMAILJS_USER = os.getenv('EMAILJS_USER')
 
 # --- Sending Emails ---
 
