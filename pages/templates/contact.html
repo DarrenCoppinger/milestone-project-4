@@ -1,6 +1,16 @@
 {% extends 'base.html' %} 
-
+{% load static from staticfiles %}
 {% block page_title %}Contact{% endblock %} 
+{% block head_js %}
+    <!--JSEmail-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("user_TogJB0tfRK922oybFdTcZ");
+        emailjs.send("gmail","ms4_contact");
+    })();
+    </script>
+{% endblock head_js %}
 
 {% block content %}
 <main>
@@ -14,6 +24,29 @@
         </div>
     </div>
     <div class="container content-bubble">
+    <div class="row">
+                    <div class="col-12 offset-md-2 col-md-8">
+                        <!--Contract Form-->
+                        <div class="center-form">
+                            <p>If you have a question for us let us know here!</p>
+                            <form id="myForm" onsubmit="return sendMail(this);">
+                                {% csrf_token %}
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required/>
+                                <input type="email" name="emailaddress" class="form-control" id="emailaddress" placeholder="Your Email" required/>
+                                <textarea rows="5" name="contactrequest" class="form-control" id="contactrequest" placeholder="What question do you have for us?" required></textarea>
+                                <div class="row text-center ">
+                                    <div class="col">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
     </div>
 </main>
 {% endblock %}
+
+{% block contact_js %}
+    <script type="text/javascript" src="{% static 'js/sendEmail.js' %}"></script>
+{% endblock contact_js %}
