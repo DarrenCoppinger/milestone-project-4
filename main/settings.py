@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'checkout',
     'django_forms_bootstrap',
     'storages',
+    'pages'
 ]
 
 MIDDLEWARE = [
