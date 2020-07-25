@@ -37,4 +37,3 @@ class TestUserLoginForm(TestCase):
         self.assertRaisesMessage(
             messages.success,
             "You have successfully logged in!")
-

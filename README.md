@@ -93,8 +93,11 @@ A user who visits the website might follow one of these forms:
 - A user wants to order drinks to a table that they are sitting at through a completely contactless means.
 
 ### Design
-The style of the site is inspired by a classic cocktail 
+The style of the site is inspired by the aesthetic of classic cocktail club. These clubs tend to have dark, cool and simple design.
+
 #### Framework
+For this project the framework [Django](https://www.djangoproject.com/) was used.
+
 #### Colors
 #### Icons
 - [Font Awesome](https://fontawesome.com/)
@@ -127,22 +130,31 @@ The style of the site is inspired by a classic cocktail
 ## Technologies Used
 
 ### Frontend Technologies
+- [HTML](https://www.w3schools.com/html/html5_intro.asp) - Employed for markup text. 
+- [CSS](https://www.w3schools.com/css/) - Used for cascading styles.
+- [jQuery 3.4.1](https://code.jquery.com/jquery/) - Used for JavaScript functionality.
+- [Bootstrap 4.5.0](https://getbootstrap.com/) - Used for the design framework.
 ### Back-End Technologies
 **Python**
-    - [Python 3.7.6](https://www.python.org/) - Used as the programming language at the back-end.
+ - [Python 3.7.6](https://www.python.org/) - Used as the programming language at the back-end.
 **Django**
+- [Django](https://www.djangoproject.com/)
 **Heroku**
     - [Heroku](https://www.heroku.com) - Used for hosting the deployed website.
 
 
 ## Testing
-
+The follow validators were used to check the code developed from this project:
+- [WC3 Markup Validator](https://validator.w3.org/)
+- [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)
 
 ### Code Validators
 #### WC3 Markup Validator
+ [WC3 Markup Validator](https://validator.w3.org/) was used to validate the HTML code. However, the validator is not able to recognise the Jinja templating syntax so some errors were recorded. All code other than the template syntax language was successfully validated.
 #### W3C Jigsaw CSS Validator
+[W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS code. The CSS successfully passed this check with no errors.
 #### PEP8 Validator
-
+[PEP8 Validator](http://pep8online.com/) was used ti validate my python code.
 
 ### Browers Testing
 This website was tested on multiple browsers. They included:

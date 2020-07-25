@@ -36,4 +36,3 @@ class TestOrderFormLoggedIn(TestCase):
             'stripe_id': 'tok_visa'
             })
         self.assertTrue(payment_form.is_valid())
- 

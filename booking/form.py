@@ -27,6 +27,3 @@ class ReservationForm(forms.ModelForm):
             'reserved_end_time': TimeInput()
             }
         exclude = ['status']
-
-
-

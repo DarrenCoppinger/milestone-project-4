@@ -1,5 +1,5 @@
 from django.db import models
-from django.urls import reverse
+
 
 class Product(models.Model):
     """ Model for drinks available """
