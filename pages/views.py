@@ -21,10 +21,13 @@ def contact(request):
 
     emailjs_user = settings.EMAILJS_USER
 
+    context = {'contact_form': contact_form, 'emailjs_user': emailjs_user}
+
     return render(
         request,
         'contact.html',
-        {'contact_form': contact_form, 'emailjs_user': emailjs_user})
+        context
+        )
 
 
 def contact_success(request):

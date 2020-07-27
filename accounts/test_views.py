@@ -1,6 +1,6 @@
-from django.test import TestCase, SimpleTestCase, Client, RequestFactory
+from django.test import TestCase, Client, RequestFactory
 from django.contrib.auth.models import User
-from django.contrib import auth, messages
+from django.contrib import messages
 from accounts.views import registration, login, logout
 # from accounts.forms import UserLoginForm
 
