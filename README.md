@@ -4,7 +4,7 @@
 
 ![BarTender Project Image](https://i.ibb.co/s6J6dMv/bartender-banner.jpg)
 
-##[Deployed BarTender website here](https://bartender-ms4.herokuapp.com/)
+## [Deployed BarTender website here](https://bartender-ms4.herokuapp.com/)
 
 ---
 
@@ -81,16 +81,33 @@ The website also provides the customer with a list of the products available in 
 ### Design Objectives
 The following are the main design objectives for the project:
 
-#### Deign a Application Appropriate for Audience
+#### Design a Application Appropriate for Audience
+The website must be appropriate for the audience. The audience for this website will be English speaking, technology savvy and will likely access the site on mobile devices. Although the website will accommodate all visitors, its primary audience will be technology literate. Using the bootstrap framework means that this website has a mobile first approach to development however, it will also perform well on a large screen sizes.
 #### Content Relevance and Accuracy
+The content to the site must be relevant to the site owners and their audience. As such, products on sale through the website can be add through the backend of the site. Products can be edited and updated as required.
+
 #### Content Grouping
+
+The website content is grouped into easily understood sections (Home, Booking, Drinks, Login/Logout, Cart).
 #### Technology 
+
+Appropriate technologies were used to design the website such as [Bootstrap](https://getbootstrap.com/), [Django](https://www.djangoproject.com/), [EmailJS](https://www.emailjs.com/), [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial)  to provide the user with a high-quality experience. 
+
+To manage the data two different relational (SQL) databases were used. For local deployment and development of the site Django's default database, SQLite3, was used. For the deployed site [Heroku Postgres](https://www.heroku.com/postgres) database was used.
 
 ### User stories
 A user who visits the website might follow one of these forms:
 - A user wants to book a particular type of seat for a certain date and time in the bar.
 - A user wants to look through the drinks/products that are available on from the bar.
 - A user wants to order drinks to a table that they are sitting at through a completely contactless means.
+
+Additionally, the following requirements should be met by the website:
+
+"As a user of this website, I would like to- _____________________"
+- view the website from all device types (mobile, tablet or desktop)
+- contact the site adminstrators to make a inquiry
+
+
 
 ### Design
 The style of the site is inspired by the aesthetic of classic cocktail club. These clubs tend to have dark, cool and simple design.
