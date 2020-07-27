@@ -1,5 +1,6 @@
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
+from products.models import Product
 
 
 class TestCartViewLoggedOut(TestCase):
@@ -35,10 +36,9 @@ class TestCartViewLoggedIn(TestCase):
 
     def test_cart_redirect(self):
         """
-        Check that the when not logged in the user
-         is redirected to the login page
+        Check that the when logged in the user
+         is directed to the cart page
         """
-
         response = self.client.get('/cart/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "cart.html")
