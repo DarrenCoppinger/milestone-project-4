@@ -6,7 +6,7 @@
 <main class="background">
     <div class="container home">
         <div class="row d-flex justify-content-center">
-            <div class="col-12 col-md-10 text-center">
+            <div class="col-12 offset-md-1 col-md-10 text-center">
                 <h2 class="text-white">
                     Welcome to BarTender
                 </h2>
@@ -23,7 +23,7 @@
                 {% if user.is_authenticated %}
                     <div class="row d-flex justify-content-center">
                         <div class="col-6">
-                            <a href="{% url 'view_cart' %}" class="btn btn-home rounded px-0">Your Cart</a>
+                            <a href="{% url 'view_cart' %}" class="btn btn-home rounded px-0">Cart</a>
                         </div>
                         <div class="col-6">
                             <a href="{% url 'products' %}" class="btn btn-home rounded px-0">Drinks</a>
