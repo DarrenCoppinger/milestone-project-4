@@ -107,8 +107,6 @@ Additionally, the following requirements should be met by the website:
 - view the website from all device types (mobile, tablet or desktop)
 - contact the site adminstrators to make a inquiry
 
-
-
 ### Design
 The style of the site is inspired by the aesthetic of classic cocktail club. These clubs tend to have dark, cool and simple design.
 
@@ -122,12 +120,31 @@ For this project the framework [Django](https://www.djangoproject.com/) was used
 #### Typography
 
 ### Wireframe
+Wireframes for both the desktop and mobile versions of the website were produced. They are include below:
 #### Desktop Wireframes
-#### Mobile Wireframes
+- [Home](https://i.ibb.co/d6VGZBh/Home.png)
+- [Booking](https://i.ibb.co/VBT3YP4/Booking.png)
+- [Drinks](https://i.ibb.co/F6Gqzm1/Drinks.png)
+- [Drink Description](https://i.ibb.co/DbQG6Y0/Product-Page.png)
+- [Cart](https://i.ibb.co/cxgKzfp/Cart.png)
+- [Checkout](https://i.ibb.co/fSLy6Zq/Checkout.png)
+- [Login](https://i.ibb.co/BVKrFnG/Login.png)
+- [Registration](https://i.ibb.co/wcLsW36/Register.png)
 
+#### Mobile Wireframes
+- [Home](https://i.ibb.co/p4mZw8K/Home-mobile.png)
+- [Booking](https://i.ibb.co/Rzc3w1v/Booking-mobile.png)
+- [Drinks](https://i.ibb.co/R2PDQHV/Drinks-mobile.png)
+- [Drink Description](https://i.ibb.co/BZns43m/Products-mobile.png)
+- [Cart](https://i.ibb.co/F0CyDXk/Cart-mobile.png)
+- [Checkout](https://i.ibb.co/0ZZDm56/Checkout-mobile.png)
+- [Login](https://i.ibb.co/Rp0jBXd/Login-mobile.png)
+- [Registration](https://i.ibb.co/G2pqtZp/Register-mobile.png)
 
 ## Features
+Major features to be developed and deployed on this website are summarized in the following table and graph. In the below opportunites analysis, the viability/feasibility is lower than the importance total. Therefore, all the features on this list will not be implemented. The Booked out feature was left for a later development sprint.
 
+![Viability Feasability Study](https://i.ibb.co/SxQ0wFG/Viability-Feasability-Study.jpg)
 
 ### Existing Features
 

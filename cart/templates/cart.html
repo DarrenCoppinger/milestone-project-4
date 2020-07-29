@@ -19,7 +19,7 @@
                 {% for item in cart_items %}
                     <div class="row no-gutters cart-item">
                         <div class="col-12 col-md-4">
-                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}{{  item.product.image }}" alt="Product Image">
+                            <img class="img-fluid rounded pl-3" src="{{ MEDIA_URL }}{{  item.product.image }}" alt="Product Image">
                             <!-- <p class="product-description">{{ item.product.description }}</p> -->
                         </div>
                         <div class="col-12 col-md-8"> 
@@ -59,7 +59,7 @@
                             </div>
                         </div>
                         <div class="col-12">
-                            <hr>
+                            <hr class="mx-3">
                         </div>
                     </div>
                 {% endfor %}
