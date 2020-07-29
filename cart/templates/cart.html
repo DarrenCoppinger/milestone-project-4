@@ -11,8 +11,12 @@
     <div class="container">
         <div class="row no-gutters justify-content-center">
             <div id="shopping-cart" class="content-bubble col-12 col-sm-10">
-            {% for item in cart_items %}
-                <!-- <div class="card"> -->
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <h2>Cart</h2>
+                    </div>
+                </div>
+                {% for item in cart_items %}
                     <div class="row no-gutters cart-item">
                         <div class="col-12 col-md-4">
                             <img class="img-fluid rounded" src="{{ MEDIA_URL }}{{  item.product.image }}" alt="Product Image">
@@ -58,20 +62,17 @@
                             <hr>
                         </div>
                     </div>
-                <!-- </div> -->
                 {% endfor %}
-                <div class="">
-                    <div class="row checkout-line justify-content-end">
-                        <div class="col-10 text-right">
-                            Total <span><i class="fas fa-euro-sign"></i></span>{{ total }}
-                        </div>
+                <div class="row checkout-line justify-content-end">
+                    <div class="col-10 text-right">
+                        Total <span><i class="fas fa-euro-sign"></i></span>{{ total }}
                     </div>
-                    <div class="row checkout-line justify-content-end">
-                        <div class="col-10 text-right">
-                            <a href="{% url 'checkout' %}" class="btn btn-success" role="button">
-                                <i class="fas fa-check"></i> Checkout
-                            </a>
-                        </div>
+                </div>
+                <div class="row checkout-line justify-content-end">
+                    <div class="col-10 text-right">
+                        <a href="{% url 'checkout' %}" class="btn btn-success" role="button">
+                            <i class="fas fa-check"></i> Checkout
+                        </a>
                     </div>
                 </div>
             </div>

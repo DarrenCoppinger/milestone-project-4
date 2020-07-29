@@ -12,30 +12,36 @@
 <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
 
+{% block page_title %}Checkout{% endblock %} 
+
 {% block content %}
 <main>
     <div class="container">
-        <div class="row content-bubble">
+    <div class="content-bubble">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>Checkout</h2>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-12 col-md-6">  
-                <div id="shopping-cart" >
-                    {% for item in cart_items %}
-                        <div class="row ">
-                            <div class="col-12 col-md-4">
-                                <img class="img-fluid rounded" src="{{ MEDIA_URL }}{{  item.product.image }}" alt="Product Image">
-                            </div>
-                            <div class="col-12 col-md-8"> 
-                                <div>
-                                    <p>{{ item.product.name }}</p>
-                                    <p>Price: <span><i class="fas fa-euro-sign"></i></span>{{ item.product.price }}</p>
-                                    <p>Quantity: {{ item.quantity }}</p>
-                                </div>
-                            </div>
-                            <div class="col-12 p-0">
-                                <hr>
+                {% for item in cart_items %}
+                    <div class="row no-gutters">
+                        <div class="col-12 col-md-4">
+                            <img class="img-fluid rounded" src="{{ MEDIA_URL }}{{  item.product.image }}" alt="Product Image">
+                        </div>
+                        <div class="col-12 col-md-8 pl-3 pt-3"> 
+                            <div>
+                                <h5>{{ item.product.name }}</h5>
+                                <p>Price: <span><i class="fas fa-euro-sign"></i></span>{{ item.product.price }}</p>
+                                <p>Quantity: {{ item.quantity }}</p>
                             </div>
                         </div>
-                    {% endfor %}
-                </div>
+                        <div class="col-12 p-0">
+                            <hr>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
             <div class="col-12 col-md-6">
                 <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
@@ -56,16 +62,17 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-6 text-center">
-                            <a class="btn btn-primary" href="{% url 'view_cart' %}">Alter</a>
+                        <div class="form-group col-6 text-center pl-0">
+                            <a class="btn btn-primary btn-sm" href="{% url 'view_cart' %}">Alter</a>
                         </div>
-                        <div class="form-group col-6 text-center">
-                            <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Confirm">
+                        <div class="form-group col-6 text-center  pr-0">
+                            <input class="btn btn-primary btn-sm" id="submit_payment_btn" name="commit" type="submit" value="Confirm">
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+    </div>
     </div>
 </main>
 {% endblock %}
