@@ -78,6 +78,7 @@ This website was designed as a part of my Code Institute Full Stack Development 
 The website provides users with a tool that allows them to book a seat in a bar on the "Booking" page. Through the admin functionality of the website the the bar staff can approve, deny or amend the booking request (potentially after contacting the customer directly). 
 
 The website also provides the customer with a list of the products available in the bar on the "Drinks".
+
 ### Design Objectives
 The following are the main design objectives for the project:
 
@@ -106,6 +107,7 @@ Additionally, the following requirements should be met by the website:
 "As a user of this website, I would like to- _____________________"
 - view the website from all device types (mobile, tablet or desktop)
 - contact the site adminstrators to make a inquiry
+- search the website for a drink
 
 ### Design
 The style of the site is inspired by the aesthetic of classic cocktail club. These clubs tend to have dark, cool and simple design.
@@ -147,10 +149,30 @@ Major features to be developed and deployed on this website are summarized in th
 ![Viability Feasability Study](https://i.ibb.co/SxQ0wFG/Viability-Feasability-Study.jpg)
 
 ### Existing Features
-
 #### All Pages
+All pages include a responsive navigation bar and title at the top of the page. The title and logo act as a "Home" button. On medium and small screen size the navbar reduces to just the title and logo, with the page's buttons concealed in a sidebar accessible via a menu icon in the left-hand corner of the navbar. 
+
+The navbar contains the Home, Booking, Drinks, Cart and a Login button. If the user is logged into an account the login button will change to a "Logout" button.
+
 #### Home
+The Home page includes background image of a cocktail bar with is fixed in position at the center of the page. A floating transparent container appears infront of the image which has a greeting statement. There are also two link buttons in the contain which change depending on whether the user is logged in or not. If they are not logged on the buttons will direct the user to the "Login" and "About" page. If the user is logged in the buttons will direct them to the "Booking" and "Drinks" pages.
+
 #### Drinks
+The drinks page presents the drinks added to the database. By default the page is loaded with the all the entries loaded. 
+
+At the top of the page is a arrangement of buttons which have the names of the catagories defined in the database "Pints", "Bottles", "Soft Drinks", "Cocktails" and "Spirits". The "All" button is the default view which displays all catagories. Each of the other buttons will limit the entries presented to a single catagory.
+
+Each entry on the Drinks page is represented as a Bootstrap Card. Each card has an image, title, decription and price associated with it. Underneath these details is a small form which allows the user to select the number of the item they wish to add to their Cart and then click the "Add" button to execute this. 
+
+Each card has a hoover effect to indicate that if clicked it will provide more information by bringing the user to the drinks individual page. THis is also indicated by the truncated presentation of the description text underneath it's image.
+
+The page is designed to be responsive and will the number of entries in a row will vary depending on the screen width as follows:
+- 992px < width : 4 entries per row
+- 768px < width < 992px : 3 entries per row
+- 576px < width < 768px  : 2 entries per row
+- width < 576px : 1 entry per row
+
+
 #### Booking
 #### Cart
 #### Checkout
@@ -159,7 +181,8 @@ Major features to be developed and deployed on this website are summarized in th
 #### Registration
 
 ### Features Left to Implement
-
+Booked Out Feature
+Pagination on the Drinks Page
 
 ## Technologies Used
 
