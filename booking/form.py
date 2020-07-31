@@ -10,6 +10,10 @@ class TimeInput(forms.TimeInput):
     input_type = ('time')
 
 
+class NumberInput(forms.NumberInput):
+    input_type = ('number')
+
+
 class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
@@ -22,6 +26,7 @@ class ReservationForm(forms.ModelForm):
             'booking_end_time'
             )
         widgets = {
+            'phone_number': NumberInput,
             'date': DateInput(),
             'booking_start_time': TimeInput(),
             'booking_end_time': TimeInput()

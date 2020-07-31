@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
-
+from django.contrib import messages
 
 @login_required
 def view_cart(request):
@@ -19,6 +19,7 @@ def add_to_cart(request, id):
         cart[id] = cart.get(id, quantity)
 
     request.session['cart'] = cart
+    messages.success(request, "Item successfully added to your Cart!")
     return redirect(reverse('products'))
 
 
@@ -33,4 +34,5 @@ def adjust_cart(request, id):
         cart.pop(id)
 
     request.session['cart'] = cart
+    messages.success(request, "Successfully adjusted item in your Cart!")
     return redirect(reverse('view_cart'))

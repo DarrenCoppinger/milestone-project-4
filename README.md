@@ -195,9 +195,17 @@ The Booking page includes input fields for all the required information to make 
 This feature requires the user to add in additional details that the did not provide during their registration (Full Name and phone number). During the design of the website it was considered adding these details into the registeration process. However, it was considered an simpler solution to only ask the user information when it was absolutely necessary.
 
 A "Floor Plan" of the bar is also included on the right hand side of the page. This column will move to underneath the "Booking Details" form on screens of less than  768px (the md breakpoint).
- 
 
 #### Cart
+The Cart page presents a summary of all the items add to the users cart. If the user has not added an item to their cart they will be show the message "YOUR CART IS EMPTY".
+
+When the user adds a itme to the cart from the Drinks page they will receive the message "Item successfully added to your Cart!" and a badge with a number will appear beside the Cart icon in the Navbar.
+
+Each item in the Cart has a image, title, price and quantity. The quantity can be adjusted to using an input field. It the field is set to 0 and the "AMEND" button clicked the item will be removed from the Cart. 
+
+At the bottom of the page there is "Total" section which shows the user the total cost of all the items in their Cart.
+
+
 #### Checkout
 #### Search
 #### Login
