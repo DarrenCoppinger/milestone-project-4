@@ -146,6 +146,19 @@ Wireframes for both the desktop and mobile versions of the website were produced
 ## Features
 Major features to be developed and deployed on this website are summarized in the following table and graph. In the below opportunites analysis, the viability/feasibility is lower than the importance total. Therefore, all the features on this list will not be implemented. The Booked out feature was left for a later development sprint.
 
+| Opportunities | Importance | Viability/feasibility | Difficulty |
+|:---|:---:|:---:|:---:|
+|Booking functionality to receive and store requests|5|4|5|
+|Automatic emails on booking request and on processing request from backend|5|3|5|
+|Menu/drinks page with sort functionality (by item category)|4|4|4|
+|Backend feature to add new products/drinks|4|5|3|
+|User Registration and Login|4|5|3|
+|Cart and Checkout feature with the ability to take payments|4|3|4|
+|Contact page for general user communications|3|4|3|
+|Interactive map showing business location|3|4|3|
+|Booking app add time slots and remove seat options when unavailable (Booked Out feature)|3|3|5|
+| **Total** | **33** | **32** |  | 
+
 ![Viability Feasability Study](https://i.ibb.co/SxQ0wFG/Viability-Feasability-Study.jpg)
 
 ### Existing Features
@@ -153,6 +166,8 @@ Major features to be developed and deployed on this website are summarized in th
 All pages include a responsive navigation bar and title at the top of the page. The title and logo act as a "Home" button. On medium and small screen size the navbar reduces to just the title and logo, with the page's buttons concealed in a sidebar accessible via a menu icon in the left-hand corner of the navbar. 
 
 The navbar contains the Home, Booking, Drinks, Cart and a Login button. If the user is logged into an account the login button will change to a "Logout" button.
+
+Each page has a message panel that appears when a messages is generated. 
 
 #### Home
 The Home page includes background image of a cocktail bar with is fixed in position at the center of the page. A floating transparent container appears infront of the image which has a greeting statement. There are also two link buttons in the contain which change depending on whether the user is logged in or not. If they are not logged on the buttons will direct the user to the "Login" and "About" page. If the user is logged in the buttons will direct them to the "Booking" and "Drinks" pages.
@@ -172,8 +187,16 @@ The page is designed to be responsive and will the number of entries in a row wi
 - 576px < width < 768px  : 2 entries per row
 - width < 576px : 1 entry per row
 
-
 #### Booking
+The Booking page presents users with the ability to request a particular type of seat in the bar for a particular time. 
+
+The Booking page includes input fields for all the required information to make a reservation, these include: Seat Type, Full Name, Phone Number, Date, Booking Start Time and Booking End Time. Widgets were used for the date and time fields. This ensures that the user can only use the date or time picker (the calendar and clock icons) to fill in these fields. This reduces the chances of incorrect or unclear data being submitted in the form.
+
+This feature requires the user to add in additional details that the did not provide during their registration (Full Name and phone number). During the design of the website it was considered adding these details into the registeration process. However, it was considered an simpler solution to only ask the user information when it was absolutely necessary.
+
+A "Floor Plan" of the bar is also included on the right hand side of the page. This column will move to underneath the "Booking Details" form on screens of less than  768px (the md breakpoint).
+ 
+
 #### Cart
 #### Checkout
 #### Search

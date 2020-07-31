@@ -18,12 +18,19 @@ class ReservationForm(forms.ModelForm):
             'full_name',
             'phone_number',
             'date',
-            'reserved_start_time',
-            'reserved_end_time'
+            'booking_start_time',
+            'booking_end_time'
             )
         widgets = {
             'date': DateInput(),
-            'reserved_start_time': TimeInput(),
-            'reserved_end_time': TimeInput()
+            'booking_start_time': TimeInput(),
+            'booking_end_time': TimeInput()
             }
+        labels = {
+            'seat_type': 'Seat Type',
+            'full_name': 'Full Name',
+            'phone_number': 'Phone Number',
+            'booking_start_time': 'Booking Start Time',
+            'booking_end_time': 'Booking End Time',
+        }
         exclude = ['status']

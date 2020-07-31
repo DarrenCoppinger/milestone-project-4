@@ -25,7 +25,12 @@ def login(request):
                 return redirect(reverse('index'))
             else:
                 messages.error(
-                    request, "Your username or password is incorrect")
+                    request, 
+                    """
+                    Your username or password is incorrect.
+                    Note that both fields may be case-sensitive.
+                    """
+                    )
 
     else:
         login_form = UserLoginForm()
