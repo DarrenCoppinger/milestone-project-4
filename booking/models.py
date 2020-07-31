@@ -1,4 +1,5 @@
 from django.db import models
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Reservation(models.Model):
@@ -22,7 +23,11 @@ class Reservation(models.Model):
     )
 
     full_name = models.CharField(max_length=50, blank=False)
-    phone_number = models.CharField(max_length=20, blank=False)
+    phone_number = PhoneNumberField(
+        blank=False,
+        error_messages={
+            'invalid': 'Enter a valid phone number (e.g. +353861234567)'
+            })
     date = models.DateField()
     seat_type = models.SmallIntegerField(choices=SEAT_TYPE, default=STOOL)
     booking_start_time = models.TimeField()

@@ -1,5 +1,8 @@
 from django import forms
 from .models import Reservation
+from django.utils import timezone
+from datetime import datetime, date, time
+from django.utils.dateparse import parse_time
 
 
 class DateInput(forms.DateInput):
@@ -39,3 +42,33 @@ class ReservationForm(forms.ModelForm):
             'booking_end_time': 'Booking End Time',
         }
         exclude = ['status']
+
+    def clean_date(self):
+        booking_date = self.cleaned_data.get('date')
+        now = date.today()
+        if booking_date < now:
+            raise forms.ValidationError(u'Invalid date - selected date passed')
+        return booking_date
+
+    def clean_booking_start_time(self):
+        booking_start_time = self.cleaned_data.get('booking_start_time')
+        opening_time = parse_time('12:30:00')
+        if booking_start_time < opening_time:
+            raise forms.ValidationError(
+                u'Booking must be during bar opening hours 12:30 - 00:00.'
+                )
+        return booking_start_time
+
+    def clean_booking_end_time(self):
+        booking_start_time = self.cleaned_data.get('booking_start_time')
+        booking_end_time = self.cleaned_data.get('booking_end_time')
+        opening_time = parse_time('12:30:00')
+        if booking_end_time < opening_time:
+            raise forms.ValidationError(
+                u'Booking must be during bar opening hours 12:30 - 00:00.'
+                )
+        if booking_end_time < booking_start_time:
+            raise forms.ValidationError(
+                u'Booking can not end before it starts'
+                )
+        return booking_end_time
