@@ -1,7 +1,6 @@
 from django import forms
 from .models import Reservation
-from django.utils import timezone
-from datetime import datetime, date, time
+from datetime import date, time
 from django.utils.dateparse import parse_time
 
 
@@ -43,32 +42,37 @@ class ReservationForm(forms.ModelForm):
         }
         exclude = ['status']
 
-    def clean_date(self):
+
+    def clean(self):
+        """
+            Clean the date, booking_start_time and booking_end_time 
+            fields of the ReservationForm
+        """
+        cleaned_data = super().clean()
+        # ------ Date ------
         booking_date = self.cleaned_data.get('date')
         now = date.today()
         if booking_date < now:
-            raise forms.ValidationError(u'Invalid date - selected date passed')
-        return booking_date
+            msg = "Invalid date - selected date passed"
+            self.add_error('date', msg)
 
-    def clean_booking_start_time(self):
+        # ------ booking_start_time ------
         booking_start_time = self.cleaned_data.get('booking_start_time')
         opening_time = parse_time('12:30:00')
+        print('booking_start_time= ' + str(booking_start_time))
         if booking_start_time < opening_time:
-            raise forms.ValidationError(
-                u'Booking must be during bar opening hours 12:30 - 00:00.'
-                )
-        return booking_start_time
+            msg = "Booking must start during bar opening hours 12:30 - 00:00."
+            self.add_error('booking_start_time', msg)
 
-    def clean_booking_end_time(self):
-        booking_start_time = self.cleaned_data.get('booking_start_time')
+        # ------ booking_end_time ------
         booking_end_time = self.cleaned_data.get('booking_end_time')
         opening_time = parse_time('12:30:00')
+        print('booking_start_time= ' + str(booking_start_time))
+        print('booking_end_time= ' + str(booking_end_time))
         if booking_end_time < opening_time:
-            raise forms.ValidationError(
-                u'Booking must be during bar opening hours 12:30 - 00:00.'
-                )
+            msg = "Booking must end during bar opening hours 12:30 - 00:00."
+            self.add_error('booking_end_time', msg)
         if booking_end_time < booking_start_time:
-            raise forms.ValidationError(
-                u'Booking can not end before it starts'
-                )
-        return booking_end_time
+            msg = "Booking can not end before it starts"
+            self.add_error('booking_end_time', msg)
+        return cleaned_data
