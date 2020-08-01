@@ -42,10 +42,9 @@ class ReservationForm(forms.ModelForm):
         }
         exclude = ['status']
 
-
     def clean(self):
         """
-            Clean the date, booking_start_time and booking_end_time 
+            Clean the date, booking_start_time and booking_end_time
             fields of the ReservationForm
         """
         cleaned_data = super().clean()

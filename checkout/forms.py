@@ -32,4 +32,9 @@ class OrderForm(forms.ModelForm):
             'full_name',
             'phone_number'
             )
+        labels = {
+            'table_number': 'Table Number',
+            'full_name': 'Full Name',
+            'phone_number': 'Phone Number',
+        }
         exclude = ['date', 'time']

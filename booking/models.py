@@ -22,7 +22,7 @@ class Reservation(models.Model):
         (TABLE, "Table"),
     )
 
-    full_name = models.CharField(max_length=50, blank=False)
+    full_name = models.CharField(max_length=20, blank=False)
     phone_number = PhoneNumberField(
         blank=False,
         error_messages={

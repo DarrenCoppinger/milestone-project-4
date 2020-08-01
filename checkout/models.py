@@ -1,5 +1,6 @@
 from django.db import models
 from products.models import Product
+from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Order(models.Model):
@@ -48,8 +49,12 @@ class Order(models.Model):
     table_number = models.SmallIntegerField(
         choices=TABLE_CHOICE,
         default=STOOL_1)
-    full_name = models.CharField(max_length=50, blank=False)
-    phone_number = models.CharField(max_length=20, blank=False)
+    full_name = models.CharField(max_length=20, blank=False)
+    phone_number = PhoneNumberField(
+        blank=False,
+        error_messages={
+            'invalid': 'Enter a valid phone number (e.g. +353861234567)'
+            })
     date = models.DateField(auto_now=True)
     time = models.TimeField(auto_now=True)
 
