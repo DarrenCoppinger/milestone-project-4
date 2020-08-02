@@ -218,8 +218,16 @@ Underneath this is a payment form requiring the credit card details of the user 
 Underneath these forms is a Cart button to bring the user back to their cart view to make alterations and another button to confirm their order.
 
 #### Search
+A search bar is built into the NavBar in the base.html template and so is present on every page. If the user is not logged in creating a search in the search bar will bring them to the login page.
+
+If a search is entered into the search box it will search all the drinks/products in the products database and present the results on the product.html page.
 
 #### Login
+The login page is accessed via a button on the navbar or the sidenav on mobile devices. Clicking this brings the user to a typical user login form screen with a submit button labelled "Login". 
+
+- If the users has not registered for an account but tries to login by inputing an unregistered username and password they will receive a flash banner saying "Your username or password is incorrect. Note that both fields may be case-sensitive."
+- If the user enters both an existing username and a correct password they will be redirected to the home page of the site and shown a banner message saying "You have successfully logged in!"
+- If the user has signed up to the site they can click the "Reset Password" button underneath the login in form.
 #### Registration
 
 ### Features Left to Implement
