@@ -11,14 +11,14 @@ class MakePaymentForm(forms.Form):
         label="Credit card number",
         required=False)
     cvc = forms.CharField(
-        label="Security Code",
+        label="Security Code (CVC)",
         required=False)
     expiry_month = forms.ChoiceField(
-        label="Month",
+        label="Expiry Month",
         choices=MONTH_CHOICES,
         required=False)
     expiry_year = forms.ChoiceField(
-        label="Year",
+        label="Expiry Year",
         choices=YEAR_CHOICES,
         required=False)
     stripe_id = forms.CharField(widget=forms.HiddenInput)

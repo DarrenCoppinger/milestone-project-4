@@ -207,7 +207,18 @@ At the bottom of the page there is "Total" section which shows the user the tota
 
 
 #### Checkout
+The checkout page presents an order summary and a payments details form. The order summary presents an image, title, price and quantity of each item added to the cart. Underneath this is also presents a "Total" for the cost of the items in the Cart.
+
+The checkout page also presents and order form requiring the user to input their table number, Full Name and phone number.
+
+AN item for future work is to tie a reservation to a particular order and save the users details which were used in the booking form. 
+
+Underneath this is a payment form requiring the credit card details of the user (Credit card number, CVC Expiry Month and Expiry Year). Any Errors generated through submission of this form will appear above under the form title colored red and underlined.
+
+Underneath these forms is a Cart button to bring the user back to their cart view to make alterations and another button to confirm their order.
+
 #### Search
+
 #### Login
 #### Registration
 
