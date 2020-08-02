@@ -116,6 +116,12 @@ The style of the site is inspired by the aesthetic of classic cocktail club. The
 For this project the framework [Django](https://www.djangoproject.com/) was used.
 
 #### Colors
+The main colors used, which are primary form the Lux bootswatch style, are as follows:
+- ![#1a1a1a](https://placehold.it/15/1a1a1a/1a1a1a) `#1a1a1a` (**off black**)
+- ![#f7f7f9](https://placehold.it/15/f7f7f9/f7f7f9) `#f7f7f9` (**light grey**)
+- ![#800000](https://placehold.it/15/800000/800000) `#800000` (**maroon**)
+- ![#d9534f](https://placehold.it/15/d9534f/d9534f) `#d9534f` (**coral red**)
+
 #### Icons
 - [Font Awesome](https://fontawesome.com/)
     - The Font Awesome icons where used as they provide a wide array of attractive and useful icons and I found these to be sufficient for my project.
@@ -228,11 +234,21 @@ The login page is accessed via a button on the navbar or the sidenav on mobile d
 - If the users has not registered for an account but tries to login by inputing an unregistered username and password they will receive a flash banner saying "Your username or password is incorrect. Note that both fields may be case-sensitive."
 - If the user enters both an existing username and a correct password they will be redirected to the home page of the site and shown a banner message saying "You have successfully logged in!"
 - If the user has signed up to the site they can click the "Reset Password" button underneath the login in form.
+
 #### Registration
+
+The registration page has four fields Email, Username, Password, Password Confirmation. All fields are required for form submission to be successful.
+- If the user enters an Email that has been used to create an account previously they will receive the error message "Email address must be unique".
+- If the user enters a Username that has been used to create an account previously they will receive the error message "A user with that username already exists.
+- If the user enter both Password and Password Confirmation but the values are not the same they will receive the error message "Passwords must match".
+
+If the user enters all fields and the form is successfully validated they will be redirected to the home page and receive a banner message of "You have successfully logged in!".
 
 ### Features Left to Implement
 Booked Out Feature
 Pagination on the Drinks Page
+Order automatic email on completion.
+Profile page for user with update detils feature.
 
 ## Technologies Used
 
@@ -254,6 +270,7 @@ Pagination on the Drinks Page
 The follow validators were used to check the code developed from this project:
 - [WC3 Markup Validator](https://validator.w3.org/)
 - [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)
+- [PEP8 Validator](http://pep8online.com/) 
 
 ### Code Validators
 #### WC3 Markup Validator
