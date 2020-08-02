@@ -13,16 +13,25 @@ class Testviews(TestCase):
         self.client.login(
             username='person',
             password='test12345@_password')
-        self.client.post("/booking/", {
-            "seat_type": 1,
-            "full_name": "Test Name",
-            "phone_number": "12345678910",
-            "date": '2021-01-01',
-            "reserved_start_time": '20:10',
-            "reserved_end_time": '21:10',
-            "status": 1,
-            "email": 'fake@email.com',
-        })
+        # self.client.post("/booking/", {
+        #     "seat_type": 1,
+        #     "full_name": "Test Name",
+        #     "phone_number": "12345678910",
+        #     "date": '2021-01-01',
+        #     "booking_start_time": '20:10',
+        #     "booking_end_time": '21:10',
+        #     "status": 1,
+        #     "email": 'fake@email.com',
+        # })
+        booking = Reservation.objects.create(
+            seat_type=1,
+            full_name="Test Name",
+            phone_number="12345678910",
+            date='2021-01-01',
+            booking_start_time='20:10',
+            booking_end_time='21:10',
+            status=1,
+            email='fake@email.com')
 
         booking = Reservation.objects.get(pk=1)
         self.assertEqual(booking.full_name, "Test Name")

@@ -21,7 +21,7 @@ class TestOrderFormLoggedIn(TestCase):
         order_form = OrderForm({
             'table_number': 1,
             'full_name': 'Test Name',
-            'phone_number': '0861234567',
+            'phone_number': '+353861234567',
             'date': '2020-07-21',
             'time': '21:10'
             })

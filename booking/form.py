@@ -58,7 +58,7 @@ class ReservationForm(forms.ModelForm):
         # ------ booking_start_time ------
         booking_start_time = self.cleaned_data.get('booking_start_time')
         opening_time = parse_time('12:30:00')
-        print('booking_start_time= ' + str(booking_start_time))
+        # print('booking_start_time= ' + str(booking_start_time))
         if booking_start_time < opening_time:
             msg = "Booking must start during bar opening hours 12:30 - 00:00."
             self.add_error('booking_start_time', msg)
@@ -66,8 +66,8 @@ class ReservationForm(forms.ModelForm):
         # ------ booking_end_time ------
         booking_end_time = self.cleaned_data.get('booking_end_time')
         opening_time = parse_time('12:30:00')
-        print('booking_start_time= ' + str(booking_start_time))
-        print('booking_end_time= ' + str(booking_end_time))
+        # print('booking_start_time= ' + str(booking_start_time))
+        # print('booking_end_time= ' + str(booking_end_time))
         if booking_end_time < opening_time:
             msg = "Booking must end during bar opening hours 12:30 - 00:00."
             self.add_error('booking_end_time', msg)
