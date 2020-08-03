@@ -302,6 +302,12 @@ This website was tested on multiple browsers. They included:
 
 ### User Stories Testing
 
+#### A user wants to book a particular type of seat for a certain date and time in the bar.
+1. The User loads the app and is directed to the index.html page. The user sees the instructions on the page and 
+
+#### A user wants to look through the drinks/products that are available on from the bar.
+#### A user wants to order drinks to a table that they are sitting at through a completely contactless means.
+
 ### Manual Testing
 #### Home
 #### Drinks
