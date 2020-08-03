@@ -43,7 +43,6 @@ This website, [BarTender](https://bartender-ms4.herokuapp.com/), is an online to
 3. [**Technologies Used**](#technologies-used)
     - [**Frontend Technologies**](#frontend-technologies)
     - [**Backend Technologies**](#Backend-technologies)
-
 4. [**Testing**](#testing)
     - [**Code Validators**](#code-validators)
         - [**WC3 Markup Validator**](#w3c-markup-validator)
@@ -55,11 +54,11 @@ This website, [BarTender](https://bartender-ms4.herokuapp.com/), is an online to
         - [**User Story 2**](#user-story-3)
         - [**User Story 3**](#user-story-3)
     - [**Manual testing**](#manual-testing)
-        - [**Home**](#home)
-        - [**Drinks**](#drinks)
-        - [**Booking**](#booking)
-        - [**Cart**](#cart)
-        - [**Checkout**](#checkout)
+        - [**Test Home**](#test-home)
+        - [**Test Booking**](#test-booking)
+        - [**Test Drinks**](#test-drinks)
+        - [**Test Cart**](#test-cart)
+        - [**Checkout**](#test-checkout)
     - [**Known Issues**](#known-issues)
 
 5. [**Deployment**](#deployment)
@@ -276,9 +275,9 @@ The follow validators were used to check the code developed from this project:
 
 ### Code Validators
 #### WC3 Markup Validator
- [WC3 Markup Validator](https://validator.w3.org/) was used to validate the HTML code. However, the validator is not able to recognise the Jinja templating syntax so some errors were recorded. All code other than the template syntax language was successfully validated.
+[WC3 Markup Validator](https://validator.w3.org/) was used to validate the HTML code. However, the validator is not able to recognise the Jinja templating syntax so some errors were recorded. All code other than the template syntax language was successfully validated.
 
- All errors highlight by the validator were dealt with apart from those caused by the templating language (i.e. statements inside "{%%}" of "{{}}") which were caught by the validator but are not errors.
+All errors highlight by the validator were dealt with apart from those caused by the templating language (i.e. statements inside "{%%}" of "{{}}") which were caught by the validator but are not errors.
 
 Examples of these errors are:
 - "Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>"
@@ -293,14 +292,20 @@ Bad value {% url 'example' %} for attribute href on element a: Illegal character
 #### W3C Jigsaw CSS Validator
 [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS code. The CSS successfully passed this check with no errors.
 #### PEP8 Validator
-[PEP8 Validator](http://pep8online.com/) was used ti validate my python code.
+[PEP8 Validator](http://pep8online.com/) was used to validate my python code. The were two remaining errors left in the settings.py file which are as follows:
+- 'env' imported but not used
+    - this is incorrect as the env variables are import and used in the local deployment of this project
+- line 107 too long (83 > 79 characters)
+    - this is a line from the original django code and is as follows: 
+    `'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'`
+    - As the line is the specifying a validator it was thought better not to alter it in any way.
+
 
 ### Browers Testing
 This website was tested on multiple browsers. They included:
 - [Google Chrome](https://www.google.com/chrome/)
 - [Microsoft Edge](https://www.microsoft.com/en-us/edge)
 - [Firefox](https://www.mozilla.org/en-US/firefox/new/)
-
 
 ### User Stories Testing
 
