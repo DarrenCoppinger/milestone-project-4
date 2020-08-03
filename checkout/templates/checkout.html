@@ -65,15 +65,19 @@
                                 {{ payment_form | as_bootstrap }}
                             </div>                    
                         </div>
+                        <div class="form-group col-12 text-center pt-3">
+                            <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Confirm Order">
+                        </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-12 col-md-6 text-center">
-                            <a class="btn btn-primary" href="{% url 'view_cart' %}" title="Click here to alter your cart">Cart</a>
-                        </div>
-                        <div class="form-group col-12 col-md-6 text-center">
-                            <input class="btn btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Confirm">
+                        <div class="form-group col-12 text-center">
+                            <a class="btn btn-primary" href="{% url 'view_cart' %}" title="Click here to alter your cart">Go to Cart</a>
                         </div>
                     </div>
+                        <!-- <div class="form-group col-12 col-md-6 text-center">  -->
+                            <!-- <input class="btn btn-sm btn-primary" id="submit_payment_btn" name="commit" type="submit" value="Confirm">
+                        </div> -->
+
                 </form>
             </div>
         </div>

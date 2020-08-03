@@ -2,6 +2,22 @@ from django import forms
 from .models import Order
 
 
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = (
+            'table_number',
+            'full_name',
+            'phone_number'
+            )
+        labels = {
+            'table_number': 'Table Number',
+            'full_name': 'Full Name',
+            'phone_number': 'Phone Number',
+        }
+        exclude = ['date', 'time']
+
+
 class MakePaymentForm(forms.Form):
 
     MONTH_CHOICES = [(i, i) for i in range(1, 12)]
@@ -22,19 +38,3 @@ class MakePaymentForm(forms.Form):
         choices=YEAR_CHOICES,
         required=False)
     stripe_id = forms.CharField(widget=forms.HiddenInput)
-
-
-class OrderForm(forms.ModelForm):
-    class Meta:
-        model = Order
-        fields = (
-            'table_number',
-            'full_name',
-            'phone_number'
-            )
-        labels = {
-            'table_number': 'Table Number',
-            'full_name': 'Full Name',
-            'phone_number': 'Phone Number',
-        }
-        exclude = ['date', 'time']

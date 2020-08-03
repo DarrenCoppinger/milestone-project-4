@@ -249,6 +249,8 @@ Booked Out Feature
 Pagination on the Drinks Page
 Order automatic email on completion.
 Profile page for user with update detils feature.
+ajax supported adding of items to the cart
+Table number on order that can be selected by administrator 
 
 ## Technologies Used
 
@@ -303,24 +305,152 @@ This website was tested on multiple browsers. They included:
 ### User Stories Testing
 
 #### A user wants to book a particular type of seat for a certain date and time in the bar.
-1. The User loads the app and is directed to the index.html page. The user sees the instructions on the page and 
+1. The User loads the app and is directed to the index.html page. The user sees the instructions on the page and the click the register button.
+2. The user submits a completed registration form is redirected to the home page where there is a success message of "You have successfully registered" underneath the navbar.
+3. On the home page the user sees the buttons on the have now changed to "Booking" and "Drinks". Additionally, the navbar has changed from "Home", "Register" and "Login" to "Home", "Booking", "Drinks", "Logout" and "Cart". The user clicks the "Booking" button on either the page or the navbar.
+4. The user see the floor plan on the left of the "Booking" page showing the layout of the bar.
+5. The user fills out the form choicing from the seat type options (Bar Stool, Window Seat, Booth or Table), Phone number, date, Booking Start Time and Booking End Time. These field can generate the following types of validation errors:
+    - If the user doesn't enter a valid phone number they get the message "Enter a valid phone number (e.g. +353861234567)"
+    - If the user chooses a date that has already past they get the message "Invalid date - selected date passed"
+    - If the user choose a start or end time for the booking outside of the bars opening hourse they get the error message "Booking must start/end during bar opening hours 12:30 - 00:00."
+    - If ther user chooses a end time that is earlier than the selected start time the error message "Booking can not end before it starts" will be displayed.
+    - Each of the above errors generates a message under the navbar of "We were unable to make this reservation"
+6. On submission of the booking form the user is redirected back to the home page with the message "Your have requested a booking. A member of our staff will be in touch shortly to confirm your booking." underneath the navbar.
+7. The user will also receive an automatic email (to the email provided during registration) specifying the "Booking Status","Date", "Start Time", and "End Time". The email says that it will be followed up on by a member of staff. 
+8. In a real world situtation the user would be rang by the staff of BarTender to confirm their details and make any amendments to their booking dependant on seat availability at certain times.
+9. After staff have reviewed and confirmed the booking with the user the staff can change the status of the booking to either "Accepted" or "Denied" based on thier interaction with the user. When they save the chage to the booking request on the admin part of the site. The user will receive an email with the confirmed details and the message "We are please to confirmed your booking. We look forward to seeing you!".
 
-#### A user wants to look through the drinks/products that are available on from the bar.
-#### A user wants to order drinks to a table that they are sitting at through a completely contactless means.
+
+
+#### A user wants to look through the drinks/products that are available on from the bar to find a specific product.
+1. The User loads the app and is directed to the index.html page. The user see's the search bar in the top left hand corner of the screen and types in the search term and clicks search.
+2. As the user isn't looked in they are directed to the login page. As the user hasn't set up an accoun they click the register button at the bottom of the page and is cirected to the registration page.
+3. The user submits a completed registration form is redirected to the home page where there is a success message of "You have successfully logged in!" underneath the navbar.
+4. On the home page the user sees the buttons on the have now changed to "Booking" and "Drinks". Additionally, the navbar has changed from "Home", "Register" and "Login" to "Home", "Booking", "Drinks", "Logout" and "Cart". The user clicks the "Drinks" button on either the page or the navbar.
+5. The user is directed to the produts page where all the current products available from the bar are displayed. 
+6. The user sees that that there are buttons at the top of the Drinks page that descibes name of the catagories the drinks are broken down into.
+7. The user can either search for the drink they are looking for by entering a searh term in the search bar or by clicking the relevent catagory from the buttons at the top of the page. Either choice will generate a Drinks page with a subset of all teh drinks in the products database.
+8. The user now can choose the exact product they are looking for. If the user clicks on the drinks/product entry they will be directed the products individual page. This page with present the products image, name, full untruncated desciption and a for for adding that item to their cart. If the user wishes to turn to the cart there is a redirect button at the bottom of the page which will bring them back to the Drinks page.
+
+
+#### A user wants to order and pay for a drink (specifically a cocktail) to a table that they are sitting at through a completely contactless means.
+1. The user has already register for the site and logged in along the lines of the first user stories presented above. They have booked a table in the bar and have taken their seats at the booking time.
+2. From the home page the user clicks the Drinks icon in the navbar and is directed to the Drinks page.
+3. The user clicks the cocktail button at the top of the page to isolate the cocktails that are available.
+4. The user reviews what is on the menu and choose to order 4 drinks. They navigate to there selected drink and use the form at the bottom of the entry to enter the number 4 (alternatively they could user the arrows on the right side of the input box to adjust the number being ordered). 
+5. The user then clicks the add button and is redirected back to the full Drinks menu. The message "Item successfully added to your Cart!" is displayed under the navbar.
+6. The user see that a badge with the number 4 has appeared beside the Cart icon in the navbar. The user clicks the cart icon and is directed to the cart page.
+7. The user is presented with a summary of their order on the Cart page. The user realised they have need to order another drink and so adjust the number in the quanty field to 5 and click the Amend Button beside it. This reloads the page and a success message of "Successfully adjusted item in your Cart!" is displayed under the Navbar.
+8. The user is now satisfied that the order is correct and so clicks the "Checkout" button underneath the otrder total at the bottom of the page.
+9. The user is directed to the checkout page. On the right side the user see the final version of teh order they have created with the total cost underneath it. On the right side they see a payment details form.
+10. The user selects their table number (in a real world situation this would be specified on their table) and inputs their name and phone number (required incase there is difficulty locating the person who made the orderd).
+11. The user inputs their credit card details (number, CVC, Expiry month, and expiry year). The user then clicks the "Confirm" button to submit the order. If user fills in the form incorrectly the following error can be displayed:
+    - If the card number is entered incorrectly the error message "Your card number is incorrect." is displayed.
+    - If the cards CVC is entered incorrectly the error message "Your card's security code is invalid." is displayed.
+    - If the cards expiry month or year has passed the user will see error message "Your card's expiration month/year is invalid." displayed at the top of the form
+    - If the user doesn't enter a valid phone number they get the message "Enter a valid phone number (e.g. +353861234567)"
+    - Each error above is also accompanied by an error message under the navbar of "We were unable to take payment with that card".
+12. If the user successfully submits the Payment Details form they are redirected to the Drinks page with the following sucess message displayed under the navbar "Your have successfully paid".
+
 
 ### Manual Testing
-#### Home
-#### Drinks
-#### Booking
-#### Cart
-#### Checkout
-#### Login
-#### Registration
-#### Known Issues
+#### Test Navbar and Footer (All pages)
+1. Navbar
+    - Check on that a logged out user see the Home, Register and Login items in the navbar.
+    - Check that a logged in user see the Home, Booking, Drinks, Logout and Cart items in the navbar.
+    - Visit the a page of the website on a desktop sized screen (lg)
+    - Hover over the name text "BarTender" and logo to check that the hover effects work.
+    - Click the navbar-brand text "BarTender" to check that it links to the Home page.
+    - Hover over each navbar item to check the hover effect works for each one.
+    - Click on each one of the navbar buttons to ensure that each links to the correct page.
+    - Alter the screen size from desktop size down to medium devices (<992px) size to check that the navbar is responsive. At that size the navbar changes to the toggler icon with just the site name and logo. The menu items move to the sidenav menu.
+    - Click the toggler icon to check that the drop-down sidenav menu activates.
+    - Hover over each of the sidenav menu menu items and the login button to make sure their hover effect activates.
+    - Click each of the drop-down menu buttons to make sure that they links to the correct page.
 
+2. Footer
+    - Check that the body element is always a minimum of 100% of the viewport height and that the footer is never floating in the middle of the screen
+    - Check that the hover effects for the links in the Site Links section of the footer are reactive and that the get direct link hover effect is also reactive.
+    - Check that the Google Maps API viewport is displaying and that the full screen view in it's top right corner works.
+    - Alter the screen size from above medium/tablet size down to small/mobile size (<768px) to check that the one row of four columns in the footer rearrange themselves into two rows of two columns.
+    - Alter the screen size from small/mobile size down to extra-small/mirco size (<576px) to check that the two rows of two columns in the footer rearrange themselves into four rows of one column.
+3. Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
+
+#### Test Home
+1. Logged Out
+- Check that the Bottons in the central text area are "Register" and "About Us". Check that the buttons bring the user to the correct location.
+
+2. Logged In
+- Check that the Bottons in the central text area are "Booking" and "Drinks". Check that the buttons bring the user to the correct location.
+
+#### Test Registration
+- Check that the form will only submit when all fields are populated and when the email field container a valid email type entry.
+- Check that when an email that has already been used by another user is entered the error message "Email address must be unique." is display"
+- Check that when an username that has already been used by another user is entered the error message "A user with that username already exists." is display"
+- Check that when the the password and Password Confirmation fields have different entries that the error message "Passwords must match." is displayed.
+- Check that when the user submits a completed registration form they are redirected to the home page where there is a success message of "You have successfully registered!" underneath the navbar.
+- Check that the button under the form area is labelled "Login". Check that the button bring the user to the correct location.
+
+#### Test Login
+- Check that the button under the form area is labelled "Register". Check that the button bring the user to the correct location.
+- Check that when the user enters an incorrect username and password combination that the error message "Your username or password is incorrect. Note that both fields may be case-sensitive." is displayed under the navbar.
+- Check that when the user submits a completed login form they are redirected to the home page where there is a success message of "You have successfully logged in!" underneath the navbar.
+
+
+#### Test Booking
+- Visit the a Booking page of the website on a desktop sized screen (lg) to check that the page is displayed in 2 columns.
+- Check that the page reduces to one column for <768px in width.
+- Check that the floor plan iamge on the left side of the page showing the layout of the bar -s loading correctly.
+- Check that when the user fills out the form fields for seat type, Phone number, date, Booking Start Time and Booking End Time incorrectly the following types of validation errors are generated:
+    - If the user doesn't enter a valid phone number they get the message "Enter a valid phone number (e.g. +353861234567)"
+    - If the user chooses a date that has already past they get the message "Invalid date - selected date passed"
+    - If the user choose a start or end time for the booking outside of the bars opening hourse they get the error message "Booking must start/end during bar opening hours 12:30 - 00:00."
+    - If ther user chooses a end time that is earlier than the selected start time the error message "Booking can not end before it starts" will be displayed.
+    - Each of the above errors generates a message under the navbar of "We were unable to make this reservation"
+- Check that on submission of the booking form the user is redirected back to the home page with the message "Your have requested a booking. A member of our staff will be in touch shortly to confirm your booking." underneath the navbar.
+- Check that the user receives an automatic email (to the email provided during registration) specifying the "Booking Status","Date", "Start Time", and "End Time".
+- Check that when an administrator (or staff memeber with access to the admin part of the website) make any amendments to the booking and saves the changes that the user receive another automatic email confirming this with the subjest "Booking Request at BarTender - REQUEST ALTERED".
+- Check that when an administrator of the site changes the status of the booking to either "Accepted" or "Denied" that the user receives an email with the confirmed details and the subject of either ""Booking Request at BarTender - ACCEPTED" or "Booking Request at BarTender - DENDIED".
+
+#### Test Drinks/Listings pages
+- Visit the a Drinks page of the website on a desktop sized screen (>992px) to check that the page is displays enteries 4 columns to a row.
+- Reduce the screen width to <992px to check the page changes to displays enteries 3 columns to a row.
+- Reduce the screen width to <768px to check the page changes to displays enteries 2 columns to a row.
+- Reduce the screen width to <576px to check the page changes to displays enteries 1 column to a row.
+- Check that clicking each of the buttons at the top of the page limits the page entry to the catagories they represent, i.e. Pints, Bottles, Soft-drinks, Cocktails, Spirits or All (all catagories).
+- Check that hovering over each entry results in a box shadow effect.
+- Check that the form at the bottom of each enrties card is clickable, that the value can be change both by typing and by using the arrows on the right of the input box.
+- Check that clicking the "Add" button reloads the full products page with the success message "Item successfully added to your Cart!".
+- Check that when an item has been successfully added to the users cart the a badge appears beside the cart icon in the navbar with the number of items in the cart shown.
+- Check that when a product on the Drinks page, that products Listing page is launch and that the drinks name, image, untruncated description and price are displayed. A form should also be displayed underneath this allowing the user to select an amount and add that product to the user cart.
+
+#### Test Cart
+- Visit the a Cart page of the website and check the the page is responsive and that is displays drinks added to the cart in the following format:
+    - Desktop width(>992px): the images of the item is displayed on the left side of the screen and the title price and input form allowing the user to adjust the amount of the product in the Cart on the right side of the screen
+    - Mobile width(>768px): the image of the item is displayed on top of the items title, price and input form allowing the user to adjust the amount of the product in the Cart
+- Check that the total cost of the cart is correctly calculated and displayed at teh bottom of the page
+- Check that the input form at the bottom of the item entry loads the correct quanity of that item in the cart and that it can but adjusted by typing a different value or by using the arrows on the right of the input box.
+- Check that if the quantity of an item is amended that the Cart page is reloaded with the success message "Successfully adjusted item in your Cart!"
+-Check that when the Checkout button at the bottom of the Cart page is pressed that it loads the Checkout page.
+
+#### Test Checkout
+- Visit the a Checkout page of the website and check the the page is responsive and that it displays the users Cart in the following format:
+    - Desktop width(>992px): the order summary is shown on the left of the screen, this includes for each item the image (to the left), name, price and quantity of the item displayed. The payment details form is displayed on the right side of the screen.
+    - Mobile width(>768px): the order summary is shown on the top of the page this includes for each item the image (on top), name, price and quantity of the item displayed. The payment details form is displayed on beneath the order summary. 
+- Check Confirm order button submits the Payment Details form (Order Form and Payment Form)
+- Check that "Go to Cart" button brings the user back to the Cart page
+- Check that if the user inputs their credit card number, CVC, Expiry month, and expiry year incorrectly and clicks "Confirm Order" button the following errors can be displayed:
+    - If the card number is entered incorrectly the error message "Your card number is incorrect." is displayed.
+    - If the cards CVC is entered incorrectly the error message "Your card's security code is invalid." is displayed.
+    - If the cards expiry month or year has passed the user will see error message "Your card's expiration month/year is invalid." displayed at the top of the form
+    - If the user doesn't enter a valid phone number they get the message "Enter a valid phone number (e.g. +353861234567)"
+    - Each error above is also accompanied by an error message under the navbar of "We were unable to take payment with that card".
+- Check that if the user successfully submits the Payment Details form they are redirected to the Drinks page with the following sucess message displayed under the navbar "Your have successfully paid".
+
+#### Known Issues
+It was observed during testing that it would be from a design stand point if the Drinks page didn't reload after clicking the "Add" button for an item. This results in the unfiltered Drinks page being reload instead of the filter applied by the user. This will be address in a future development sprint.
 
 ## Deployment
-
 
 ### Local Deployment
 To run this project locally on any system the following will need to be installed
