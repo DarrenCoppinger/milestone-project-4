@@ -24,7 +24,7 @@ class TestUserRegistrationForm(TestCase):
             })
         self.assertFalse(form.is_valid())
         self.assertEqual(
-            form.errors["password2"], [u"Passwords must match"])
+            form.errors["password2"], [u"Passwords must match."])
 
 
 class TestUserLoginForm(TestCase):

@@ -85,9 +85,6 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-# }
 if "DATABASE_URL" in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -195,7 +192,10 @@ EMAILJS_USER = os.environ.get('EMAILJS_USER')
 
 # --- Sending Emails ---
 
+# Code to run email functionality locally is:
+#
 # EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+#
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'

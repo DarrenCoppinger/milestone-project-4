@@ -1,7 +1,5 @@
 from django.test import TestCase, Client
-from products.models import Product
-
-# Create your tests here.
+from django.contrib.auth.models import User
 
 
 class TestSearchView(TestCase):
@@ -9,18 +7,29 @@ class TestSearchView(TestCase):
 
     def setUp(self):
         self.client = Client()
-        # product = Product()
-        # product.id = 1
-        # product.category = 'PINTS'
-        # product.name = "Guiness"
-        # product.description = "description"
-        # product.price = 4.50
-        # product.save()
 
-    def test_search_view(self):
+    def test_search_view_when_user_logged_out(self):
+        """
+        Check that the search url redirects to login page
+        """
+
+        response = self.client.get('/search/?q=')
+        self.assertEqual(response.status_code, 302)
+        redirect = self.client.get("/accounts/login/?next=/search/?q=")
+        self.assertEqual(redirect.status_code, 200)
+
+    def test_search_view_when_user_logged_in(self):
         """
         Check that the search url returns products.html page
         """
+        self.user = User.objects.create_user(
+            username='person',
+            email='fake@email.com',
+            password='test12345@_password',
+            )
+        self.client.login(
+            username='person',
+            password='test12345@_password')
 
         response = self.client.get('/search/?q=')
         self.assertEqual(response.status_code, 200)

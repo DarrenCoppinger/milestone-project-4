@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 
 
-# Create your tests here.
 class TestCheckoutViewLoggedOut(TestCase):
     """ Test for Checkout view when user is logged out """
 

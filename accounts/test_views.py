@@ -1,8 +1,7 @@
 from django.test import TestCase, Client, RequestFactory
 from django.contrib.auth.models import User
 from django.contrib import messages
-from accounts.views import registration, login, logout
-# from accounts.forms import UserLoginForm
+from accounts.views import registration, login
 
 
 class TestIndexviews(TestCase):
@@ -34,7 +33,6 @@ class TestRegistratationViewLoggedIn(TestCase):
         request = self.factory.get('/')
         request.user = self.user
         page = registration(request)
-        # page = self.client.get("/accounts/register/")
         self.assertEqual(page.status_code, 302)
         self.assertEqual(page.url, "/")
 
@@ -68,7 +66,6 @@ class TestLoginViewLoggedIn(TestCase):
         request = self.factory.get('/')
         request.user = self.user
         page = login(request)
-        # page = self.client.get("/accounts/register/")
         self.assertEqual(page.status_code, 302)
         self.assertEqual(page.url, "/")
 
@@ -83,12 +80,8 @@ class TestLogoutSuccesful(TestCase):
         self.client.login(
             username='person',
             password='test12345@_password')
-        # self.factory = RequestFactory()
 
     def test_logout_page_redirects_to_index(self):
-        # request = self.factory.get('/')
-        # request.user = self.user
-        # page = logout(request)
         page = self.client.get("/accounts/logout/")
         self.assertEqual(page.status_code, 302)
         self.assertRaisesMessage(

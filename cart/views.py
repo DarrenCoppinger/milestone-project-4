@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
+
 @login_required
 def view_cart(request):
     """ A view that renders the cart contents page"""

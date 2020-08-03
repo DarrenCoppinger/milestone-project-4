@@ -26,7 +26,7 @@ class TestPageViewsLoggedIn(TestCase):
             username='person',
             password='test12345@_password')
         page = self.client.get("/pages/contact/")
- 
+
         form = page.context['contact_form']
         form_type = type(form)
         self.assertEqual(form_type, ContactForm)
