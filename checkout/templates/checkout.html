@@ -3,13 +3,13 @@
 {% load bootstrap_tags %}
 
 {% block head_js %}
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-<script type="text/javascript">
+<script src="https://js.stripe.com/v2/"></script>
+<script >
     //<![CDATA[
         Stripe.publishableKey = '{{ publishable }}';
     //]]>
 </script>
-<script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+<script src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
 
 {% block page_title %}Checkout{% endblock %} 
@@ -25,6 +25,7 @@
         </div>
         <div class="row">
             <div class="col-12 col-md-6">  
+                <h4 class="text-center py-3">Order Summary</h4>
                 {% for item in cart_items %}
                     <div class="row no-gutters">
                         <div class="col-12 col-md-4">
@@ -49,11 +50,10 @@
                 </div>
             </div>
             <div class="col-12 col-md-6">
-                <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+                <h4 class="text-center py-3">Payment Details</h4>
+                <form method="post" id="payment-form" action="{% url 'checkout' %}">
                     <div class="row">
                         <div class="col-12">
-                            <legend>Payment Details</legend>
-
                             <div id="credit-card-errors" style="display: none;">
                                 <div class="alert-message block-message error" id="stripe-error-message"></div>
                             </div>

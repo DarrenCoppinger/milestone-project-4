@@ -31,11 +31,9 @@
                     <a href="{% url 'product_desc' product.id %}">
                         <img class="card-img-top img-responsive rounded-top" src="{{ MEDIA_URL }}{{ product.image }}" alt="Card image cap">
                         <div class="card-body">
-                            
                             <h6 class="card-title">{{ product.name|truncatechars:18  }}</h6>
                             <p class="card-text">{{ product.description|truncatechars:30 }}</p>
                             <p class="text-right">Price: <span><i class="fas fa-euro-sign"></i></span>{{ product.price }}</p>
-
                         </div>
                     </a>
                     <form method="post" action="{% url 'add_to_cart' product.id %}">

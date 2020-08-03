@@ -4,8 +4,8 @@
 {% block page_title %}Contact{% endblock %} 
 {% block head_js %}
     <!--JSEmail-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
-    <script type="text/javascript">
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script >
         (function(){
             emailjs.init("{{ emailjs_user }}");
         })();
@@ -44,5 +44,5 @@
 {% endblock %}
 
 {% block contact_js %}
-    <script type="text/javascript" src="{% static 'js/sendEmail.js' %}"></script>
+    <script src="{% static 'js/sendEmail.js' %}"></script>
 {% endblock contact_js %}
