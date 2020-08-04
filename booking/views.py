@@ -41,7 +41,7 @@ def booking(request):
             messages.success(
                 request,
                 """
-                Your have requested a booking.
+                You have requested a booking.
                 A member of our staff will be in touch
                 shortly to confirm your booking.
                 """

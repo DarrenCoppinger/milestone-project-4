@@ -9,9 +9,13 @@
 ---
 
 ## Introduction
-This website, [BarTender](https://bartender-ms4.herokuapp.com/), is an online tool for customers of a bar who:
-- wish to book a seat for a particular date and time
-- order drinks to a seat in a completely contactless way
+This website, [BarTender](https://bartender-ms4.herokuapp.com/), was designed as a part of my Code Institute Full Stack Development course, specifically the Full Stack Framewords with Django module.
+The website is an online tool for a fictitious bar of the same name. 
+
+The website aims to:
+- provide a booking system for customers to request a type of seat in the bar for a particular date and time
+- provide a database of booking requests for staff to review and reduce their workload by sending automatic emails to the customers
+- to provide a completely contactless way for customers to look at the menu of the bar and then place an order for their table.
 
 ## Table of Contents
 0. [**Introduction**](#introduction)
@@ -56,9 +60,10 @@ This website, [BarTender](https://bartender-ms4.herokuapp.com/), is an online to
     - [**Manual testing**](#manual-testing)
         - [**Test Home**](#test-home)
         - [**Test Booking**](#test-booking)
-        - [**Test Drinks**](#test-drinks)
+        - [**Test Drinks/Listings pages**](#test-drinks/listings-pages)
         - [**Test Cart**](#test-cart)
-        - [**Checkout**](#test-checkout)
+        - [**Test Checkout**](#test-checkout)
+        - [**Test Contact**](#test-contact)
     - [**Known Issues**](#known-issues)
 
 5. [**Deployment**](#deployment)
@@ -72,7 +77,7 @@ This website, [BarTender](https://bartender-ms4.herokuapp.com/), is an online to
 ---
 
 ## UX
-This website was designed as a part of my Code Institute Full Stack Development course, specifically the Full Stack Framewords with Django module.
+
 
 The website provides users with a tool that allows them to book a seat in a bar on the "Booking" page. Through the admin functionality of the website the the bar staff can approve, deny or amend the booking request (potentially after contacting the customer directly). 
 
@@ -83,15 +88,15 @@ The following are the main design objectives for the project:
 
 #### Design a Application Appropriate for Audience
 The website must be appropriate for the audience. The audience for this website will be English speaking, technology savvy and will likely access the site on mobile devices. Although the website will accommodate all visitors, its primary audience will be technology literate. Using the bootstrap framework means that this website has a mobile first approach to development however, it will also perform well on a large screen sizes.
+
 #### Content Relevance and Accuracy
 The content to the site must be relevant to the site owners and their audience. As such, products on sale through the website can be add through the backend of the site. Products can be edited and updated as required.
 
 #### Content Grouping
-
 The website content is grouped into easily understood sections (Home, Booking, Drinks, Login/Logout, Cart).
-#### Technology 
 
-Appropriate technologies were used to design the website such as [Bootstrap](https://getbootstrap.com/), [Django](https://www.djangoproject.com/), [EmailJS](https://www.emailjs.com/), [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial)  to provide the user with a high-quality experience. 
+#### Technology 
+Appropriate technologies were used to design the website such as [Bootstrap](https://getbootstrap.com/), [Django](https://www.djangoproject.com/), [EmailJS](https://www.emailjs.com/), [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial) to provide the user with a high-quality experience. 
 
 To manage the data two different relational (SQL) databases were used. For local deployment and development of the site Django's default database, SQLite3, was used. For the deployed site [Heroku Postgres](https://www.heroku.com/postgres) database was used.
 
@@ -101,6 +106,8 @@ A user who visits the website might follow one of these forms:
 - A user wants to look through the drinks/products that are available on from the bar.
 - A user wants to order drinks to a table that they are sitting at through a completely contactless means.
 
+
+
 Additionally, the following requirements should be met by the website:
 
 "As a user of this website, I would like to- _____________________"
@@ -109,7 +116,9 @@ Additionally, the following requirements should be met by the website:
 - search the website for a drink
 
 ### Design
-The style of the site is inspired by the aesthetic of classic cocktail club. These clubs tend to have dark, cool and simple design.
+The style of the site is inspired by the minimumist aesthetic of a modern cocktail club. These clubs tend to have dark, cool and simple design.
+
+To achieve this the  Bootswatch theme [Lux](https://bootswatch.com/lux/) was used and amended as required to fix the projects requirements.
 
 #### Framework
 For this project the framework [Django](https://www.djangoproject.com/) was used.
@@ -124,10 +133,13 @@ The main colors used, which are primary form the Lux bootswatch style, are as fo
 #### Icons
 - [Font Awesome](https://fontawesome.com/)
     - The Font Awesome icons where used as they provide a wide array of attractive and useful icons and I found these to be sufficient for my project.
+
 #### Typography
+The font used for this project is [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans). It is included through the use of the Bootswatch theme [Lux](https://bootswatch.com/lux/).
 
 ### Wireframe
-Wireframes for both the desktop and mobile versions of the website were produced. They are include below:
+Wireframes for both the desktop and mobile versions of the website were produced. They are included below:
+
 #### Desktop Wireframes
 - [Home](https://i.ibb.co/d6VGZBh/Home.png)
 - [Booking](https://i.ibb.co/VBT3YP4/Booking.png)
@@ -168,14 +180,14 @@ Major features to be developed and deployed on this website are summarized in th
 
 ### Existing Features
 #### All Pages
-All pages include a responsive navigation bar and title at the top of the page. The title and logo act as a "Home" button. On medium and small screen size the navbar reduces to just the title and logo, with the page's buttons concealed in a sidebar accessible via a menu icon in the left-hand corner of the navbar. 
+All pages include a responsive navigation bar and title at the top of the page. The title and logo act as a "Home" button. On medium and small screen sizes the navbar reduces to just the title and logo, with the page's buttons concealed in a sidebar accessible via a menu icon in the left-hand corner of the navbar. 
 
-The navbar contains the Home, Booking, Drinks, Cart and a Login button. If the user is logged into an account the login button will change to a "Logout" button.
+If the user is logged in the navbar contains the Home, Booking, Drinks, Cart and a Logout buttons. If the user is logged out only the Home, Register and Login buttons will be displayed.
 
-Each page has a message panel that appears when a messages is generated. 
+Each page has a message panel that appears directly under the navbar when a messages is generated. 
 
 #### Home
-The Home page includes background image of a cocktail bar with is fixed in position at the center of the page. A floating transparent container appears infront of the image which has a greeting statement. There are also two link buttons in the contain which change depending on whether the user is logged in or not. If they are not logged on the buttons will direct the user to the "Login" and "About" page. If the user is logged in the buttons will direct them to the "Booking" and "Drinks" pages.
+The Home page includes background image of a cocktail bar which is fixed in position at the center of the page. A floating transparent container appears infront of the image which holds a greeting statement. There are also two buttons at the bottom of the container which change depending on whether the user is logged in or not. If they are not logged on the buttons will direct the user to the "Login" and "About" pages. If the user is logged in the buttons will direct them to the "Booking" and "Drinks" pages.
 
 #### Drinks
 The drinks page presents the drinks added to the database. By default the page is loaded with the all the entries loaded. 
@@ -192,14 +204,37 @@ The page is designed to be responsive and will the number of entries in a row wi
 - 576px < width < 768px  : 2 entries per row
 - width < 576px : 1 entry per row
 
+A superuser/administrator can use the admin panel of the website to add additional entries to the website by populating the following fields in the Products section of the admin panel:
+- Catagory
+- Name
+- Description
+- Price
+- Image (in a 1:1 aspect ratio)
+
 #### Booking
-The Booking page presents users with the ability to request a particular type of seat in the bar for a particular time. 
+The Booking page allwows users with the ability to request a particular type of seat in the bar for a particular time. 
 
-The Booking page includes input fields for all the required information to make a reservation, these include: Seat Type, Full Name, Phone Number, Date, Booking Start Time and Booking End Time. Widgets were used for the date and time fields. This ensures that the user can only use the date or time picker (the calendar and clock icons) to fill in these fields. This reduces the chances of incorrect or unclear data being submitted in the form.
+The Booking page includes input fields for all the required information to make a reservation, these include: 
+- Seat Type
+- Full Name
+- Phone Number
+- Date
+- Booking Start Time
+- Booking End Time
 
-This feature requires the user to add in additional details that the did not provide during their registration (Full Name and phone number). During the design of the website it was considered adding these details into the registeration process. However, it was considered an simpler solution to only ask the user information when it was absolutely necessary.
+A final field is excluded from the customers form, that is the "Status" field. This is used by the staff to define whether the booking has been accepted or not. The field has three set options: "Requested", "Accepted" or "Denied". By default it is set to "Requested" until altered by a member of staff.
 
-A "Floor Plan" of the bar is also included on the right hand side of the page. This column will move to underneath the "Booking Details" form on screens of less than  768px (the md breakpoint).
+Widgets were used for the date and time fields so they must be input in date and time format. On the MS Edge and Google Chrome browers the user can use the date or time picker instruments (by clicking the calendar or clock icons) to fill in these fields. The measures reduces the chances of incorrect data being submitted in the form.
+
+The Booking feature also requires the user to add in additional details that were not provided during registration (Full Name and phone number). During the design of the website the author considered adding these details into the registeration form so they could be passed into the Booking form as initial data. However, it was decided that is was a simpler solution to only ask the user for this information when it was absolutely necessary.
+
+A "Floor Plan" of the bar is also included on the right hand side of the page to provide the user with an overview of the bars layout. This column will move to underneath the "Booking Details" form on screens of less than  768px (the md breakpoint).
+
+A member of staff of the bar who is set up as a superuser/administrator of the website will be able to access all the sumbitted booking applications from the Bookings panel in the Admin section of the website. The staff member can review and change any details of the booking from the admin panel. If there is an issue with seat availability at a certain time they have the contact details of the customer in the booking form so they can contact to discuss any changes. 
+
+If the booking is altered and saved the customer will receive an updated automatic email with these details. If the booking is accepted the staff member can change it's status from "Requested" to "Accepted" this will result in a different automatic email being sent to the customer. Similarly if the status is changed to "Denied" another automatic email is sent to the customer.
+
+These emails can be found at the following location in the project files "booking/templates/mail".
 
 #### Cart
 The Cart page presents a summary of all the items add to the users cart. If the user has not added an item to their cart they will be show the message "YOUR CART IS EMPTY".
@@ -222,6 +257,8 @@ Underneath this is a payment form requiring the credit card details of the user 
 
 Underneath these forms is a Cart button to bring the user back to their cart view to make alterations and another button to confirm their order.
 
+Orders submitted by customers can be reviewed and acted on in the Checkout section of the admin site.
+
 #### Search
 A search bar is built into the NavBar in the base.html template and so is present on every page. If the user is not logged in creating a search in the search bar will bring them to the login page.
 
@@ -243,6 +280,11 @@ The registration page has four fields Email, Username, Password, Password Confir
 
 If the user enters all fields and the form is successfully validated they will be redirected to the home page and receive a banner message of "You have successfully logged in!".
 
+#### Contact 
+The contact page provides a place for customers to get in touch with the BarTender staff. If the user has 
+
+On submission of the contact form the user will receive a copy of the query in the email address that was provided. 
+
 ### Features Left to Implement
 Booked Out Feature
 Pagination on the Drinks Page
@@ -261,10 +303,12 @@ Table number on order that can be selected by administrator
 ### Back-End Technologies
 **Python**
  - [Python 3.7.6](https://www.python.org/) - Used as the programming language at the back-end.
+
 **Django**
-- [Django](https://www.djangoproject.com/)
+- [Django 1.11.29](https://www.djangoproject.com/)
+
 **Heroku**
-    - [Heroku](https://www.heroku.com) - Used for hosting the deployed website.
+- [Heroku](https://www.heroku.com) - Used for hosting the deployed website.
 
 
 ## Testing
@@ -450,12 +494,139 @@ This website was tested on multiple browsers. They included:
     - If the cards expiry month or year has passed the user will see error message "Your card's expiration month/year is invalid." displayed at the top of the form
     - If the user doesn't enter a valid phone number they get the message "Enter a valid phone number (e.g. +353861234567)"
     - Each error above is also accompanied by an error message under the navbar of "We were unable to take payment with that card".
-- Check that if the user successfully submits the Payment Details form they are redirected to the Drinks page with the following sucess message displayed under the navbar "Your have successfully paid".
+- Check that if the user successfully submits the Payment Details form they are redirected to the Drinks page with the following sucess message displayed under the navbar "You have successfully paid".
+
+#### Test Contact
+- Check that all form fields are required to sumbit the contact form.
+- Check that the initial user data of username and email are loaded into the form fields if the user is logged in.
+- Check that on successful submission of the form the user is redirected to the home page with the following success message displayed under the navbar "Thank you for your message, we will be in touch shortly!".
 
 #### Known Issues
 It was observed during testing that it would be from a design stand point if the Drinks page didn't reload after clicking the "Add" button for an item. This results in the unfiltered Drinks page being reload instead of the filter applied by the user. This will be address in a future development sprint.
 
+
+### Automated Testing
+
+#### Python Testing
+
+Using Django's built in TestCase Class 44 test were written in order to test views, form, model and app python files. 
+
+To ensure that at least 80% of this projects code was tested [Coverage.py](https://coverage.readthedocs.io/en/v4.5.x/#) was used.
+
+#### Run Coverage
+- To run coverage for this project type the following into the terminal:
+
+    ```
+    coverage run
+    ``` 
+
+- On Gitpod to limit the results of coverage to just the relevent files the following command was executed:
+
+    ```
+    coverage run --omit=*/site-packages/*,*/migrations/* manage.py test
+    ```
+- A report of the coverage of te testing in the project can then be generated using the following command:
+    ```
+    coverage report
+    ```
+
+- The final report for project is summarized  below:
+
+<details>
+<summary>Click here to see a summary of the <b>Coverage Report</b></summary>
+
+| **Name** | **Stmts** | **Miss** | **Cover** |
+| :--- | :---: | :---: | ---: |
+| *accounts/__init__.py* | 0 | 0 | **100%** |
+| *accounts/forms.py* | 29 | 1 | 97% | 
+| *accounts/test_forms.py* | 16 | 0 | 100% | 
+| *accounts/test_models.py* | 0 | 0 | 100% | 
+| *accounts/test_views.py* | 53 | 0 | 100%
+| *accounts/urls.py* | 4 | 0 | 100% | 
+| *accounts/urls_reset.py* | 3 | 0 | 100% | 
+| *accounts/views.py* | 40 | 20 | 50% | 
+| *booking/__init__.py* | 0 | 0 | 100% | 
+| *booking/admin.py* | 30 | 17 | 43% | 
+| *booking/apps.py* | 3 |  0 | 100% | 
+| *booking/form.py* | 38 | 8 | 79% | 
+| *booking/models.py* | 22 | 0 | 100% | 
+| *booking/test_apps.py* | 7 | 0 | 100% | 
+| *booking/test_forms.py* | 10 | 0 | 100% | 
+| *booking/test_models.py* | 16 | 0 | 100% | 
+| *booking/test_views.py* | 16 | 0 | 100% | 
+| *booking/tests.py* | 4 | 0 | 100% | 
+| *booking/urls.py* | 3 | 0 | 100% | 
+| *booking/views.py* | 30 | 16 | 47% | 
+| *cart/__init__.py* | 0 | 0 | 100% | 
+| *cart/apps.py* | 3 | 0 | 100% | 
+| *cart/contexts.py* | 13 | 4 | 69% | 
+| *cart/test_app.py* | 7 | 0 | 100% | 
+| *cart/test_views.py* | 18 | 0 | 100% | 
+| *cart/urls.py* | 3 | 0 | 100% | 
+| *cart/views.py* | 24 | 16 | 33% | 
+| *checkout/__init__.py* | 0 | 0 | 100% | 
+| *checkout/admin.py* | 9 | 0 | 100% | 
+| *checkout/apps.py* | 3 | 0 | 100% | 
+| *checkout/forms.py* | 16 | 0 | 100% | 
+| *checkout/models.py* | 38 | 2 | 95% | 
+| *checkout/test_app.py* | 7 | 0 | 100% | 
+| *checkout/test_forms.py* | 14 | 0 | 100% | 
+| *checkout/test_views.py* | 29 | 0 | 100% | 
+| *checkout/urls.py* | 3 | 0 | 100% | 
+| *checkout/views.py* | 41 | 20 | 51% | 
+| *custom_storages.py* | 6 | 0 | 100% | 
+| *env.py* | 7 | 0 | 100% | 
+| *main/__init__.py* | 0 | 0 | 100% | 
+| *main/settings.py* | 51 | 2 | 96% | 
+| *main/urls.py* | 13 | 0 | 100% | 
+| *manage.py* | 13 | 6 | 54% | 
+| *pages/__init__.py* | 0 | 0 | 100% | 
+| *pages/apps.py* | 3 | 0 | 100% | 
+| *pages/forms.py* | 7 | 0 | 100% | 
+| *pages/test_app.py* | 7 | 0 | 100% | 
+| *pages/test_views.py* | 22 | 0 | 100% | 
+| *pages/urls.py* | 3 | 0 | 100% | 
+| *pages/views.py* | 20 | 6 | 70% | 
+| *products/__init__.py* | 0 | 0 | 100% | 
+| *products/admin.py* | 3 | 0 | 100% | 
+| *products/apps.py* | 3 | 0 | 100% | 
+| *products/models.py* | 15 | 0 | 100% | 
+| *products/test_app.py* | 7 | 0 | 100% | 
+| *products/test_models.py* | 6 | 0 | 100% | 
+| *products/test_views.py* | 39 | 0 | 100% | 
+| *products/urls.py* | 3 | 0 | 100% | 
+| *products/views.py* | 15 | 0 | 100% | 
+| *search/__init__.py* | 0 | 0 | 100% | 
+| *search/apps.py* | 3 | 0 | 100% | 
+| *search/test_app.py* | 5 | 0 | 100%
+| *search/test_views.py* | 16 | 0 | 100%
+| *search/urls.py* | 3 | 0 | 100%
+| *search/views.py* | 7 | 0 | 100%
+| **TOTAL** | **829** | **118** | **86%** |
+
+</details>
+
+- Represent the coverage report in html format for ease of viewing the following command was run after a report was generated.
+```
+coverage html 
+```
+
+- This command creates a folder called "htmlcov" which holds an "index.html" file. Running or previewing this file give a visual reprsentation of the code that is covered by the test written.
+
+### Travis
+In addition to TestCase and coverage.py tests, [Travis-CI](https://travis-ci.org/) was used to test Continuous Integration.
+
+The current status of Travis for this project is as follows:
+
+[![Build Status](https://travis-ci.org/DarrenCoppinger/milestone-project-4.svg?branch=master)](https://travis-ci.org/DarrenCoppinger/milestone-project-4)
+
+Please note that at the time of submission this badge was marked as passing.
+
 ## Deployment
+
+This project is currently live on Heroku : [BarTender](https://bartender-ms4.herokuapp.com/)
+
+It should be noted that during the course of the development of this project static and media files were not uploaded to  GitHub. This was achieve by adding the folder names to the .gitignore file. The reason for this is that heroku can't host these files. As this is the case they are hosted from an AWS S3-Bucket. These files were only push to this Github repository for the purposes of project assessment by Code Institute.
 
 ### Local Deployment
 To run this project locally on any system the following will need to be installed
@@ -474,33 +645,114 @@ To clone or copy this project from GitHub follow these steps:
 6. Type "git clone" into the GIT CLI terminal and then paste in the URL copied from GitHub in step 3 (i.e. git clone https://github.com/DarrenCoppinger/milestone-project-4.git )
 7. Hit enter and create your local drive.
 8. Install the necessary requirements from the requirements.txt file using the command `pip3 install -r requirements.txt`
-9. Generated a env.py file where you will store your environmental variables:
+9. Sign up to the following freely available services:
+    - [stripe](http://stripe.com/)
+    - [Amazon AWS](http://aws.amazon.com/)
+    - [EmailJS](https://www.emailjs.com/)
+10. Generated a env.py file where you will store your environmental variables:
     - SERCRET_KEY
     - STRIPE_PUBLISHABLE
+    - STRIPE_SECRET
     - AWS_ACCESS_KEY_ID
     - AWS_SECRET_ACCESS_KEY
-10. Set the SERCRET_KEY to your preferred value. 
-11. Run the application by typing the following command into the CLI:
-    - python3 manage.py runserver
-
-
+    - EMAILJS_USER
+11. Set the SERCRET_KEY to your preferred value. 
+12. Run the application by typing the following command into the CLI:
+    ```
+    python3 manage.py runserver
+    ```
+13. Running Django should generate a SQLite3 database file "db.sqlite3".
+14. Migrate the structure of the database design for this project to the new database with teh following commands:
+    ```
+    python3 manage.py makemigrations`
+    python3 manage.py migrate
+    ```
+15. Create a superuser as follows, in order to access the Django Admin Panel:
+    ```
+    python3 manage.py createsuperuser
+    ```
 
 ### Remote Deployment on Heroku
 This app is currently deployed on heroku. The deployment is the code stored on the master branch of the project on GitHub. To deploy this project to Heroku required the following steps:
 1. Register for Heroku and once signed in click the "New" button on the dashboard to create a new app.
 2. In Heroku Name the app and specify the region (Europe in my case). 
-3. Create a requirement.txt file to allow Heroku to install the required dependencies to run the app. The CLI text to input is as follows `pip3 freeze --local > requirements.txt`
-4. Create a Procfile to inform Heroku what type of app is being deployed `echo web: python run.py > Procfile`
-5. On the deployment tab of your project in Heroku click the Heroku GIT method for deployment.
+3. Create a requirement.txt file to allow Heroku to install the required dependencies to run the app. The CLI text to input is as follows 
+    ```
+    pip3 freeze --local > requirements.txt
+    ```
+    - The requirements for this project can be found in this repositories files here: [requirements.txt](requirements.txt)
+4. Create a Procfile to inform Heroku what type of app is being deployed 
+    ```
+    echo web: python run.py > Procfile
+    ```
+5. On the deployment tab of your project in Heroku click the Heroku GIT method for deployment (alternatively you can click "Github", connect heroku directly to the repository and enable automatic deployments in the "Automatic deploys" section).
 6. In the CLI of you IDE input the following:
- ```
- $ heroku login
- $ heroku git:remote -a <BarTender>
- $ git push heroku master
- ```
-7. In the resources panel of Heroku type Postgres into the Add-ons search bar and then click the Provision button to add this as a resource.
-8. Set up AWS S3 Bucket and Stripe account
-9. In the Heroku settings tab, click on the  "Real Config Vars" button to set environmental variables as follows:
+    ```
+    $ heroku login
+    $ heroku git:remote -a <BarTender>
+    $ git push heroku master
+    ```
+7. In the resources panel of Heroku type Postgres into the Add-ons search bar and then click the Provision button to add this as a resource. This will create the "DATABASE_URL" in the heroku setting section under the "Config Vars" subsection.
+8. Set up a free account on AWS to create an S3-Bucket to service the static files for the website. 
+- Set the CORS configuration as follows:
+    ```
+    <?xml version="1.0" encoding="UTF-8"?>
+    <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+    <CORSRule>
+        <AllowedOrigin>*</AllowedOrigin>
+        <AllowedMethod>GET</AllowedMethod>
+        <AllowedMethod>HEAD</AllowedMethod>
+        <MaxAgeSeconds>3000</MaxAgeSeconds>
+        <AllowedHeader>Authorization</AllowedHeader>
+    </CORSRule>
+    </CORSConfiguration>
+
+    ```
+
+- Create a "Bucket Policy" setting it equal to the following (Please note that you should replace the `arn:aws:s3:::bucket-name-example/*`  with your specific AWS bucket ARN. It is also important to keep the `/*` at the end of the address.):
+    ```
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "PublicReadGetObject",
+                "Effect": "Allow",
+                "Principal": "*",
+                "Action": "s3:GetObject",
+                "Resource": "arn:aws:s3:::bucket-name-example/*"
+            }
+        ]
+    }
+    ```
+9. Go to the IAM application available in AWS. 
+    - Set up a new Group. 
+    - Associate the S3 Bucket you have created with this group.
+    - Create a new policy by importing the "AmazonS3FullAccess" Policy, then add the ARN from the S3-Bucket to the "Resource" list. The policy should follow the following example:
+        ```
+        {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Action": "s3:*",
+                    "Resource": ["arn:aws:s3:::bucket-name-example", "arn:aws:s3:::bucket-name-example/*"]
+                }
+            ]
+        }
+        ```
+    - Create a new User and assoicate this with the Group you have created. This will generate the following AWS access keys:
+        - AWS_ACCESS_KEY_ID
+        - AWS_SECRET_ACCESS_KEY
+
+10. To push all static and media files to the S3-Bucket run the following in your CLI terminal:
+    ```
+    python3 manage.py collectstatic
+    ```
+11. Set up free account on Stripe and in the developer section generate test API keys. These include:
+    - Publishable key = pk_test_key
+    - Secret key = sk_test_key 
+12. Set up free account on EmailJS, add an email service (e.g. GMAIL) and create a template for your contact form. Then from the Installation section of EMAILJS copy user ID generated for you in the code snippet (EMAILJS_USER). 
+13. In the Heroku settings tab, click on the "Real Config Vars" button to set environmental variables as follows:
  - AWS_ACCESS_KEY_ID: `<your_aws_key>`
  - AWS_SECRET_ACCESS_KEY: `<your_secret_aws_key>`
  - DATABASE_URL: `<postgres_database_link>`
@@ -510,17 +762,17 @@ This app is currently deployed on heroku. The deployment is the code stored on t
  - SERCET_KEY: `<your_secret_key>`
  - STRIPE_PUBLISHABLE: `<your_stripe_publishable_key>`
  - STRIPE_SECRET: `<your_stripe_secret_key>`
+ - EMAILJS_USER: `<your_emailjs_user_id>`
  
- 10. In the top right of the heroku dashboard press the "Open App" button to view your deployed Heroku app.
-
+ 14. In the top right of the heroku dashboard press the "Open App" button to view your deployed Heroku app.
 
 ## Credits
 ### Media
 Images used in this site were sourced from the [Wikimedia Commons](https://commons.wikimedia.org/).
 
 ### Acknowledgements
-- [Antonio Rodriguez](https://github.com/AkaAnto)
-    - My Code Institute mentor.
+- [Antonio Rodriguez](https://github.com/AkaAnto) my Code Institute mentor for his supervision and input.
+- All the Code Institute Tutors for their help and support during the development of this project.
 
 ### Disclaimer
 This Website was produced for educational purposes only.

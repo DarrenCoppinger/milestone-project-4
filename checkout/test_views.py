@@ -62,7 +62,7 @@ class TestCheckoutOrderAccepted(TestCase):
 
         self.assertRaisesMessage(
             messages.success,
-            "Your have successfully paid")
+            "You have successfully paid")
 
         page = self.client.get("/checkout/")
         self.assertEqual(page.status_code, 200)
