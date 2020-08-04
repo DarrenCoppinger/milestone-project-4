@@ -12,10 +12,7 @@
 This website, [BarTender](https://bartender-ms4.herokuapp.com/), was designed as a part of my Code Institute Full Stack Development course, specifically the Full Stack Framewords with Django module.
 The website is an online tool for a fictitious bar of the same name. 
 
-The website aims to:
-- provide a booking system for customers to request a type of seat in the bar for a particular date and time
-- provide a database of booking requests for staff to review and reduce their workload by sending automatic emails to the customers
-- to provide a completely contactless way for customers to look at the menu of the bar and then place an order for their table.
+
 
 ## Table of Contents
 0. [**Introduction**](#introduction)
@@ -27,7 +24,7 @@ The website aims to:
         - [**Technology**](#technology)
     - [**User stories**](#user-tories)
     - [**Design**](#design)
-        - [**Framework**](#framework)
+        - [**Frameworks**](#frameworks)
         - [**Colors**](#colors)
         - [**Icons**](#icons)
         - [**Typography**](#typography)
@@ -43,6 +40,7 @@ The website aims to:
         - [**Search**](#search)
         - [**Login**](#login)
         - [**Registration**](#registration)
+        - [**Contact**](#contact)
     - [**Features Left to Implement**](#features-left-to-implement)
 3. [**Technologies Used**](#technologies-used)
     - [**Frontend Technologies**](#frontend-technologies)
@@ -58,14 +56,18 @@ The website aims to:
         - [**User Story 2**](#user-story-3)
         - [**User Story 3**](#user-story-3)
     - [**Manual testing**](#manual-testing)
+        - [**Test Navbar and Footer**](#test-navbar-and-footer)
         - [**Test Home**](#test-home)
         - [**Test Booking**](#test-booking)
-        - [**Test Drinks/Listings pages**](#test-drinks/listings-pages)
+        - [**Test Drinks/Listings Pages**](#test-drinks/listings-pages)
         - [**Test Cart**](#test-cart)
         - [**Test Checkout**](#test-checkout)
         - [**Test Contact**](#test-contact)
     - [**Known Issues**](#known-issues)
-
+    - [**Automated Testing**](#automated-testing)
+        - [**Python Testing**](#python-testing)
+        - [**Coverage**](#coverage)
+        - [**Travis**](#travis)
 5. [**Deployment**](#deployment)
     - [**Local Deployment**](#local-deployment)
     - [**Remote Deployment on Heroku**](#remote-deployment-on-heroku)
@@ -79,21 +81,46 @@ The website aims to:
 ## UX
 
 
-The website provides users with a tool that allows them to book a seat in a bar on the "Booking" page. Through the admin functionality of the website the the bar staff can approve, deny or amend the booking request (potentially after contacting the customer directly). 
+This website has a number of user and business goa
 
-The website also provides the customer with a list of the products available in the bar on the "Drinks".
+provides users with a tool that allows them to book a seat in a bar on the "Booking" page. 
+Through the admin functionality of the website the the bar staff can approve, deny or amend the booking request (potentially after contacting the customer directly). 
+
+### Goals
+#### User Goals
+The user goals for this website are to:
+- provide a booking system for customers to request a type of seat in the bar for a particular date and time
+- provide a drinks/products page to act as a complete menu of what is available to the customer (this removes the requirement of a physical menu)
+- provide a completely contactless way for customers to contruct and place an order from the bar for a particular table.
+- provide a contactless way for a customer to pay for an order they have constructed
+
+#### Business Goals
+The business goals for this website are to:
+- provide a database of booking requests from customers for staff to review.
+- reduce staff workload creating a booking system that sends automatic emails emails to the customers when the status of their application changes.
+- provide a contactless payment mechanism to remove the requirement of processing payments through a card machines or cash.
+- provide a mechanism for customers to make enquires through the website.
 
 ### Design Objectives
 The following are the main design objectives for the project:
+- The website must be appropriate for the audience. 
+- The content to the site must be relevant to the audience and site owners.
+- The website content must be grouped into easily understood sections.
 
-#### Design a Application Appropriate for Audience
-The website must be appropriate for the audience. The audience for this website will be English speaking, technology savvy and will likely access the site on mobile devices. Although the website will accommodate all visitors, its primary audience will be technology literate. Using the bootstrap framework means that this website has a mobile first approach to development however, it will also perform well on a large screen sizes.
+#### Appropriate for Audience
+The audience for this website will be English speaking, technology savvy and will likely access the site on mobile devices. 
+
+Although the website will accommodate all visitors, its primary audience will be technology literate. Using the bootstrap framework means that this website has a mobile first approach to development. However, it will also perform well on a large screen sizes.
 
 #### Content Relevance and Accuracy
-The content to the site must be relevant to the site owners and their audience. As such, products on sale through the website can be add through the backend of the site. Products can be edited and updated as required.
+The content to the site must be relevant to the site owners and their audience. 
+
+As such, the website operator/administrator can be add products to the Drinks page through the backend of the site. Products can be edited and updated as required. THis ensures that the content of the website is relevent.
 
 #### Content Grouping
-The website content is grouped into easily understood sections (Home, Booking, Drinks, Login/Logout, Cart).
+The website content is grouped into easily understood sections (Home, Booking, Drinks, Login/Logout, Register, Cart, Checkout, About Us, Contact Us). 
+
+Logged out users are also only able to access the Home, Register, Login/Logout, About Us and Contact Us. Only logged in users can access the Booking, Drinks, Cart and Checkout pages.
 
 #### Technology 
 Appropriate technologies were used to design the website such as [Bootstrap](https://getbootstrap.com/), [Django](https://www.djangoproject.com/), [EmailJS](https://www.emailjs.com/), [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial) to provide the user with a high-quality experience. 
@@ -106,8 +133,6 @@ A user who visits the website might follow one of these forms:
 - A user wants to look through the drinks/products that are available on from the bar.
 - A user wants to order drinks to a table that they are sitting at through a completely contactless means.
 
-
-
 Additionally, the following requirements should be met by the website:
 
 "As a user of this website, I would like to- _____________________"
@@ -116,12 +141,12 @@ Additionally, the following requirements should be met by the website:
 - search the website for a drink
 
 ### Design
-The style of the site is inspired by the minimumist aesthetic of a modern cocktail club. These clubs tend to have dark, cool and simple design.
+The style of the site is inspired by the minimumist aesthetic of a modern cocktail club. These clubs tend to have dark, cool and simple designs.
 
-To achieve this the  Bootswatch theme [Lux](https://bootswatch.com/lux/) was used and amended as required to fix the projects requirements.
+To achieve this the Bootswatch theme [Lux](https://bootswatch.com/lux/) was used and amended as required to fix the projects requirements.
 
-#### Framework
-For this project the framework [Django](https://www.djangoproject.com/) was used.
+#### Frameworks
+For this project the framework [Django](https://www.djangoproject.com/) was used. Additionally, [Bootstrap](https://getbootstrap.com/) was used for the design framework.
 
 #### Colors
 The main colors used, which are primary form the Lux bootswatch style, are as follows:
@@ -136,6 +161,8 @@ The main colors used, which are primary form the Lux bootswatch style, are as fo
 
 #### Typography
 The font used for this project is [Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans). It is included through the use of the Bootswatch theme [Lux](https://bootswatch.com/lux/).
+
+This suited the simple minimalist clean aesthetic that the author had in mind for the website and so was not changed.
 
 ### Wireframe
 Wireframes for both the desktop and mobile versions of the website were produced. They are included below:
@@ -161,7 +188,10 @@ Wireframes for both the desktop and mobile versions of the website were produced
 - [Registration](https://i.ibb.co/G2pqtZp/Register-mobile.png)
 
 ## Features
-Major features to be developed and deployed on this website are summarized in the following table and graph. In the below opportunites analysis, the viability/feasibility is lower than the importance total. Therefore, all the features on this list will not be implemented. The Booked out feature was left for a later development sprint.
+### Opportunities Analysis
+At the beginning of this project the major features to be developed and deployed on this website planned. The results of this preliminary analysis are summarized in the following table and graph. 
+
+In the below opportunites analysis, the viability/feasibility is lower than the importance total. Therefore, all the features on this list will not be implemented. The "Booked Out feature" was left for a later development sprint.
 
 | Opportunities | Importance | Viability/feasibility | Difficulty |
 |:---|:---:|:---:|:---:|
@@ -173,14 +203,14 @@ Major features to be developed and deployed on this website are summarized in th
 |Cart and Checkout feature with the ability to take payments|4|3|4|
 |Contact page for general user communications|3|4|3|
 |Interactive map showing business location|3|4|3|
-|Booking app add time slots and remove seat options when unavailable (Booked Out feature)|3|3|5|
+|Booking App: add time slots and remove seat options when unavailable (Booked Out feature)|3|3|5|
 | **Total** | **33** | **32** |  | 
 
 ![Viability Feasability Study](https://i.ibb.co/SxQ0wFG/Viability-Feasability-Study.jpg)
 
 ### Existing Features
 #### All Pages
-All pages include a responsive navigation bar and title at the top of the page. The title and logo act as a "Home" button. On medium and small screen sizes the navbar reduces to just the title and logo, with the page's buttons concealed in a sidebar accessible via a menu icon in the left-hand corner of the navbar. 
+All pages include a responsive navigation bar (navbar) and title at the top of the page. The title and logo act as a "Home" button. On medium and small screen sizes the navbar reduces to just the title and logo, with the page's buttons concealed in a sidebar accessible via a menu icon in the left-hand corner of the navbar. 
 
 If the user is logged in the navbar contains the Home, Booking, Drinks, Cart and a Logout buttons. If the user is logged out only the Home, Register and Login buttons will be displayed.
 
@@ -189,32 +219,10 @@ Each page has a message panel that appears directly under the navbar when a mess
 #### Home
 The Home page includes background image of a cocktail bar which is fixed in position at the center of the page. A floating transparent container appears infront of the image which holds a greeting statement. There are also two buttons at the bottom of the container which change depending on whether the user is logged in or not. If they are not logged on the buttons will direct the user to the "Login" and "About" pages. If the user is logged in the buttons will direct them to the "Booking" and "Drinks" pages.
 
-#### Drinks
-The drinks page presents the drinks added to the database. By default the page is loaded with the all the entries loaded. 
-
-At the top of the page is a arrangement of buttons which have the names of the catagories defined in the database "Pints", "Bottles", "Soft Drinks", "Cocktails" and "Spirits". The "All" button is the default view which displays all catagories. Each of the other buttons will limit the entries presented to a single catagory.
-
-Each entry on the Drinks page is represented as a Bootstrap Card. Each card has an image, title, decription and price associated with it. Underneath these details is a small form which allows the user to select the number of the item they wish to add to their Cart and then click the "Add" button to execute this. 
-
-Each card has a hoover effect to indicate that if clicked it will provide more information by bringing the user to the drinks individual page. THis is also indicated by the truncated presentation of the description text underneath it's image.
-
-The page is designed to be responsive and will the number of entries in a row will vary depending on the screen width as follows:
-- 992px < width : 4 entries per row
-- 768px < width < 992px : 3 entries per row
-- 576px < width < 768px  : 2 entries per row
-- width < 576px : 1 entry per row
-
-A superuser/administrator can use the admin panel of the website to add additional entries to the website by populating the following fields in the Products section of the admin panel:
-- Catagory
-- Name
-- Description
-- Price
-- Image (in a 1:1 aspect ratio)
-
 #### Booking
-The Booking page allwows users with the ability to request a particular type of seat in the bar for a particular time. 
+The Booking page allows users to request a particular type of seat in the bar for a particular time. 
 
-The Booking page includes input fields for all the required information to make a reservation, these include: 
+The Booking page includes input fields for all the required information to make a reservation. These fields are defined in the Reservation model and are as follows: 
 - Seat Type
 - Full Name
 - Phone Number
@@ -222,76 +230,108 @@ The Booking page includes input fields for all the required information to make 
 - Booking Start Time
 - Booking End Time
 
-A final field is excluded from the customers form, that is the "Status" field. This is used by the staff to define whether the booking has been accepted or not. The field has three set options: "Requested", "Accepted" or "Denied". By default it is set to "Requested" until altered by a member of staff.
+A final model field is excluded from the customers booking form (ReservationForm), that is the "Status" field. This is used by the staff to define whether the booking has been accepted or not. The field has three set options: "Requested", "Accepted" or "Denied". By default it is set to "Requested" until altered by a member of staff.
 
 Widgets were used for the date and time fields so they must be input in date and time format. On the MS Edge and Google Chrome browers the user can use the date or time picker instruments (by clicking the calendar or clock icons) to fill in these fields. The measures reduces the chances of incorrect data being submitted in the form.
 
-The Booking feature also requires the user to add in additional details that were not provided during registration (Full Name and phone number). During the design of the website the author considered adding these details into the registeration form so they could be passed into the Booking form as initial data. However, it was decided that is was a simpler solution to only ask the user for this information when it was absolutely necessary.
+The Booking feature also requires the user to add in additional details that were not provided during registration (Full Name and phone number). During the design of the website the author considered adding these details into the registeration form so they could be passed into the Booking form as initial data. However, it was decided that is was a simpler solution to only ask the user for this information only when it was necessary.
 
-A "Floor Plan" of the bar is also included on the right hand side of the page to provide the user with an overview of the bars layout. This column will move to underneath the "Booking Details" form on screens of less than  768px (the md breakpoint).
+A "Floor Plan" of the bar is also included on the right hand side of the page to provide the user with an overview of the bars layout. This column will move to underneath the "Booking Details" form on screens of <768px.
 
-A member of staff of the bar who is set up as a superuser/administrator of the website will be able to access all the sumbitted booking applications from the Bookings panel in the Admin section of the website. The staff member can review and change any details of the booking from the admin panel. If there is an issue with seat availability at a certain time they have the contact details of the customer in the booking form so they can contact to discuss any changes. 
+A member of BarTenders staff who is set up as a superuser/administrator of the website will be able to access all the requested booking applications from the Bookings panel in the Admin section of the website. The staff member can review and change any details of the booking from the admin panel. If there is an issue with seat availability at a certain time they have the contact details of the customer in the booking form so they can be contacted to discuss any changes. 
 
 If the booking is altered and saved the customer will receive an updated automatic email with these details. If the booking is accepted the staff member can change it's status from "Requested" to "Accepted" this will result in a different automatic email being sent to the customer. Similarly if the status is changed to "Denied" another automatic email is sent to the customer.
 
-These emails can be found at the following location in the project files "booking/templates/mail".
+These emails can be found at the following location in the project files:
+-  Booking Requested email: [request.txt](booking/templates/mail/accepted.txt)
+-  Booking Accepted email: [accepted.txt](booking/templates/mail/accepted.txt)
+-  Booking Denied email: [denied.txt](booking/templates/mail/accepted.txt)
+
+#### Drinks
+The Drinks page presents the drinks/products added to the Product model. By default the page is loaded with the all the entries displayed. 
+
+At the top of the page is a arrangement of buttons which have the names of the catagories defined in the database "Pints", "Bottles", "Soft Drinks", "Cocktails" and "Spirits". The "All" button is the default view which displays all catagories. Each of the other buttons will limit the entries presented to a single catagory.
+
+Each entry on the Drinks page is represented as a Bootstrap Card. Each card has an image, title, decription (truncated to 30 characters) and price associated with it. Underneath these details is a small form which allows the user to select the number of the item they wish to add to their Cart and then click the "Add" button to execute this. 
+
+Each card has a hoover effect to indicate that if clicked it will provide more information by bring clicked. It does this by bringing the user to the drinks individual listing page (listing.html). This is also indicated by the truncated presentation of the description text underneath the items image.
+
+The page is designed to be responsive and with the number of entries in a row varying depending on the screen width as follows:
+- 992px < width : 4 entries per row
+- 768px < width < 992px : 3 entries per row
+- 576px < width < 768px  : 2 entries per row
+- width < 576px : 1 entry per row
+
+A superuser/administrator of the site can use the Products section of the websites admin panel to add additional drinks/prodcuts to the Products database. The superuser simply needs to click the "Add Product" button and populate the following model fields:
+- Catagory (choice of Pints, Bottles, Soft-drinks, Cocktails or Spirits)
+- Name
+- Description
+- Price
+- Image (although not manditory, for aesthetic purposes, product images should have a 1:1 aspect ratio)
 
 #### Cart
-The Cart page presents a summary of all the items add to the users cart. If the user has not added an item to their cart they will be show the message "YOUR CART IS EMPTY".
+The Cart page presents a summary of all the items added to the users cart. If the user has not added an item to their cart they will be show the message "YOUR CART IS EMPTY".
 
-When the user adds a itme to the cart from the Drinks page they will receive the message "Item successfully added to your Cart!" and a badge with a number will appear beside the Cart icon in the Navbar.
+When the user adds a item to the cart from the Drinks page they will receive the following message displayed under the navbar "Item successfully added to your Cart!". A badge with a number will also  appear beside the Cart icon in the Navbar.
 
-Each item in the Cart has a image, title, price and quantity. The quantity can be adjusted to using an input field. It the field is set to 0 and the "AMEND" button clicked the item will be removed from the Cart. 
+Each item in the Cart has a image, title, price and quantity. The quantity can be adjusted by using an input field. If the field is set to 0 and the "AMEND" button clicked the item will be removed from the Cart. 
 
-At the bottom of the page there is "Total" section which shows the user the total cost of all the items in their Cart.
+At the bottom of the page there is "Total" section which shows the total cost of the items currently in the Cart.
 
 
 #### Checkout
-The checkout page presents an order summary and a payments details form. The order summary presents an image, title, price and quantity of each item added to the cart. Underneath this is also presents a "Total" for the cost of the items in the Cart.
+The checkout page presents an Order Summary and a Payment Details form. The Order Summary presents an image, title, price and quantity of each item added to the cart. Underneath this is also presents a "Total" for the cost of the items in the Cart.
 
-The checkout page also presents and order form requiring the user to input their table number, Full Name and phone number.
+The checkout page also displays the Payment Details form which is made up of two forms, the Order Form and the Payment Form. The Order Form requires the user to input their table number, Full Name and phone number.
 
-AN item for future work is to tie a reservation to a particular order and save the users details which were used in the booking form. 
+Underneath the Order Form is the Payment Form. This requires the credit card details of the user (Credit card number, CVC Expiry Month and Expiry Year). Any Errors generated through submission of this form will appear above the form. Error messages are colored red and underlined.
 
-Underneath this is a payment form requiring the credit card details of the user (Credit card number, CVC Expiry Month and Expiry Year). Any Errors generated through submission of this form will appear above under the form title colored red and underlined.
+Underneath these forms is a "Confirm Order" button to submit the payment details. There is also "Go to Cart" button to bring the user back to their cart view to make any alterations they require.
 
-Underneath these forms is a Cart button to bring the user back to their cart view to make alterations and another button to confirm their order.
-
-Orders submitted by customers can be reviewed and acted on in the Checkout section of the admin site.
+Orders submitted by customers can be reviewed and acted on by site administrators in the Checkout section of the admin site.
 
 #### Search
-A search bar is built into the NavBar in the base.html template and so is present on every page. If the user is not logged in creating a search in the search bar will bring them to the login page.
+A search bar is built into the NavBar in the base.html template and so is present on every page. If the user is not logged in, executing a search in the search bar will redirect them to the login page.
 
-If a search is entered into the search box it will search all the drinks/products in the products database and present the results on the product.html page.
-
-#### Login
-The login page is accessed via a button on the navbar or the sidenav on mobile devices. Clicking this brings the user to a typical user login form screen with a submit button labelled "Login". 
-
-- If the users has not registered for an account but tries to login by inputing an unregistered username and password they will receive a flash banner saying "Your username or password is incorrect. Note that both fields may be case-sensitive."
-- If the user enters both an existing username and a correct password they will be redirected to the home page of the site and shown a banner message saying "You have successfully logged in!"
-- If the user has signed up to the site they can click the "Reset Password" button underneath the login in form.
+If a search is executed when the user is logged in, the user is directed to the results on the  Drinks page (product.html). The search query will look for results in the Products model database.
 
 #### Registration
 
-The registration page has four fields Email, Username, Password, Password Confirmation. All fields are required for form submission to be successful.
-- If the user enters an Email that has been used to create an account previously they will receive the error message "Email address must be unique".
-- If the user enters a Username that has been used to create an account previously they will receive the error message "A user with that username already exists.
-- If the user enter both Password and Password Confirmation but the values are not the same they will receive the error message "Passwords must match".
+The registration page has four fields: Email, Username, Password, Password Confirmation. All fields are required for form submission to be successful.
 
-If the user enters all fields and the form is successfully validated they will be redirected to the home page and receive a banner message of "You have successfully logged in!".
+Error messages are generated on this page in the follows scenarios:
+- If the user enters an Email that has been used to create an account previously they will receive the error message "Email address must be unique".
+- If the user enters a Username that has been used to create an account previously they will receive the error message "A user with that username already exists".
+- If the user enter data in both Password and Password Confirmation fields but the values are not the same they will receive the error message "Passwords must match".
+
+If the user enters all fields and the form is successfully validated they will be redirected to the home page and receive a message under the navbar of "You have successfully logged in!".
+
+#### Login
+The login page is accessed via a button on the navbar or the sidenav on mobile devices. Clicking this brings the user to the user login form page. The page has two fields, "Username" and "Password" with a submit button labelled "Login". 
+
+- If the users has not registered for an account but tries to login by inputing an unregistered username and password they will see a message under the navbar saying "Your username or password is incorrect. Note that both fields may be case-sensitive."
+- If the user enters both an existing username and a correct password they will be redirected to the home page of the site and shown a message of "You have successfully logged in!"
+
+
+If the user has signed up to the site but forgotten their password the can click the "Reset Password" button underneath the login form. This will bring them to a "Password Reset" which will require them to input the email address they used during registration. Submitting, this form will send an email to this address allowing the user to reset their password.
+
+All page templates used in this process are bespoke and styled in the same manner as the reset of the website.
 
 #### Contact 
-The contact page provides a place for customers to get in touch with the BarTender staff. If the user has 
+The contact page provides a place for customers to get in touch with the BarTender staff. All fields of the form (Username, email address and Message) must be populated for the form to be submitted.
 
-On submission of the contact form the user will receive a copy of the query in the email address that was provided. 
+On submission of the contact form the user will receive a copy of their message to the email address that was entered in the form. 
 
 ### Features Left to Implement
-Booked Out Feature
-Pagination on the Drinks Page
-Order automatic email on completion.
-Profile page for user with update detils feature.
-ajax supported adding of items to the cart
-Table number on order that can be selected by administrator 
+There are a number of features which were developed during the building of this website that could not be included in the final version. They will be address in a future development sprint. 
+
+These feature include:
+- In the booking model: creating discrete time slots for each available seat in the bar. This would allow unavailable time slots to be highlight by the form so the customer would know the needed to choose another option (Booked Out Feature).
+- Add Pagination on the Drinks Page (import if number of drinks/products grows larger)
+- Generate automatic emails to the customer when a Order and Payment Form are submitted to confirm their order and act as a receipt.
+- Add a profile page to display the user information and provide a way for these details to be updated.
+- Develop Ajax supported form submissions on the Drinks page to stop the page reloading after an item is add to the cart.
+- Link all orders for a particular table to an specific booking. This would allow the passing of the customers details from the Reservation From to the Order Form and reduce the need for the customer to enter in this information twice. 
 
 ## Technologies Used
 
@@ -300,16 +340,16 @@ Table number on order that can be selected by administrator
 - [CSS](https://www.w3schools.com/css/) - Used for cascading styles.
 - [jQuery 3.4.1](https://code.jquery.com/jquery/) - Used for JavaScript functionality.
 - [Bootstrap 4.5.0](https://getbootstrap.com/) - Used for the design framework.
+
+
 ### Back-End Technologies
-**Python**
- - [Python 3.7.6](https://www.python.org/) - Used as the programming language at the back-end.
-
-**Django**
+- [Python 3.7.6](https://www.python.org/) - Used as the programming language at the back-end.
 - [Django 1.11.29](https://www.djangoproject.com/)
-
-**Heroku**
 - [Heroku](https://www.heroku.com) - Used for hosting the deployed website.
+- [PostgreSQL ](https://www.heroku.com/postgres) - A relational SQL database used as plugin through Heroku.
+- [AWS](https://aws.amazon.com/) - S3-Bucket and IAM used to host static and media files.
 
+Details of all the packages used in this project can be found in the [requirements.txt](requirements.txt) file.
 
 ## Testing
 The follow validators were used to check the code developed from this project:
@@ -319,31 +359,32 @@ The follow validators were used to check the code developed from this project:
 
 ### Code Validators
 #### WC3 Markup Validator
-[WC3 Markup Validator](https://validator.w3.org/) was used to validate the HTML code. However, the validator is not able to recognise the Jinja templating syntax so some errors were recorded. All code other than the template syntax language was successfully validated.
+[WC3 Markup Validator](https://validator.w3.org/) was used to validate the HTML code. 
 
 All errors highlight by the validator were dealt with apart from those caused by the templating language (i.e. statements inside "{%%}" of "{{}}") which were caught by the validator but are not errors.
 
 Examples of these errors are:
-- "Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>"
-- "Consider adding a lang attribute to the html start tag to declare the language of this document" 
+- `Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>`
+- `Consider adding a lang attribute to the html start tag to declare the language of this document`
 
 These are present in templates that extend the base.html template. Again this is not an error but a result of the validator not recognising the templating language. 
 
 Additionally, there is another common templating error generated by using templating language to define a href or src value. This error has the form:
-Bad value {% url 'example' %} for attribute href on element a: Illegal character in path segment: "{" is not allowed.
- Again this is not an error but a result of the validator not recognising the templating language. 
+- `Bad value {% url 'example' %} for attribute href on element a: Illegal character in path segment: "{" is not allowed.`
+
+Again this is not an error but a result of the validator not recognising the templating language. 
 
 #### W3C Jigsaw CSS Validator
 [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS code. The CSS successfully passed this check with no errors.
+
 #### PEP8 Validator
-[PEP8 Validator](http://pep8online.com/) was used to validate my python code. The were two remaining errors left in the settings.py file which are as follows:
+[PEP8 Validator](http://pep8online.com/) was used to validate my python code. However, there were two remaining errors left in the settings.py file which are as follows:
 - 'env' imported but not used
     - this is incorrect as the env variables are import and used in the local deployment of this project
 - line 107 too long (83 > 79 characters)
     - this is a line from the original django code and is as follows: 
     `'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'`
-    - As the line is the specifying a validator it was thought better not to alter it in any way.
-
+    - As the line is the specifying a validator it was not altered.
 
 ### Browers Testing
 This website was tested on multiple browsers. They included:
@@ -353,7 +394,8 @@ This website was tested on multiple browsers. They included:
 
 ### User Stories Testing
 
-#### A user wants to book a particular type of seat for a certain date and time in the bar.
+#### User Story 1
+**A user wants to book a particular type of seat for a certain date and time in the bar.**
 1. The User loads the app and is directed to the index.html page. The user sees the instructions on the page and the click the register button.
 2. The user submits a completed registration form is redirected to the home page where there is a success message of "You have successfully registered" underneath the navbar.
 3. On the home page the user sees the buttons on the have now changed to "Booking" and "Drinks". Additionally, the navbar has changed from "Home", "Register" and "Login" to "Home", "Booking", "Drinks", "Logout" and "Cart". The user clicks the "Booking" button on either the page or the navbar.
@@ -369,9 +411,8 @@ This website was tested on multiple browsers. They included:
 8. In a real world situtation the user would be rang by the staff of BarTender to confirm their details and make any amendments to their booking dependant on seat availability at certain times.
 9. After staff have reviewed and confirmed the booking with the user the staff can change the status of the booking to either "Accepted" or "Denied" based on thier interaction with the user. When they save the chage to the booking request on the admin part of the site. The user will receive an email with the confirmed details and the message "We are please to confirmed your booking. We look forward to seeing you!".
 
-
-
-#### A user wants to look through the drinks/products that are available on from the bar to find a specific product.
+#### User Story 2
+**A user wants to look through the drinks/products that are available on from the bar to find a specific product.**
 1. The User loads the app and is directed to the index.html page. The user see's the search bar in the top left hand corner of the screen and types in the search term and clicks search.
 2. As the user isn't looked in they are directed to the login page. As the user hasn't set up an accoun they click the register button at the bottom of the page and is cirected to the registration page.
 3. The user submits a completed registration form is redirected to the home page where there is a success message of "You have successfully logged in!" underneath the navbar.
@@ -381,8 +422,8 @@ This website was tested on multiple browsers. They included:
 7. The user can either search for the drink they are looking for by entering a searh term in the search bar or by clicking the relevent catagory from the buttons at the top of the page. Either choice will generate a Drinks page with a subset of all teh drinks in the products database.
 8. The user now can choose the exact product they are looking for. If the user clicks on the drinks/product entry they will be directed the products individual page. This page with present the products image, name, full untruncated desciption and a for for adding that item to their cart. If the user wishes to turn to the cart there is a redirect button at the bottom of the page which will bring them back to the Drinks page.
 
-
-#### A user wants to order and pay for a drink (specifically a cocktail) to a table that they are sitting at through a completely contactless means.
+#### User Story 3
+**A user wants to order and pay for a drink (specifically a cocktail) to a table that they are sitting at through a completely contactless means.**
 1. The user has already register for the site and logged in along the lines of the first user stories presented above. They have booked a table in the bar and have taken their seats at the booking time.
 2. From the home page the user clicks the Drinks icon in the navbar and is directed to the Drinks page.
 3. The user clicks the cocktail button at the top of the page to isolate the cocktails that are available.
@@ -403,7 +444,7 @@ This website was tested on multiple browsers. They included:
 
 
 ### Manual Testing
-#### Test Navbar and Footer (All pages)
+#### Test Navbar and Footer
 1. Navbar
     - Check on that a logged out user see the Home, Register and Login items in the navbar.
     - Check that a logged in user see the Home, Booking, Drinks, Logout and Cart items in the navbar.
@@ -431,20 +472,6 @@ This website was tested on multiple browsers. They included:
 
 2. Logged In
 - Check that the Bottons in the central text area are "Booking" and "Drinks". Check that the buttons bring the user to the correct location.
-
-#### Test Registration
-- Check that the form will only submit when all fields are populated and when the email field container a valid email type entry.
-- Check that when an email that has already been used by another user is entered the error message "Email address must be unique." is display"
-- Check that when an username that has already been used by another user is entered the error message "A user with that username already exists." is display"
-- Check that when the the password and Password Confirmation fields have different entries that the error message "Passwords must match." is displayed.
-- Check that when the user submits a completed registration form they are redirected to the home page where there is a success message of "You have successfully registered!" underneath the navbar.
-- Check that the button under the form area is labelled "Login". Check that the button bring the user to the correct location.
-
-#### Test Login
-- Check that the button under the form area is labelled "Register". Check that the button bring the user to the correct location.
-- Check that when the user enters an incorrect username and password combination that the error message "Your username or password is incorrect. Note that both fields may be case-sensitive." is displayed under the navbar.
-- Check that when the user submits a completed login form they are redirected to the home page where there is a success message of "You have successfully logged in!" underneath the navbar.
-
 
 #### Test Booking
 - Visit the a Booking page of the website on a desktop sized screen (lg) to check that the page is displayed in 2 columns.
@@ -496,6 +523,24 @@ This website was tested on multiple browsers. They included:
     - Each error above is also accompanied by an error message under the navbar of "We were unable to take payment with that card".
 - Check that if the user successfully submits the Payment Details form they are redirected to the Drinks page with the following sucess message displayed under the navbar "You have successfully paid".
 
+#### Test Search
+- Check that if the user is not logged in creating a search in the search bar will bring them to the login page.
+- Check that if a login in users enters a search term in the search box and clicks the serach button that the search results are presented on the product.html page correctly.
+
+
+#### Test Registration
+- Check that the form will only submit when all fields are populated and when the email field container a valid email type entry.
+- Check that when an email that has already been used by another user is entered the error message "Email address must be unique." is display"
+- Check that when an username that has already been used by another user is entered the error message "A user with that username already exists." is display"
+- Check that when the the password and Password Confirmation fields have different entries that the error message "Passwords must match." is displayed.
+- Check that when the user submits a completed registration form they are redirected to the home page where there is a success message of "You have successfully registered!" underneath the navbar.
+- Check that the button under the form area is labelled "Login". Check that the button bring the user to the correct location.
+
+#### Test Login
+- Check that the button under the form area is labelled "Register". Check that the button bring the user to the correct location.
+- Check that when the user enters an incorrect username and password combination that the error message "Your username or password is incorrect. Note that both fields may be case-sensitive." is displayed under the navbar.
+- Check that when the user submits a completed login form they are redirected to the home page where there is a success message of "You have successfully logged in!" underneath the navbar.
+
 #### Test Contact
 - Check that all form fields are required to sumbit the contact form.
 - Check that the initial user data of username and email are loaded into the form fields if the user is logged in.
@@ -503,7 +548,6 @@ This website was tested on multiple browsers. They included:
 
 #### Known Issues
 It was observed during testing that it would be from a design stand point if the Drinks page didn't reload after clicking the "Add" button for an item. This results in the unfiltered Drinks page being reload instead of the filter applied by the user. This will be address in a future development sprint.
-
 
 ### Automated Testing
 
@@ -513,7 +557,7 @@ Using Django's built in TestCase Class 44 test were written in order to test vie
 
 To ensure that at least 80% of this projects code was tested [Coverage.py](https://coverage.readthedocs.io/en/v4.5.x/#) was used.
 
-#### Run Coverage
+#### Coverage
 - To run coverage for this project type the following into the terminal:
 
     ```
@@ -613,7 +657,7 @@ coverage html
 
 - This command creates a folder called "htmlcov" which holds an "index.html" file. Running or previewing this file give a visual reprsentation of the code that is covered by the test written.
 
-### Travis
+#### Travis
 In addition to TestCase and coverage.py tests, [Travis-CI](https://travis-ci.org/) was used to test Continuous Integration.
 
 The current status of Travis for this project is as follows:
