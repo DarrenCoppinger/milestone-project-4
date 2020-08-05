@@ -70,6 +70,6 @@ class ReservationForm(forms.ModelForm):
             msg = "Booking must end during bar opening hours 12:30 - 00:00."
             self.add_error('booking_end_time', msg)
         if booking_end_time < booking_start_time:
-            msg = "Booking can not end before it starts"
+            msg = "Booking cannot end before it starts"
             self.add_error('booking_end_time', msg)
         return cleaned_data
