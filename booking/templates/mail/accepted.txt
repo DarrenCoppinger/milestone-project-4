@@ -2,6 +2,6 @@
 
 {% block content %}
 
-<p>We are please to confirmed your booking. We look forward to seeing you!</p>
+<p>We are pleased to confirm your booking. We look forward to seeing you!</p>
 
 {% endblock %}

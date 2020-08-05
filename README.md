@@ -107,12 +107,12 @@ The following are the main design objectives for the project:
 #### Appropriate for Audience
 The audience for this website will be English speaking, technology savvy and will likely access the site on mobile devices. 
 
-Although the website will accommodate all visitors, its primary audience will be technology literate. Using the bootstrap framework means that this website has a mobile first approach to development. However, it will also perform well on a large screen sizes.
+Although the website will accommodate all visitors, its primary audience will be technology literate. Using the bootstrap framework means that this website has a mobile first approach to development. However, it will also perform well on larger screen sizes.
 
 #### Content Relevence and Accuracy
 The content to the site must be relevant to the site owners and their audience. 
 
-As such, the website operator/administrator can be add products to the Drinks page through the backend of the site. Products can be edited and updated as required. This ensures that the content of the website is relevant.
+As such, the website operator/administrator can add products to the Drinks page through the backend of the site. Products can be edited and updated as required. This ensures that the content of the website is relevant.
 
 #### Content Grouping
 The website content is grouped into easily understood sections (Home, Booking, Drinks, Login/Logout, Register, Cart, Checkout, About Us, Contact Us). 
@@ -134,7 +134,7 @@ Additionally, the following requirements should be met by the website:
 
 "As a user of this website, I would like to- _____________________"
 - view the website from all device types (mobile, tablet or desktop)
-- contact the site administrators to make a inquiry
+- contact the site administrators to make an inquiry
 - search the website for a drink
 
 ### Design
@@ -211,7 +211,7 @@ All pages include a responsive navigation bar (navbar) and title at the top of t
 
 If the user is logged in the navbar contains the Home, Booking, Drinks, Cart and a Logout buttons. If the user is logged out only the Home, Register and Login buttons will be displayed.
 
-Each page has a message panel that appears directly under the navbar when a messages is generated. 
+Each page has a message panel that appears directly under the navbar when a message is generated. 
 
 #### Home
 The Home page includes background image of a cocktail bar which is fixed in position at the centre of the page. A floating transparent container appears in front of the image which holds a greeting statement. There are also two buttons at the bottom of the container which change depending on whether the user is logged in or not. If they are not logged on the buttons will direct the user to the "Login" and "About" pages. If the user is logged in the buttons will direct them to the "Booking" and "Drinks" pages.
@@ -227,17 +227,17 @@ The Booking page includes input fields for all the required information to make 
 - Booking Start Time
 - Booking End Time
 
-A final model field is excluded from the customers booking form (ReservationForm), that is the "Status" field. This is used by the staff to define whether the booking has been accepted or not. The field has three set options: "Requested", "Accepted" or "Denied". By default it is set to "Requested" until altered by a member of staff.
+A final model field is excluded from the customers booking form (ReservationForm), that is the "Status" field. This is used by the staff to define whether the booking has been accepted or not. The field has three set options: "Requested", "Accepted" or "Denied". By default, it is set to "Requested" until altered by a member of staff.
 
-Widgets were used for the date and time fields so they must be input in date and time format. On the MS Edge and Google Chrome browsers the user can use the date or time picker instruments (by clicking the calendar or clock icons) to fill in these fields. The measures reduces the chances of incorrect data being submitted in the form.
+Widgets were used for the date and time fields so they must be input in date and time format. On the MS Edge and Google Chrome browsers the user can use the date or time picker instruments (by clicking the calendar or clock icons) to fill in these fields. These measures reduce the chances of incorrect data being submitted in the form.
 
 The Booking feature also requires the user to add in additional details that were not provided during registration (Full Name and phone number). During the design of the website the author considered adding these details into the registration form so they could be passed into the Booking form as initial data. However, it was decided that is was a simpler solution to only ask the user for this information only when it was necessary.
 
-A "Floor Plan" of the bar is also included on the right hand side of the page to provide the user with an overview of the bars layout. This column will move to underneath the "Booking Details" form on screens of <768px.
+A "Floor Plan" of the bar is also included on the right side of the page to provide the user with an overview of the bar's layout. This column will move to underneath the "Booking Details" form on screens of <768px.
 
-A member of BarTender's staff who is set up as a superuser/administrator of the website will be able to access all the requested booking applications from the Bookings panel in the Admin section of the website. The staff member can review and change any details of the booking from the admin panel. If there is an issue with seat availability at a certain time they have the contact details of the customer in the booking form so they can be contacted to discuss any changes. 
+A member of BarTender's staff who is set up as a superuser/administrator of the website will be able to access all the requested booking applications from the Bookings panel in the Admin section of the website. The staff member can review and change any details of the booking from the admin panel. If there is an issue with seat availability at a certain time, they have the contact details of the customer in the booking form so they can be contacted to discuss any changes. 
 
-If the booking is altered and saved the customer will receive an updated automatic email with these details. If the booking is accepted the staff member can change it's status from "Requested" to "Accepted" this will result in a different automatic email being sent to the customer. Similarly if the status is changed to "Denied" another automatic email is sent to the customer.
+If the booking is altered and saved the customer will receive an updated automatic email with these details. If the booking is accepted the staff member can change its status from "Requested" to "Accepted" this will result in a different automatic email being sent to the customer. Similarly, if the status is changed to "Denied" another automatic email is sent to the customer.
 
 These emails can be found at the following location in the project files:
 -  Booking Requested email: [request.txt](booking/templates/mail/accepted.txt)
@@ -245,9 +245,9 @@ These emails can be found at the following location in the project files:
 -  Booking Denied email: [denied.txt](booking/templates/mail/accepted.txt)
 
 #### Drinks
-The Drinks page presents the drinks/products added to the Product model. By default the page is loaded with the all the entries displayed. 
+The Drinks page presents the drinks/products added to the Product model. By default, the page is loaded with the all the entries displayed. 
 
-At the top of the page is a arrangement of buttons which have the names of the categories defined in the database "Pints", "Bottles", "Soft Drinks", "Cocktails" and "Spirits". The "All" button is the default view which displays all categories. Each of the other buttons will limit the entries presented to a single category.
+At the top of the page is an arrangement of buttons which have the names of the categories defined in the database "Pints", "Bottles", "Soft Drinks", "Cocktails" and "Spirits". The "All" button is the default view which displays all categories. Each of the other buttons will limit the entries presented to a single category.
 
 Each entry on the Drinks page is represented as a Bootstrap Card. Each card has an image, title, description (truncated to 30 characters) and price associated with it. Underneath these details is a small form which allows the user to select the number of the item they wish to add to their Cart and then click the "Add" button to execute this. 
 
@@ -267,11 +267,11 @@ A superuser/administrator of the site can use the Products section of the websit
 - Image (although not mandatory, for aesthetic purposes, product images should have a 1:1 aspect ratio)
 
 #### Cart
-The Cart page presents a summary of all the items added to the users cart. If the user has not added an item to their cart they will be show the message "YOUR CART IS EMPTY".
+The Cart page presents a summary of all the items added to the user's cart. If the user has not added an item to their cart, they will be shown the message "YOUR CART IS EMPTY".
 
-When the user adds a item to the cart from the Drinks page they will receive the following message displayed under the navbar "Item successfully added to your Cart!". A badge with a number will also  appear beside the Cart icon in the Navbar.
+When the user adds an item to the cart from the Drinks page they will receive the following message displayed under the navbar "Item successfully added to your Cart!". A badge with a number will also  appear beside the Cart icon in the Navbar.
 
-Each item in the Cart has a image, title, price and quantity. The quantity can be adjusted by using an input field. If the field is set to 0 and the "AMEND" button clicked the item will be removed from the Cart. 
+Each item in the Cart has an image, title, price and quantity. The quantity can be adjusted by using an input field. If the field is set to 0 and the "AMEND" button clicked the item will be removed from the Cart. 
 
 At the bottom of the page there is "Total" section which shows the total cost of the items currently in the Cart.
 
@@ -296,20 +296,20 @@ If a search is executed when the user is logged in, the user is directed to the 
 
 The registration page has four fields: Email, Username, Password, Password Confirmation. All fields are required for form submission to be successful.
 
-Error messages are generated on this page in the follows scenarios:
-- If the user enters an Email that has been used to create an account previously they will receive the error message "Email address must be unique".
-- If the user enters a Username that has been used to create an account previously they will receive the error message "A user with that username already exists".
-- If the user enter data in both Password and Password Confirmation fields but the values are not the same they will receive the error message "Passwords must match".
+Error messages are generated on this page in the following scenarios:
+- If the user enters an Email that has been used to create an account previously, they will receive the error message "Email address must be unique".
+- If the user enters a Username that has been used to create an account previously, they will receive the error message "A user with that username already exists".
+- If the user enter data in both Password and Password Confirmation fields but the values are not the same, they will receive the error message "Passwords must match".
 
-If the user enters all fields and the form is successfully validated they will be redirected to the home page and receive a message under the navbar of "You have successfully logged in!".
+If the user enters all fields and the form is successfully validated, they will be redirected to the home page and receive a message under the navbar of "You have successfully logged in!".
 
 #### Login
 The login page is accessed via a button on the navbar or the sidenav on mobile devices. Clicking this brings the user to the user login form page. The page has two fields, "Username" and "Password" with a submit button labelled "Login". 
 
-- If the users has not registered for an account but tries to login by inputting an unregistered username and password they will see a message under the navbar saying "Your username or password is incorrect. Note that both fields may be case-sensitive."
-- If the user enters both an existing username and a correct password they will be redirected to the home page of the site and shown a message of "You have successfully logged in!"
+- If the user has not registered for an account but tries to login by inputting an unregistered username and password they will see a message under the navbar saying "Your username or password is incorrect. Note that both fields may be case-sensitive."
+- If the user enters both an existing username and a correct password, they will be redirected to the home page of the site and shown a message of "You have successfully logged in!"
 
-If the user has signed up to the site but forgotten their password the can click the "Reset Password" button underneath the login form. This will bring them to a "Password Reset" which will require them to input the email address they used during registration. Submitting, this form will send an email to this address allowing the user to reset their password.
+If the user has signed up to the site but forgotten their password, they can click the "Reset Password" button underneath the login form. This will bring them to a "Password Reset" which will require them to input the email address they used during registration. Submitting, this form will send an email to this address allowing the user to reset their password.
 
 All page templates used in this process are bespoke and styled in the same manner as the reset of the website.
 
@@ -321,13 +321,13 @@ On submission of the contact form the user will receive a copy of their message 
 ### Features Left to Implement
 There are a number of features which were developed during the building of this website that could not be included in the final version. They will be address in a future development sprint. 
 
-These feature include:
+These features include:
 - In the booking model: creating discrete time slots for each available seat in the bar. This would allow unavailable time slots to be highlight by the form so the customer would know the needed to choose another option (Booked Out Feature).
 - Add Pagination on the Drinks Page (import if number of drinks/products grows larger)
-- Generate automatic emails to the customer when a Order and Payment Form are submitted to confirm their order and act as a receipt.
+- Generate automatic emails to the customer when an Order and Payment Form are submitted to confirm their order and act as a receipt.
 - Add a profile page to display the user information and provide a way for these details to be updated.
 - Develop Ajax supported form submissions on the Drinks page to stop the page reloading after an item is add to the cart.
-- Link all orders for a particular table to an specific booking. This would allow the passing of the customers details from the Reservation From to the Order Form and reduce the need for the customer to enter in this information twice. 
+- Link all orders for a particular table to a specific booking. This would allow the passing of the customers details from the Reservation Form to the Order Form and reduce the need for the customer to enter in this information twice. 
 
 ## Technologies Used
 ### General Technologies
@@ -372,12 +372,12 @@ Examples of these errors are:
 - `Non-space characters found without seeing a doctype first. Expected <!DOCTYPE html>`
 - `Consider adding a lang attribute to the html start tag to declare the language of this document`
 
-These are present in templates that extend the base.html template. Again this is not an error but a result of the validator not recognising the templating language. 
+These are present in templates that extend the base.html template. Again, this is not an error but a result of the validator not recognising the templating language. 
 
 Additionally, there is another common templating error generated by using templating language to define a href or src value. This error has the form:
 - `Bad value {% url 'example' %} for attribute href on element a: Illegal character in path segment: "{" is not allowed.`
 
-Again this is not an error but a result of the validator not recognising the templating language. 
+Again, this is not an error but a result of the validator not recognising the templating language. 
 
 #### W3C Jigsaw CSS Validator
 [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS code. The CSS successfully passed this check with no errors.
@@ -427,22 +427,22 @@ This website was tested on multiple browsers. They included:
 1. The user loads the site and is directed to the index.html page. The user sees the instructions on the page and the click the register button.
 2. The user submits a completed registration form is redirected to the home page where there is a success message of "You have successfully registered" underneath the navbar.
 3. On the home page the user sees the buttons have now changed to "Booking" and "Drinks". Additionally, the navbar has changed from "Home", "Register" and "Login" to "Home", "Booking", "Drinks", "Logout" and "Cart". The user clicks the "Booking" button on either the page or the navbar.
-4. The user see the floor plan on the left of the "Booking" page showing the layout of the bar.
+4. The user sees the floor plan on the left of the "Booking" page showing the layout of the bar.
 5. The user fills out the form choosing a Seat Type option (Bar Stool, Window Seat, Booth or Table), Phone number, date, Booking Start Time and Booking End Time. These field can generate the following types of validation errors:
-    - If the user doesn't enter a valid phone number they get the message "Enter a valid phone number (e.g. +353861234567)"
-    - If the user chooses a date that has already past they get the message "Invalid date - selected date passed"
-    - If the user choose a start or end time for the booking outside of the bars opening hours they get the error message "Booking must start/end during bar opening hours 12:30 - 00:00."
+    - If the user doesn't enter a valid phone number, they get the message "Enter a valid phone number (e.g. +353861234567)"
+    - If the user chooses a date that has already past, they get the message "Invalid date - selected date passed"
+    - If the user chooses a start or end time for the booking outside of the bars opening hours they get the error message "Booking must start/end during bar opening hours 12:30 - 00:00."
     - If the user chooses an end time that is earlier than the selected start time the error message "Booking can not end before it starts" will be displayed.
     - Each of the above errors generates a message under the navbar of "We were unable to make this reservation"
-6. On submission of the booking form the user is redirected back to the home page with the message "Your have requested a booking. A member of our staff will be in touch shortly to confirm your booking." underneath the navbar.
+6. On submission of the booking form the user is redirected back to the home page with the message "You have requested a booking. A member of our staff will be in touch shortly to confirm your booking." underneath the navbar.
 7. The user will also receive an automatic email (to the email provided during registration) specifying the "Booking Status", "Date", "Start Time", and "End Time". The email says that it will be followed up on by a member of staff. 
 8. In a real world situation the user would be rang by the staff/site admin of BarTender to confirm their details and make any amendments to their booking dependant on seat availability at certain times.
-9. After staff have reviewed and confirmed the booking with the user, the staff can change the status of the booking to either "Accepted" or "Denied" based on their interaction with the user. When the admin saves the changes to the booking request on the backend of the site, the user will receive an email with the confirmed details and the message "We are please to confirmed your booking. We look forward to seeing you!".
+9. After staff have reviewed and confirmed the booking with the user, the staff can change the status of the booking to either "Accepted" or "Denied" based on their interaction with the user. When the admin saves the changes to the booking request on the backend of the site, the user will receive an email with the confirmed details and the message "We are pleased to confirm your booking. We look forward to seeing you!".
 
 #### User Story 2
 **A user wants to look through the drinks/products that are available on from the bar to find a specific product.**
 1. The User loads the site and is directed to the index.html page. The user see's the search bar in the top right corner of the screen. Into this they type in a search term and clicks search.
-2. As the user isn't logged in they are directed to the login page. As the user hasn't set up an account they click the register button at the bottom of the page and are directed to the registration page.
+2. As the user isn't logged in, they are directed to the login page. As the user hasn't set up an account, they click the register button at the bottom of the page and are directed to the registration page.
 3. The user submits a completed registration form and is redirected to the home page where there is a success message of "You have successfully logged in!" underneath the navbar.
 4. On the home page the user sees the buttons on the have now changed to "Booking" and "Drinks". Additionally, the navbar has changed from "Home", "Register" and "Login" to "Home", "Booking", "Drinks", "Logout" and "Cart". The user clicks the "Drinks" button on either the page or the navbar.
 5. The user is directed to the Drinks page (products.html) where all the current products available from the bar are displayed. 
@@ -457,26 +457,26 @@ This website was tested on multiple browsers. They included:
 3. The user clicks the cocktail button at the top of the page to isolate the cocktails that are available.
 4. The user reviews what is on the menu and chooses to order a drink. They navigate to the selected drink and use the form at the bottom of the entry to enter the number 4 (alternatively they could user the arrows on the right side of the input box to adjust the number being ordered). 
 5. The user then clicks the add button and is redirected back to the full Drinks menu. The message "Item successfully added to your Cart!" is displayed under the navbar.
-6. The user see that a badge, with the number 4 inside it, has appeared beside the Cart icon in the navbar. The user clicks the cart icon and is directed to the cart page.
+6. The user sees that a badge, with the number 4 inside it, has appeared beside the Cart icon in the navbar. The user clicks the cart icon and is directed to the cart page.
 7. The user is presented with a summary of their order on the Cart page. The user realised they need to order another drink and so adjust the number in the quantity field to 5 and click the Amend Button beside it. This reloads the page and a success message of "Successfully adjusted item in your Cart!" is displayed under the Navbar.
 8. The user is now satisfied that the order is correct and so clicks the "Checkout" button underneath the order total at the bottom of the page.
-9. The user is directed to the checkout page. On the right side the user see the final version of the order they have created with the total cost underneath it. On the right side they see a payment details form.
+9. The user is directed to the checkout page. On the right side the user sees the final version of the order they have created with the total cost underneath it. On the right side they see a payment details form.
 10. The user selects their table number (in a real world situation this would be specified on their table) and inputs their name and phone number (required in case there is difficulty locating the person who made the order).
 11. The user inputs their credit card details (number, CVC, Expiry month, and expiry year). The user then clicks the "Confirm" button to submit the order. If user fills in the form incorrectly the following error can be displayed:
     - If the card number is entered incorrectly the error message "Your card number is incorrect." is displayed.
     - If the cards CVC is entered incorrectly the error message "Your card's security code is invalid." is displayed.
     - If the cards expiry month or year has passed the user will see error message "Your card's expiration month/year is invalid." displayed at the top of the form
-    - If the user doesn't enter a valid phone number they get the message "Enter a valid phone number (e.g. +353861234567)"
+    - If the user doesn't enter a valid phone number, they get the message "Enter a valid phone number (e.g. +353861234567)"
     - Each error above is also accompanied by an error message under the navbar of "We were unable to take payment with that card".
-12. If the user successfully submits the Payment Details form they are redirected to the Drinks page with the following success message displayed under the navbar "Your have successfully paid".
+12. If the user successfully submits the Payment Details form, they are redirected to the Drinks page with the following success message displayed under the navbar "You have successfully paid".
 
 
 ### Manual Testing
 #### Test Navbar and Footer
 1. Navbar
-    - Check that a logged out user see the Home, Register and Login items in the navbar.
-    - Check that a logged in user see the Home, Booking, Drinks, Logout and Cart items in the navbar.
-    - Visit the a page of the website on a desktop sized screen (>992px).
+    - Check that a logged out user sees the Home, Register and Login items in the navbar.
+    - Check that a logged in user sees the Home, Booking, Drinks, Logout and Cart items in the navbar.
+    - Visit a page of the website on a desktop sized screen (>992px).
     - Hover over the name text "BarTender" and logo to check that the hover effects work.
     - Click the navbar-brand text "BarTender" to check that it links to the Home page.
     - Hover over each navbar item to check the hover effect works for each one.
@@ -484,12 +484,12 @@ This website was tested on multiple browsers. They included:
     - Alter the screen size from desktop size down to medium devices (<992px) size to check that the navbar is responsive. At that size the navbar changes to the toggler icon with just the site name and logo. The menu items move to the sidenav menu.
     - Click the toggler icon to check that the drop-down sidenav menu activates.
     - Hover over each of the sidenav menu items and the login button to make sure their hover effect activates.
-    - Click each of the drop-down menu buttons to make sure that they links to the correct page.
+    - Click each of the drop-down menu buttons to make sure that they link to the correct page.
 
 2. Footer
     - Check that the body element is always a minimum of 100% of the viewport height and that the footer is never floating in the middle of the screen
     - Check that the hover effects for the links in the Site Links section of the footer are reactive and that the Get Directions link hover effect is also reactive.
-    - Check that the Google Maps API viewport is displaying and that the full screen view in it's top right corner works.
+    - Check that the Google Maps API viewport is displaying and that the full screen view in its top right corner works.
     - Alter the screen size from above medium/tablet size down to small/mobile size (<768px) to check that the one row of four columns in the footer rearrange themselves into two rows of two columns.
     - Alter the screen size from small/mobile size down to extra-small/micro size (<576px) to check that the two rows of two columns in the footer rearrange themselves into four rows of one column.
 
@@ -505,16 +505,16 @@ This website was tested on multiple browsers. They included:
 3. Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
 
 #### Test Booking
-- Visit the a Booking page of the website on a desktop sized screen (>992px) to check that the page is displayed in 2 columns.
+- Visit the Booking page of the website on a desktop sized screen (>992px) to check that the page is displayed in 2 columns.
 - Check that the page reduces to one column for <768px in width.
 - Check that the floor plan image on the left side of the page, showing the layout of the bar, is loading correctly.
 - Check that when the user fills out the form fields for Seat Type, Phone number, date, Booking Start Time and Booking End Time incorrectly the following types of validation errors are generated:
-    - If the user doesn't enter a valid phone number they get the message "Enter a valid phone number (e.g. +353861234567)"
-    - If the user chooses a date that has already past they get the message "Invalid date - selected date passed"
+    - If the user doesn't enter a valid phone number, they get the message "Enter a valid phone number (e.g. +353861234567)"
+    - If the user chooses a date that has already past, they get the message "Invalid date - selected date passed"
     - If the user chooses a start or end time for the booking outside of the bars opening hours they get the error message "Booking must start/end during bar opening hours 12:30 - 00:00."
-    - If the user chooses a end time that is earlier than the selected start time the error message "Booking can not end before it starts" will be displayed.
+    - If the user chooses an end time that is earlier than the selected start time the error message "Booking can not end before it starts" will be displayed.
     - Each of the above errors generates a message under the navbar of "We were unable to make this reservation"
-- Check that on submission of the booking form the user is redirected back to the home page with the message "Your have requested a booking. A member of our staff will be in touch shortly to confirm your booking." underneath the navbar.
+- Check that on submission of the booking form the user is redirected back to the home page with the message "You have requested a booking. A member of our staff will be in touch shortly to confirm your booking." underneath the navbar.
 - Check that the user receives an automatic email (to the email provided during registration) specifying the "Booking Status", "Date", "Start Time", and "End Time".
 - Check that when an administrator (or staff member with access to the admin part of the website) make any amendments to the booking and saves the changes that the user receive another automatic email confirming this with the subject "Booking Request at BarTender - REQUEST ALTERED".
 - Check that when an administrator of the site changes the status of the booking to either "Accepted" or "Denied" that the user receives an email with the confirmed details and the subject of either ""Booking Request at BarTender - ACCEPTED" or "Booking Request at BarTender - DENDIED".
@@ -529,7 +529,7 @@ This website was tested on multiple browsers. They included:
 - Check that hovering over each drink entry triggers a box shadow effect.
 - Check that the form at the bottom of each entries card is editable, that the value can be change both by typing and by using the arrows on the right of the input box.
 - Check that clicking the "Add" button reloads the products page (products.html) with all database entries and the success message "Item successfully added to your Cart!".
-- Check that when an item has been successfully added to the users cart the a badge appears beside the cart icon in the navbar with the number of items in the cart shown.
+- Check that when an item has been successfully added to the users cart a badge appears beside the cart icon in the navbar with the number of items in the cart shown.
 - Check that when a product entry on the Drinks page is clicked, the products Listing page is launch and that the drinks name, image, untruncated description and price are displayed. A form should also be displayed underneath this allowing the user to select an amount and add that product to the user cart.
 - Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
 
@@ -553,7 +553,7 @@ This website was tested on multiple browsers. They included:
     - If the card number is entered incorrectly the error message "Your card number is incorrect." is displayed.
     - If the cards CVC is entered incorrectly the error message "Your card's security code is invalid." is displayed.
     - If the cards expiry month or year has passed the user will see error message "Your card's expiration month/year is invalid." displayed at the top of the form
-    - If the user doesn't enter a valid phone number they get the message "Enter a valid phone number (e.g. +353861234567)"
+    - If the user doesn't enter a valid phone number, they get the message "Enter a valid phone number (e.g. +353861234567)"
     - Each error above is also accompanied by an error message under the navbar of "We were unable to take payment with that card".
 - Check that if the user successfully submits the Payment Details form they are redirected to the Drinks page with the following success message displayed under the navbar "You have successfully paid".
 - Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
@@ -567,13 +567,13 @@ This website was tested on multiple browsers. They included:
 - Check that when an email that has already been used by another user is entered the error message "Email address must be unique." is display"
 - Check that when a username, that has already been used by another user, is entered the error message "A user with that username already exists." is display"
 - Check that when the Password and Password Confirmation fields have different entries that the error message "Passwords must match." is displayed.
-- Check that when the user submits a completed registration form they are redirected to the home page where there is a success message of "You have successfully registered!" underneath the navbar.
-- Check that the button under the form area is labelled "Login". Check that the button bring the user to the correct location.
+- Check that when the user submits a completed registration form, they are redirected to the home page where there is a success message of "You have successfully registered!" underneath the navbar.
+- Check that the button under the form area is labelled "Login". Check that the button brings the user to the correct location.
 - Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
 
 #### Test Login
 - Check that when the user enters an incorrect username and password combination that the error message "Your username or password is incorrect. Note that both fields may be case-sensitive." is displayed under the navbar.
-- Check that when the user submits a completed login form they are redirected to the home page where there is a success message of "You have successfully logged in!" underneath the navbar.
+- Check that when the user submits a completed login form, they are redirected to the home page where there is a success message of "You have successfully logged in!" underneath the navbar.
 - Check that the button under the form area is labelled "Register". Check that this button brings the user to the correct location.
 - Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
 
@@ -588,19 +588,19 @@ This website was tested on multiple browsers. They included:
 - Review responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
 
 #### Known Issues
-It was observed during testing that it would be from a design stand point if the Drinks page didn't reload after clicking the "Add" button for an item. This results in the unfiltered Drinks page being reload instead of the filter applied by the user. This will be address in a future development sprint.
+It was observed during testing that it would be from a design standpoint if the Drinks page didn't reload after clicking the "Add" button for an item. This results in the unfiltered Drinks page being reload instead of the filter applied by the user. This will be address in a future development sprint.
 
 ### Automated Testing
 
 #### Python Testing
 
-Using Django's built in TestCase Class, 44 test were written in order to test views, form, model and apps in each of the sites modules. 
+Using Django's built in TestCase Class, 44 tests were written in order to test views, form, model and apps in each of the site's modules. 
 
 #### Coverage
 
 To ensure that at least 80% of this projects code was tested, [Coverage.py](https://coverage.readthedocs.io/en/v4.5.x/#) was used to measure the testing done. 
 
-The final project achieve Coverage of **86%** for it's code. 
+The final project achieves Coverage of **86%**. 
 
 [Coverage.py](https://coverage.readthedocs.io/en/v4.5.x/#) is include in the projects [requirements.txt](requirements.txt) and is loaded with the other requirements when run. 
 
@@ -716,7 +716,7 @@ Please note that at the time of submission this badge was marked as passing.
 
 This project is currently live on Heroku : [BarTender](https://bartender-ms4.herokuapp.com/)
 
-It should be noted that during the course of the development of this project static and media files were not uploaded to  GitHub. This was achieve by adding the folder names to the .gitignore file. The reason for this is that Heroku can't host these files. As this is the case they are hosted from an AWS S3-Bucket. The static folder was only pushed to this GitHub repository for the purposes of project assessment by Code Institute.
+It should be noted that during the course of the development of this project static and media files were not uploaded to  GitHub. This was achieved by adding the folder names to the .gitignore file. The reason for this is that Heroku can't host these files. As this is the case, they are hosted from an AWS S3-Bucket. The static folder was only pushed to this GitHub repository for the purposes of project assessment by Code Institute.
 
 ### Local Deployment
 To run this project locally on any system the following will need to be installed:

@@ -28,6 +28,7 @@ class UserRegistrationForm(UserCreationForm):
         }
 
     def clean_email(self):
+        """validate email field"""
         email = self.cleaned_data.get('email')
         username = self.cleaned_data.get('username')
         if User.objects.filter(email=email).exclude(username=username):
@@ -35,6 +36,7 @@ class UserRegistrationForm(UserCreationForm):
         return email
 
     def clean_password2(self):
+        """ validate confirm password field field """
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
 
