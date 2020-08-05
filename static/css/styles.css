@@ -1,0 +1,250 @@
+/* ------------ Footer ------------ */ 
+/* This keeps the footer at the bottom of a page which a height of less than 100vh */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;   /*  footer */
+    background-color: #f7f7f9;
+    position: relative;
+    min-height: 60vh;
+  }
+
+
+/* ------------ Home Page ------------ */ 
+
+.background {
+    background-image: url("/media/images/cocktail-bar-hd.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    min-height: 400px;
+}
+
+.home {
+    position: absolute;
+    width: 80%;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    color: white;
+    border: 1px solid #ffffff;
+}
+
+.btn-home {
+    width: 100%;
+    color: white;
+    background-color: maroon;
+}
+
+.btn-home:hover {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #fff;
+    background-color: rgba(128, 0, 0,0.5);
+}
+
+footer {
+    padding: 1rem;
+}
+
+/* ------------ Messages/Alerts ------------ */ 
+
+.alert {
+    margin: 0;
+}
+
+/* ------------ links ------------ */
+
+.footer-link {
+    color: white;
+    text-decoration: underline;
+}
+
+.footer-link:hover {
+    color: #d9534f;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+/* ------------ booking and order form validation ------------ */
+.error-msg {
+    color: red;
+    text-decoration: underline;
+}
+
+.help-inline {
+    color: red;
+    text-decoration: underline;
+}
+
+/* ------------ stripe form validation ------------ */
+#stripe-error-message {
+    color: red;
+    text-decoration: underline;
+}
+
+/* To find the messy information text in the password reset confirm page */
+.form-group > div > ul {
+    display: none;
+}
+
+input > p > .help-block {
+    display: none;
+}
+
+/* ------------ Buttons ------------ */
+
+.btn {
+    max-height: 45px;
+    color: #fff;
+    background-color: maroon;
+}
+
+.btn-sm {
+    color: #fff;
+    background-color: maroon;
+}
+
+.button-line {
+    line-height: 2.5;
+}
+
+
+/* ------------ General Formating ------------ */
+.row {
+    margin: 15px 0;
+}
+
+
+.content-bubble {
+    border: 1px solid lightgray;
+    border-radius: 6px;
+    margin: 1.5rem;
+    padding: 1rem;
+    background-color: #ffffff;
+}
+
+
+/* --------- Cart Page --------- */
+.cart-item {
+    padding: 0;
+    margin: 0;
+}
+
+.cart-img {
+    max-height: 200px;
+    max-width: 200px;
+
+}
+
+.cart-body {
+    padding: 1rem;
+}
+
+.checkout-line {
+    line-height: 45px;
+}
+
+/* --------- Drinks Page --------- */
+
+.card {
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    margin: 1rem 0;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+} 
+
+.card-body {
+    padding: 0.5rem;
+    min-height: 140px;
+}
+
+.btn-drinks {
+    color: white;
+    background-color: maroon;
+}
+
+/* ---------- Booking ---------- */
+.booking {
+    background-color: #f7f7f9;
+}
+
+.floor-plan-img {
+    width: 100%;
+    margin-top: 3rem;
+}
+
+/*--- Media Queries ---*/
+
+@media(min-width: 768px) {
+    .floor-plan-break {
+        border: 0;
+        border-left: 1px solid rgba(0,0,0,.125);
+    }
+}
+
+
+/* --- Map ---*/
+#map {
+    height: 150px;  
+    width: 100%;  
+}
+
+.map-footer {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* ---------- Navbar ---------- */
+
+/* ---- Logo ---- */
+.logo {
+    height: 25px;
+    width: 25px;
+    vertical-align: text-top;
+}
+
+@media(max-width: 1024px) {
+    .nav-item {
+        margin-right: 0.5rem;
+    }
+}
+
+.nav-link {
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#navbar-brand {
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#navbar-brand:hover {
+    color: rgba(255,255,255,0.5);
+}
+
