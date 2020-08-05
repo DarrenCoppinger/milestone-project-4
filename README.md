@@ -9,23 +9,24 @@
 ---
 
 ## Introduction
-This website, [BarTender](https://bartender-ms4.herokuapp.com/), was designed as a part of my Code Institute Full Stack Development course, specifically the Full Stack Framewords with Django module.
+This website, [BarTender](https://bartender-ms4.herokuapp.com/), was designed as a part of my Code Institute Full Stack Development course, specifically the Full Stack Frameworks with Django module.
 The website is an online tool for a fictitious bar of the same name. 
-
-
 
 ## Table of Contents
 0. [**Introduction**](#introduction)
 1. [**UX**](#ux)
+    - [**Aims**](#aims)
+        - [**User Aims**](#user-aims)
+        - [**Business Aims**](#business-aims)
     - [**Design Objectives**](#design-objectives)
         - [**Appropriate for Audience**](#appropriate-for-audience)
-        - [**Content Relavence and Accuracy**](#content-relevence-and-accuracy)
+        - [**Content Relevance and Accuracy**](#content-relevence-and-accuracy)
         - [**Content Grouping**](#content-grouping)
         - [**Technology**](#technology)
-    - [**User stories**](#user-tories)
+    - [**User stories**](#user-stories)
     - [**Design**](#design)
         - [**Frameworks**](#frameworks)
-        - [**Colors**](#colors)
+        - [**Colours**](#colours)
         - [**Icons**](#icons)
         - [**Typography**](#typography)
     - [**Wireframe**](#wireframe)
@@ -50,7 +51,7 @@ The website is an online tool for a fictitious bar of the same name.
         - [**WC3 Markup Validator**](#w3c-markup-validator)
         - [**W3C Jigsaw CSS Validator**](#w3c-jigsaw-css-validator)
         - [**PEP8 Validator**](#pep8-validator)
-    - [**Browers Testing**](#browers-testing)
+    - [**Browser Testing**](#browers-testing)
     - [**User Stories Testing**](#user-stories-testing)
         - [**User Story 1**](#user-story-1)
         - [**User Story 2**](#user-story-3)
@@ -63,6 +64,7 @@ The website is an online tool for a fictitious bar of the same name.
         - [**Test Cart**](#test-cart)
         - [**Test Checkout**](#test-checkout)
         - [**Test Contact**](#test-contact)
+        - [**Test About**](#test-about)
     - [**Known Issues**](#known-issues)
     - [**Automated Testing**](#automated-testing)
         - [**Python Testing**](#python-testing)
@@ -79,25 +81,20 @@ The website is an online tool for a fictitious bar of the same name.
 ---
 
 ## UX
+This website has a number of user and business aims. They are as follows:
 
-
-This website has a number of user and business goa
-
-provides users with a tool that allows them to book a seat in a bar on the "Booking" page. 
-Through the admin functionality of the website the the bar staff can approve, deny or amend the booking request (potentially after contacting the customer directly). 
-
-### Goals
-#### User Goals
-The user goals for this website are to:
+### Aims
+#### User Aims
+The user aims for this website are to:
 - provide a booking system for customers to request a type of seat in the bar for a particular date and time
 - provide a drinks/products page to act as a complete menu of what is available to the customer (this removes the requirement of a physical menu)
-- provide a completely contactless way for customers to contruct and place an order from the bar for a particular table.
+- provide a completely contactless way for customers to construct and place an order from the bar for a particular table.
 - provide a contactless way for a customer to pay for an order they have constructed
 
-#### Business Goals
-The business goals for this website are to:
+#### Business Aims
+The business aims for this website are to:
 - provide a database of booking requests from customers for staff to review.
-- reduce staff workload creating a booking system that sends automatic emails emails to the customers when the status of their application changes.
+- reduce staff workload creating a booking system that sends automatic emails to the customers when the status of their application changes.
 - provide a contactless payment mechanism to remove the requirement of processing payments through a card machines or cash.
 - provide a mechanism for customers to make enquires through the website.
 
@@ -112,10 +109,10 @@ The audience for this website will be English speaking, technology savvy and wil
 
 Although the website will accommodate all visitors, its primary audience will be technology literate. Using the bootstrap framework means that this website has a mobile first approach to development. However, it will also perform well on a large screen sizes.
 
-#### Content Relevance and Accuracy
+#### Content Relevence and Accuracy
 The content to the site must be relevant to the site owners and their audience. 
 
-As such, the website operator/administrator can be add products to the Drinks page through the backend of the site. Products can be edited and updated as required. THis ensures that the content of the website is relevent.
+As such, the website operator/administrator can be add products to the Drinks page through the backend of the site. Products can be edited and updated as required. This ensures that the content of the website is relevant.
 
 #### Content Grouping
 The website content is grouped into easily understood sections (Home, Booking, Drinks, Login/Logout, Register, Cart, Checkout, About Us, Contact Us). 
@@ -137,19 +134,19 @@ Additionally, the following requirements should be met by the website:
 
 "As a user of this website, I would like to- _____________________"
 - view the website from all device types (mobile, tablet or desktop)
-- contact the site adminstrators to make a inquiry
+- contact the site administrators to make a inquiry
 - search the website for a drink
 
 ### Design
-The style of the site is inspired by the minimumist aesthetic of a modern cocktail club. These clubs tend to have dark, cool and simple designs.
+The style of the site is inspired by the minimalist aesthetic of a modern cocktail club. These clubs tend to have dark, cool and simple designs.
 
-To achieve this the Bootswatch theme [Lux](https://bootswatch.com/lux/) was used and amended as required to fix the projects requirements.
+To achieve this the [Bootswatch](https://bootswatch.com/) theme [Lux](https://bootswatch.com/lux/) was used and amended as required to fix the projects requirements.
 
 #### Frameworks
 For this project the framework [Django](https://www.djangoproject.com/) was used. Additionally, [Bootstrap](https://getbootstrap.com/) was used for the design framework.
 
-#### Colors
-The main colors used, which are primary form the Lux bootswatch style, are as follows:
+#### Colours
+The main colours used, which are primary form the Lux bootswatch style, are as follows:
 - ![#1a1a1a](https://placehold.it/15/1a1a1a/1a1a1a) `#1a1a1a` (**off black**)
 - ![#f7f7f9](https://placehold.it/15/f7f7f9/f7f7f9) `#f7f7f9` (**light grey**)
 - ![#800000](https://placehold.it/15/800000/800000) `#800000` (**maroon**)
@@ -191,7 +188,7 @@ Wireframes for both the desktop and mobile versions of the website were produced
 ### Opportunities Analysis
 At the beginning of this project the major features to be developed and deployed on this website planned. The results of this preliminary analysis are summarized in the following table and graph. 
 
-In the below opportunites analysis, the viability/feasibility is lower than the importance total. Therefore, all the features on this list will not be implemented. The "Booked Out feature" was left for a later development sprint.
+In the below opportunities analysis, the viability/feasibility is lower than the importance total. Therefore, all the features on this list will not be implemented. The "Booked Out feature" was left for a later development sprint.
 
 | Opportunities | Importance | Viability/feasibility | Difficulty |
 |:---|:---:|:---:|:---:|
@@ -217,7 +214,7 @@ If the user is logged in the navbar contains the Home, Booking, Drinks, Cart and
 Each page has a message panel that appears directly under the navbar when a messages is generated. 
 
 #### Home
-The Home page includes background image of a cocktail bar which is fixed in position at the center of the page. A floating transparent container appears infront of the image which holds a greeting statement. There are also two buttons at the bottom of the container which change depending on whether the user is logged in or not. If they are not logged on the buttons will direct the user to the "Login" and "About" pages. If the user is logged in the buttons will direct them to the "Booking" and "Drinks" pages.
+The Home page includes background image of a cocktail bar which is fixed in position at the centre of the page. A floating transparent container appears in front of the image which holds a greeting statement. There are also two buttons at the bottom of the container which change depending on whether the user is logged in or not. If they are not logged on the buttons will direct the user to the "Login" and "About" pages. If the user is logged in the buttons will direct them to the "Booking" and "Drinks" pages.
 
 #### Booking
 The Booking page allows users to request a particular type of seat in the bar for a particular time. 
@@ -232,13 +229,13 @@ The Booking page includes input fields for all the required information to make 
 
 A final model field is excluded from the customers booking form (ReservationForm), that is the "Status" field. This is used by the staff to define whether the booking has been accepted or not. The field has three set options: "Requested", "Accepted" or "Denied". By default it is set to "Requested" until altered by a member of staff.
 
-Widgets were used for the date and time fields so they must be input in date and time format. On the MS Edge and Google Chrome browers the user can use the date or time picker instruments (by clicking the calendar or clock icons) to fill in these fields. The measures reduces the chances of incorrect data being submitted in the form.
+Widgets were used for the date and time fields so they must be input in date and time format. On the MS Edge and Google Chrome browsers the user can use the date or time picker instruments (by clicking the calendar or clock icons) to fill in these fields. The measures reduces the chances of incorrect data being submitted in the form.
 
-The Booking feature also requires the user to add in additional details that were not provided during registration (Full Name and phone number). During the design of the website the author considered adding these details into the registeration form so they could be passed into the Booking form as initial data. However, it was decided that is was a simpler solution to only ask the user for this information only when it was necessary.
+The Booking feature also requires the user to add in additional details that were not provided during registration (Full Name and phone number). During the design of the website the author considered adding these details into the registration form so they could be passed into the Booking form as initial data. However, it was decided that is was a simpler solution to only ask the user for this information only when it was necessary.
 
 A "Floor Plan" of the bar is also included on the right hand side of the page to provide the user with an overview of the bars layout. This column will move to underneath the "Booking Details" form on screens of <768px.
 
-A member of BarTenders staff who is set up as a superuser/administrator of the website will be able to access all the requested booking applications from the Bookings panel in the Admin section of the website. The staff member can review and change any details of the booking from the admin panel. If there is an issue with seat availability at a certain time they have the contact details of the customer in the booking form so they can be contacted to discuss any changes. 
+A member of BarTender's staff who is set up as a superuser/administrator of the website will be able to access all the requested booking applications from the Bookings panel in the Admin section of the website. The staff member can review and change any details of the booking from the admin panel. If there is an issue with seat availability at a certain time they have the contact details of the customer in the booking form so they can be contacted to discuss any changes. 
 
 If the booking is altered and saved the customer will receive an updated automatic email with these details. If the booking is accepted the staff member can change it's status from "Requested" to "Accepted" this will result in a different automatic email being sent to the customer. Similarly if the status is changed to "Denied" another automatic email is sent to the customer.
 
@@ -250,9 +247,9 @@ These emails can be found at the following location in the project files:
 #### Drinks
 The Drinks page presents the drinks/products added to the Product model. By default the page is loaded with the all the entries displayed. 
 
-At the top of the page is a arrangement of buttons which have the names of the catagories defined in the database "Pints", "Bottles", "Soft Drinks", "Cocktails" and "Spirits". The "All" button is the default view which displays all catagories. Each of the other buttons will limit the entries presented to a single catagory.
+At the top of the page is a arrangement of buttons which have the names of the categories defined in the database "Pints", "Bottles", "Soft Drinks", "Cocktails" and "Spirits". The "All" button is the default view which displays all categories. Each of the other buttons will limit the entries presented to a single category.
 
-Each entry on the Drinks page is represented as a Bootstrap Card. Each card has an image, title, decription (truncated to 30 characters) and price associated with it. Underneath these details is a small form which allows the user to select the number of the item they wish to add to their Cart and then click the "Add" button to execute this. 
+Each entry on the Drinks page is represented as a Bootstrap Card. Each card has an image, title, description (truncated to 30 characters) and price associated with it. Underneath these details is a small form which allows the user to select the number of the item they wish to add to their Cart and then click the "Add" button to execute this. 
 
 Each card has a hoover effect to indicate that if clicked it will provide more information by bring clicked. It does this by bringing the user to the drinks individual listing page (listing.html). This is also indicated by the truncated presentation of the description text underneath the items image.
 
@@ -262,12 +259,12 @@ The page is designed to be responsive and with the number of entries in a row va
 - 576px < width < 768px  : 2 entries per row
 - width < 576px : 1 entry per row
 
-A superuser/administrator of the site can use the Products section of the websites admin panel to add additional drinks/prodcuts to the Products database. The superuser simply needs to click the "Add Product" button and populate the following model fields:
-- Catagory (choice of Pints, Bottles, Soft-drinks, Cocktails or Spirits)
+A superuser/administrator of the site can use the Products section of the websites admin panel to add additional drinks/products to the Products database. The superuser simply needs to click the "Add Product" button and populate the following model fields:
+- Category (choice of Pints, Bottles, Soft-drinks, Cocktails or Spirits)
 - Name
 - Description
 - Price
-- Image (although not manditory, for aesthetic purposes, product images should have a 1:1 aspect ratio)
+- Image (although not mandatory, for aesthetic purposes, product images should have a 1:1 aspect ratio)
 
 #### Cart
 The Cart page presents a summary of all the items added to the users cart. If the user has not added an item to their cart they will be show the message "YOUR CART IS EMPTY".
@@ -284,7 +281,7 @@ The checkout page presents an Order Summary and a Payment Details form. The Orde
 
 The checkout page also displays the Payment Details form which is made up of two forms, the Order Form and the Payment Form. The Order Form requires the user to input their table number, Full Name and phone number.
 
-Underneath the Order Form is the Payment Form. This requires the credit card details of the user (Credit card number, CVC Expiry Month and Expiry Year). Any Errors generated through submission of this form will appear above the form. Error messages are colored red and underlined.
+Underneath the Order Form is the Payment Form. This requires the credit card details of the user (Credit card number, CVC Expiry Month and Expiry Year). Any Errors generated through submission of this form will appear above the form. Error messages are coloured red and underlined.
 
 Underneath these forms is a "Confirm Order" button to submit the payment details. There is also "Go to Cart" button to bring the user back to their cart view to make any alterations they require.
 
@@ -309,9 +306,8 @@ If the user enters all fields and the form is successfully validated they will b
 #### Login
 The login page is accessed via a button on the navbar or the sidenav on mobile devices. Clicking this brings the user to the user login form page. The page has two fields, "Username" and "Password" with a submit button labelled "Login". 
 
-- If the users has not registered for an account but tries to login by inputing an unregistered username and password they will see a message under the navbar saying "Your username or password is incorrect. Note that both fields may be case-sensitive."
+- If the users has not registered for an account but tries to login by inputting an unregistered username and password they will see a message under the navbar saying "Your username or password is incorrect. Note that both fields may be case-sensitive."
 - If the user enters both an existing username and a correct password they will be redirected to the home page of the site and shown a message of "You have successfully logged in!"
-
 
 If the user has signed up to the site but forgotten their password the can click the "Reset Password" button underneath the login form. This will bring them to a "Password Reset" which will require them to input the email address they used during registration. Submitting, this form will send an email to this address allowing the user to reset their password.
 
@@ -334,13 +330,18 @@ These feature include:
 - Link all orders for a particular table to an specific booking. This would allow the passing of the customers details from the Reservation From to the Order Form and reduce the need for the customer to enter in this information twice. 
 
 ## Technologies Used
+### General Technologies
+- [Gitpod](https://gitpod.io/) - IDE used for development
+- [GitHub](https://github.com/) - Used as remote storage for project
+- [balsamiq](https://balsamiq.com/) - Used for wireframes
+
 
 ### Frontend Technologies
 - [HTML](https://www.w3schools.com/html/html5_intro.asp) - Employed for markup text. 
 - [CSS](https://www.w3schools.com/css/) - Used for cascading styles.
 - [jQuery 3.4.1](https://code.jquery.com/jquery/) - Used for JavaScript functionality.
 - [Bootstrap 4.5.0](https://getbootstrap.com/) - Used for the design framework.
-
+- [Stripe](https://stripe.com/) - Used to make secure payments
 
 ### Back-End Technologies
 - [Python 3.7.6](https://www.python.org/) - Used as the programming language at the back-end.
@@ -348,16 +349,20 @@ These feature include:
 - [Heroku](https://www.heroku.com) - Used for hosting the deployed website.
 - [PostgreSQL ](https://www.heroku.com/postgres) - A relational SQL database used as plugin through Heroku.
 - [AWS](https://aws.amazon.com/) - S3-Bucket and IAM used to host static and media files.
+- [EmailJS](https://www.emailjs.com/) - Used to manage contact form
 
 Details of all the packages used in this project can be found in the [requirements.txt](requirements.txt) file.
 
 ## Testing
-The follow validators were used to check the code developed from this project:
-- [WC3 Markup Validator](https://validator.w3.org/)
-- [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)
-- [PEP8 Validator](http://pep8online.com/) 
+Both automated and manual testing was used in the development of this site. Additonally, online validators were used to validate the code written for this project. Finally, the project was test on a number of browser to assess it's compatibility with them.
 
 ### Code Validators
+The follow validators were used to check the code developed from this project:
+- HTML - [WC3 Markup Validator](https://validator.w3.org/)
+- CSS - [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/)
+- JavaScript - [JShint Validator](https://jshint.com/)
+- Python - [PEP8 Validator](http://pep8online.com/) 
+
 #### WC3 Markup Validator
 [WC3 Markup Validator](https://validator.w3.org/) was used to validate the HTML code. 
 
@@ -377,16 +382,39 @@ Again this is not an error but a result of the validator not recognising the tem
 #### W3C Jigsaw CSS Validator
 [W3C Jigsaw CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate my CSS code. The CSS successfully passed this check with no errors.
 
+#### JShint Validator
+[JShint Validator](https://jshint.com/) was used to validate my JavaScript code. The follow feedback provided by the validators. However, each of the errors can be explained and so do not need to be acted on.
+- maps.js
+    - Metrics: 
+        -There is only one function in this file. It takes no arguments. This function contains only one statement. Cyclomatic complexity number for this function is 1.
+    - One undefined variable:
+        - google (Used by Google Maps JS API)
+    - Two unused variables:
+    	- markers (Used by GoogleMaps JS API)
+        - initMap (Used by Google Maps JS API)
+- sendEmail.js
+    - Metrics: There are 3 functions in this file. Function with the largest signature take 1 arguments, while the median is 1. Largest function has 2 statements in it, while the median is 2. The most complex function has a cyclomatic complexity value of 1 while the median is 1.
+    - One undefined variable:
+        - emailjs (used by the EMAILJS API)
+    - One unused variable
+        - sendMail (called on contact.html page by submitting form)
+- stripe.js
+    - Metrics: 
+        - There are 3 functions in this file. Function with the largest signature take 2 arguments, while the median is 0. Largest function has 11 statements in it, while the median is 4. The most complex function has a cyclomatic complexity value of 2 while the median is 1. 
+    - Two undefined variables: 
+    	- $ (used for jQuery)
+        - Stripe (used for Stripe API)
+
 #### PEP8 Validator
 [PEP8 Validator](http://pep8online.com/) was used to validate my python code. However, there were two remaining errors left in the settings.py file which are as follows:
 - 'env' imported but not used
     - this is incorrect as the env variables are import and used in the local deployment of this project
 - line 107 too long (83 > 79 characters)
-    - this is a line from the original django code and is as follows: 
+    - this is a line from the original Django code and is as follows: 
     `'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'`
     - As the line is the specifying a validator it was not altered.
 
-### Browers Testing
+### Browser Testing
 This website was tested on multiple browsers. They included:
 - [Google Chrome](https://www.google.com/chrome/)
 - [Microsoft Edge](https://www.microsoft.com/en-us/edge)
@@ -396,155 +424,168 @@ This website was tested on multiple browsers. They included:
 
 #### User Story 1
 **A user wants to book a particular type of seat for a certain date and time in the bar.**
-1. The User loads the app and is directed to the index.html page. The user sees the instructions on the page and the click the register button.
+1. The user loads the site and is directed to the index.html page. The user sees the instructions on the page and the click the register button.
 2. The user submits a completed registration form is redirected to the home page where there is a success message of "You have successfully registered" underneath the navbar.
-3. On the home page the user sees the buttons on the have now changed to "Booking" and "Drinks". Additionally, the navbar has changed from "Home", "Register" and "Login" to "Home", "Booking", "Drinks", "Logout" and "Cart". The user clicks the "Booking" button on either the page or the navbar.
+3. On the home page the user sees the buttons have now changed to "Booking" and "Drinks". Additionally, the navbar has changed from "Home", "Register" and "Login" to "Home", "Booking", "Drinks", "Logout" and "Cart". The user clicks the "Booking" button on either the page or the navbar.
 4. The user see the floor plan on the left of the "Booking" page showing the layout of the bar.
-5. The user fills out the form choicing from the seat type options (Bar Stool, Window Seat, Booth or Table), Phone number, date, Booking Start Time and Booking End Time. These field can generate the following types of validation errors:
+5. The user fills out the form choosing a Seat Type option (Bar Stool, Window Seat, Booth or Table), Phone number, date, Booking Start Time and Booking End Time. These field can generate the following types of validation errors:
     - If the user doesn't enter a valid phone number they get the message "Enter a valid phone number (e.g. +353861234567)"
     - If the user chooses a date that has already past they get the message "Invalid date - selected date passed"
-    - If the user choose a start or end time for the booking outside of the bars opening hourse they get the error message "Booking must start/end during bar opening hours 12:30 - 00:00."
-    - If ther user chooses a end time that is earlier than the selected start time the error message "Booking can not end before it starts" will be displayed.
+    - If the user choose a start or end time for the booking outside of the bars opening hours they get the error message "Booking must start/end during bar opening hours 12:30 - 00:00."
+    - If the user chooses an end time that is earlier than the selected start time the error message "Booking can not end before it starts" will be displayed.
     - Each of the above errors generates a message under the navbar of "We were unable to make this reservation"
 6. On submission of the booking form the user is redirected back to the home page with the message "Your have requested a booking. A member of our staff will be in touch shortly to confirm your booking." underneath the navbar.
-7. The user will also receive an automatic email (to the email provided during registration) specifying the "Booking Status","Date", "Start Time", and "End Time". The email says that it will be followed up on by a member of staff. 
-8. In a real world situtation the user would be rang by the staff of BarTender to confirm their details and make any amendments to their booking dependant on seat availability at certain times.
-9. After staff have reviewed and confirmed the booking with the user the staff can change the status of the booking to either "Accepted" or "Denied" based on thier interaction with the user. When they save the chage to the booking request on the admin part of the site. The user will receive an email with the confirmed details and the message "We are please to confirmed your booking. We look forward to seeing you!".
+7. The user will also receive an automatic email (to the email provided during registration) specifying the "Booking Status", "Date", "Start Time", and "End Time". The email says that it will be followed up on by a member of staff. 
+8. In a real world situation the user would be rang by the staff/site admin of BarTender to confirm their details and make any amendments to their booking dependant on seat availability at certain times.
+9. After staff have reviewed and confirmed the booking with the user, the staff can change the status of the booking to either "Accepted" or "Denied" based on their interaction with the user. When the admin saves the changes to the booking request on the backend of the site, the user will receive an email with the confirmed details and the message "We are please to confirmed your booking. We look forward to seeing you!".
 
 #### User Story 2
 **A user wants to look through the drinks/products that are available on from the bar to find a specific product.**
-1. The User loads the app and is directed to the index.html page. The user see's the search bar in the top left hand corner of the screen and types in the search term and clicks search.
-2. As the user isn't looked in they are directed to the login page. As the user hasn't set up an accoun they click the register button at the bottom of the page and is cirected to the registration page.
-3. The user submits a completed registration form is redirected to the home page where there is a success message of "You have successfully logged in!" underneath the navbar.
+1. The User loads the site and is directed to the index.html page. The user see's the search bar in the top right corner of the screen. Into this they type in a search term and clicks search.
+2. As the user isn't logged in they are directed to the login page. As the user hasn't set up an account they click the register button at the bottom of the page and are directed to the registration page.
+3. The user submits a completed registration form and is redirected to the home page where there is a success message of "You have successfully logged in!" underneath the navbar.
 4. On the home page the user sees the buttons on the have now changed to "Booking" and "Drinks". Additionally, the navbar has changed from "Home", "Register" and "Login" to "Home", "Booking", "Drinks", "Logout" and "Cart". The user clicks the "Drinks" button on either the page or the navbar.
-5. The user is directed to the produts page where all the current products available from the bar are displayed. 
-6. The user sees that that there are buttons at the top of the Drinks page that descibes name of the catagories the drinks are broken down into.
-7. The user can either search for the drink they are looking for by entering a searh term in the search bar or by clicking the relevent catagory from the buttons at the top of the page. Either choice will generate a Drinks page with a subset of all teh drinks in the products database.
-8. The user now can choose the exact product they are looking for. If the user clicks on the drinks/product entry they will be directed the products individual page. This page with present the products image, name, full untruncated desciption and a for for adding that item to their cart. If the user wishes to turn to the cart there is a redirect button at the bottom of the page which will bring them back to the Drinks page.
+5. The user is directed to the Drinks page (products.html) where all the current products available from the bar are displayed. 
+6. The user sees that that there are buttons at the top of the Drinks page that describes the categories the drinks are broken down into (Pints, Bottles, Soft-drinks, Cocktails and Spirits).
+7. The user can either search for the drink they are looking for by entering a search term in the search bar or by clicking the relevant category from the buttons at the top of the page. Either choice will generate a Drinks page with a subset of all the drinks in the Products database.
+8. The user now can choose the exact product they are looking for. If the user clicks on the drinks/product entry they will be directed the products individual page (the products listing). This page will present the products image, name, full untruncated description and an input form for adding that item to their cart. If the user wishes to turn to the cart there is a redirect button at the bottom of the page which will bring them back to the Drinks page.
 
 #### User Story 3
-**A user wants to order and pay for a drink (specifically a cocktail) to a table that they are sitting at through a completely contactless means.**
-1. The user has already register for the site and logged in along the lines of the first user stories presented above. They have booked a table in the bar and have taken their seats at the booking time.
+**A user wants to order a drink (specifically a cocktail) to their table and pay for it through contactless means.**
+1. The user has already register for the site and logged in (as described in the first and second user stories presented above). They have booked a table in the bar and have taken their seats at the booking start time.
 2. From the home page the user clicks the Drinks icon in the navbar and is directed to the Drinks page.
 3. The user clicks the cocktail button at the top of the page to isolate the cocktails that are available.
-4. The user reviews what is on the menu and choose to order 4 drinks. They navigate to there selected drink and use the form at the bottom of the entry to enter the number 4 (alternatively they could user the arrows on the right side of the input box to adjust the number being ordered). 
+4. The user reviews what is on the menu and chooses to order a drink. They navigate to the selected drink and use the form at the bottom of the entry to enter the number 4 (alternatively they could user the arrows on the right side of the input box to adjust the number being ordered). 
 5. The user then clicks the add button and is redirected back to the full Drinks menu. The message "Item successfully added to your Cart!" is displayed under the navbar.
-6. The user see that a badge with the number 4 has appeared beside the Cart icon in the navbar. The user clicks the cart icon and is directed to the cart page.
-7. The user is presented with a summary of their order on the Cart page. The user realised they have need to order another drink and so adjust the number in the quanty field to 5 and click the Amend Button beside it. This reloads the page and a success message of "Successfully adjusted item in your Cart!" is displayed under the Navbar.
-8. The user is now satisfied that the order is correct and so clicks the "Checkout" button underneath the otrder total at the bottom of the page.
-9. The user is directed to the checkout page. On the right side the user see the final version of teh order they have created with the total cost underneath it. On the right side they see a payment details form.
-10. The user selects their table number (in a real world situation this would be specified on their table) and inputs their name and phone number (required incase there is difficulty locating the person who made the orderd).
+6. The user see that a badge, with the number 4 inside it, has appeared beside the Cart icon in the navbar. The user clicks the cart icon and is directed to the cart page.
+7. The user is presented with a summary of their order on the Cart page. The user realised they need to order another drink and so adjust the number in the quantity field to 5 and click the Amend Button beside it. This reloads the page and a success message of "Successfully adjusted item in your Cart!" is displayed under the Navbar.
+8. The user is now satisfied that the order is correct and so clicks the "Checkout" button underneath the order total at the bottom of the page.
+9. The user is directed to the checkout page. On the right side the user see the final version of the order they have created with the total cost underneath it. On the right side they see a payment details form.
+10. The user selects their table number (in a real world situation this would be specified on their table) and inputs their name and phone number (required in case there is difficulty locating the person who made the order).
 11. The user inputs their credit card details (number, CVC, Expiry month, and expiry year). The user then clicks the "Confirm" button to submit the order. If user fills in the form incorrectly the following error can be displayed:
     - If the card number is entered incorrectly the error message "Your card number is incorrect." is displayed.
     - If the cards CVC is entered incorrectly the error message "Your card's security code is invalid." is displayed.
     - If the cards expiry month or year has passed the user will see error message "Your card's expiration month/year is invalid." displayed at the top of the form
     - If the user doesn't enter a valid phone number they get the message "Enter a valid phone number (e.g. +353861234567)"
     - Each error above is also accompanied by an error message under the navbar of "We were unable to take payment with that card".
-12. If the user successfully submits the Payment Details form they are redirected to the Drinks page with the following sucess message displayed under the navbar "Your have successfully paid".
+12. If the user successfully submits the Payment Details form they are redirected to the Drinks page with the following success message displayed under the navbar "Your have successfully paid".
 
 
 ### Manual Testing
 #### Test Navbar and Footer
 1. Navbar
-    - Check on that a logged out user see the Home, Register and Login items in the navbar.
+    - Check that a logged out user see the Home, Register and Login items in the navbar.
     - Check that a logged in user see the Home, Booking, Drinks, Logout and Cart items in the navbar.
-    - Visit the a page of the website on a desktop sized screen (lg)
+    - Visit the a page of the website on a desktop sized screen (>992px).
     - Hover over the name text "BarTender" and logo to check that the hover effects work.
     - Click the navbar-brand text "BarTender" to check that it links to the Home page.
     - Hover over each navbar item to check the hover effect works for each one.
     - Click on each one of the navbar buttons to ensure that each links to the correct page.
     - Alter the screen size from desktop size down to medium devices (<992px) size to check that the navbar is responsive. At that size the navbar changes to the toggler icon with just the site name and logo. The menu items move to the sidenav menu.
     - Click the toggler icon to check that the drop-down sidenav menu activates.
-    - Hover over each of the sidenav menu menu items and the login button to make sure their hover effect activates.
+    - Hover over each of the sidenav menu items and the login button to make sure their hover effect activates.
     - Click each of the drop-down menu buttons to make sure that they links to the correct page.
 
 2. Footer
     - Check that the body element is always a minimum of 100% of the viewport height and that the footer is never floating in the middle of the screen
-    - Check that the hover effects for the links in the Site Links section of the footer are reactive and that the get direct link hover effect is also reactive.
+    - Check that the hover effects for the links in the Site Links section of the footer are reactive and that the Get Directions link hover effect is also reactive.
     - Check that the Google Maps API viewport is displaying and that the full screen view in it's top right corner works.
     - Alter the screen size from above medium/tablet size down to small/mobile size (<768px) to check that the one row of four columns in the footer rearrange themselves into two rows of two columns.
-    - Alter the screen size from small/mobile size down to extra-small/mirco size (<576px) to check that the two rows of two columns in the footer rearrange themselves into four rows of one column.
+    - Alter the screen size from small/mobile size down to extra-small/micro size (<576px) to check that the two rows of two columns in the footer rearrange themselves into four rows of one column.
+
 3. Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
 
 #### Test Home
 1. Logged Out
-- Check that the Bottons in the central text area are "Register" and "About Us". Check that the buttons bring the user to the correct location.
+    - Check that the buttons in the central text area are "Register" and "About Us". Check that the buttons bring the user to the correct location.
 
 2. Logged In
-- Check that the Bottons in the central text area are "Booking" and "Drinks". Check that the buttons bring the user to the correct location.
+    - Check that the buttons in the central text area are "Booking" and "Drinks". Check that the buttons bring the user to the correct location.
+
+3. Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
 
 #### Test Booking
-- Visit the a Booking page of the website on a desktop sized screen (lg) to check that the page is displayed in 2 columns.
+- Visit the a Booking page of the website on a desktop sized screen (>992px) to check that the page is displayed in 2 columns.
 - Check that the page reduces to one column for <768px in width.
-- Check that the floor plan iamge on the left side of the page showing the layout of the bar -s loading correctly.
-- Check that when the user fills out the form fields for seat type, Phone number, date, Booking Start Time and Booking End Time incorrectly the following types of validation errors are generated:
+- Check that the floor plan image on the left side of the page, showing the layout of the bar, is loading correctly.
+- Check that when the user fills out the form fields for Seat Type, Phone number, date, Booking Start Time and Booking End Time incorrectly the following types of validation errors are generated:
     - If the user doesn't enter a valid phone number they get the message "Enter a valid phone number (e.g. +353861234567)"
     - If the user chooses a date that has already past they get the message "Invalid date - selected date passed"
-    - If the user choose a start or end time for the booking outside of the bars opening hourse they get the error message "Booking must start/end during bar opening hours 12:30 - 00:00."
-    - If ther user chooses a end time that is earlier than the selected start time the error message "Booking can not end before it starts" will be displayed.
+    - If the user chooses a start or end time for the booking outside of the bars opening hours they get the error message "Booking must start/end during bar opening hours 12:30 - 00:00."
+    - If the user chooses a end time that is earlier than the selected start time the error message "Booking can not end before it starts" will be displayed.
     - Each of the above errors generates a message under the navbar of "We were unable to make this reservation"
 - Check that on submission of the booking form the user is redirected back to the home page with the message "Your have requested a booking. A member of our staff will be in touch shortly to confirm your booking." underneath the navbar.
-- Check that the user receives an automatic email (to the email provided during registration) specifying the "Booking Status","Date", "Start Time", and "End Time".
-- Check that when an administrator (or staff memeber with access to the admin part of the website) make any amendments to the booking and saves the changes that the user receive another automatic email confirming this with the subjest "Booking Request at BarTender - REQUEST ALTERED".
+- Check that the user receives an automatic email (to the email provided during registration) specifying the "Booking Status", "Date", "Start Time", and "End Time".
+- Check that when an administrator (or staff member with access to the admin part of the website) make any amendments to the booking and saves the changes that the user receive another automatic email confirming this with the subject "Booking Request at BarTender - REQUEST ALTERED".
 - Check that when an administrator of the site changes the status of the booking to either "Accepted" or "Denied" that the user receives an email with the confirmed details and the subject of either ""Booking Request at BarTender - ACCEPTED" or "Booking Request at BarTender - DENDIED".
+- Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
 
 #### Test Drinks/Listings pages
-- Visit the a Drinks page of the website on a desktop sized screen (>992px) to check that the page is displays enteries 4 columns to a row.
-- Reduce the screen width to <992px to check the page changes to displays enteries 3 columns to a row.
-- Reduce the screen width to <768px to check the page changes to displays enteries 2 columns to a row.
-- Reduce the screen width to <576px to check the page changes to displays enteries 1 column to a row.
-- Check that clicking each of the buttons at the top of the page limits the page entry to the catagories they represent, i.e. Pints, Bottles, Soft-drinks, Cocktails, Spirits or All (all catagories).
-- Check that hovering over each entry results in a box shadow effect.
-- Check that the form at the bottom of each enrties card is clickable, that the value can be change both by typing and by using the arrows on the right of the input box.
-- Check that clicking the "Add" button reloads the full products page with the success message "Item successfully added to your Cart!".
+- Visit the Drinks page of the website on a desktop sized screen (>992px) to check that the page is displays drinks entries (drinks display cards) in 4 columns to a row.
+- Reduce the screen width to <992px to check the page changes to displays entries in 3 columns to a row.
+- Reduce the screen width to <768px to check the page changes to displays entries in 2 columns to a row.
+- Reduce the screen width to <576px to check the page changes to displays entries in 1 column to a row.
+- Check that clicking each of the buttons at the top of the page limits the page entry to the categories they represent, i.e. Pints, Bottles, Soft-drinks, Cocktails, Spirits or All (all categories).
+- Check that hovering over each drink entry triggers a box shadow effect.
+- Check that the form at the bottom of each entries card is editable, that the value can be change both by typing and by using the arrows on the right of the input box.
+- Check that clicking the "Add" button reloads the products page (products.html) with all database entries and the success message "Item successfully added to your Cart!".
 - Check that when an item has been successfully added to the users cart the a badge appears beside the cart icon in the navbar with the number of items in the cart shown.
-- Check that when a product on the Drinks page, that products Listing page is launch and that the drinks name, image, untruncated description and price are displayed. A form should also be displayed underneath this allowing the user to select an amount and add that product to the user cart.
+- Check that when a product entry on the Drinks page is clicked, the products Listing page is launch and that the drinks name, image, untruncated description and price are displayed. A form should also be displayed underneath this allowing the user to select an amount and add that product to the user cart.
+- Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
 
 #### Test Cart
-- Visit the a Cart page of the website and check the the page is responsive and that is displays drinks added to the cart in the following format:
-    - Desktop width(>992px): the images of the item is displayed on the left side of the screen and the title price and input form allowing the user to adjust the amount of the product in the Cart on the right side of the screen
-    - Mobile width(>768px): the image of the item is displayed on top of the items title, price and input form allowing the user to adjust the amount of the product in the Cart
-- Check that the total cost of the cart is correctly calculated and displayed at teh bottom of the page
-- Check that the input form at the bottom of the item entry loads the correct quanity of that item in the cart and that it can but adjusted by typing a different value or by using the arrows on the right of the input box.
+- Visit the Cart page of the website and check that the page is responsive and that it displays drinks added to the cart in the following format:
+    - Desktop width(>992px): the order item's image is displayed on the left side of the screen and on the right is shown the name, price, and input form allowing the user to adjust the amount of the product in the Cart.
+    - Mobile width(>768px): the order item's image is displayed on top of the items name, price and input form allowing the user to adjust the amount of the product in the Cart
+- Check that the total cost of the cart is correctly calculated and displayed at the bottom of the page
+- Check that the input form at the bottom of the item entry loads the correct quantity of that item in the cart and that it can but adjusted by typing a different value or by using the arrows on the right of the input box.
 - Check that if the quantity of an item is amended that the Cart page is reloaded with the success message "Successfully adjusted item in your Cart!"
--Check that when the Checkout button at the bottom of the Cart page is pressed that it loads the Checkout page.
+- Check that when the Checkout button at the bottom of the Cart page is pressed that it loads the Checkout page.
+- Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
 
 #### Test Checkout
-- Visit the a Checkout page of the website and check the the page is responsive and that it displays the users Cart in the following format:
-    - Desktop width(>992px): the order summary is shown on the left of the screen, this includes for each item the image (to the left), name, price and quantity of the item displayed. The payment details form is displayed on the right side of the screen.
-    - Mobile width(>768px): the order summary is shown on the top of the page this includes for each item the image (on top), name, price and quantity of the item displayed. The payment details form is displayed on beneath the order summary. 
+- Visit the Checkout page of the website and check the page is responsive and that it displays the users Cart in the following format:
+    - Desktop width(>992px): the order summary is shown on the left of the screen, this includes, on the left, each item's image and , to the right, the item's name, price and quantity of the item displayed. The payment details form is displayed on the right side of the screen.
+    - Mobile width(>768px): the order summary is shown on the top of the page with each order item's image (on top) and the item's name, price and quantity displayed underneath. The Payment Details form is displayed under the Order Summary. 
 - Check Confirm order button submits the Payment Details form (Order Form and Payment Form)
 - Check that "Go to Cart" button brings the user back to the Cart page
-- Check that if the user inputs their credit card number, CVC, Expiry month, and expiry year incorrectly and clicks "Confirm Order" button the following errors can be displayed:
+- Check that if the user inputs their credit card number, CVC, Expiry month, or expiry year incorrectly and clicks the "Confirm Order" button the following errors can be displayed:
     - If the card number is entered incorrectly the error message "Your card number is incorrect." is displayed.
     - If the cards CVC is entered incorrectly the error message "Your card's security code is invalid." is displayed.
     - If the cards expiry month or year has passed the user will see error message "Your card's expiration month/year is invalid." displayed at the top of the form
     - If the user doesn't enter a valid phone number they get the message "Enter a valid phone number (e.g. +353861234567)"
     - Each error above is also accompanied by an error message under the navbar of "We were unable to take payment with that card".
-- Check that if the user successfully submits the Payment Details form they are redirected to the Drinks page with the following sucess message displayed under the navbar "You have successfully paid".
+- Check that if the user successfully submits the Payment Details form they are redirected to the Drinks page with the following success message displayed under the navbar "You have successfully paid".
+- Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
 
 #### Test Search
 - Check that if the user is not logged in creating a search in the search bar will bring them to the login page.
-- Check that if a login in users enters a search term in the search box and clicks the serach button that the search results are presented on the product.html page correctly.
-
+- Check that if a login in users enters a search term in the search box and clicks the search button that the search results are presented on the product.html page correctly.
 
 #### Test Registration
 - Check that the form will only submit when all fields are populated and when the email field container a valid email type entry.
 - Check that when an email that has already been used by another user is entered the error message "Email address must be unique." is display"
-- Check that when an username that has already been used by another user is entered the error message "A user with that username already exists." is display"
-- Check that when the the password and Password Confirmation fields have different entries that the error message "Passwords must match." is displayed.
+- Check that when a username, that has already been used by another user, is entered the error message "A user with that username already exists." is display"
+- Check that when the Password and Password Confirmation fields have different entries that the error message "Passwords must match." is displayed.
 - Check that when the user submits a completed registration form they are redirected to the home page where there is a success message of "You have successfully registered!" underneath the navbar.
 - Check that the button under the form area is labelled "Login". Check that the button bring the user to the correct location.
+- Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
 
 #### Test Login
-- Check that the button under the form area is labelled "Register". Check that the button bring the user to the correct location.
 - Check that when the user enters an incorrect username and password combination that the error message "Your username or password is incorrect. Note that both fields may be case-sensitive." is displayed under the navbar.
 - Check that when the user submits a completed login form they are redirected to the home page where there is a success message of "You have successfully logged in!" underneath the navbar.
+- Check that the button under the form area is labelled "Register". Check that this button brings the user to the correct location.
+- Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
 
 #### Test Contact
-- Check that all form fields are required to sumbit the contact form.
-- Check that the initial user data of username and email are loaded into the form fields if the user is logged in.
+- Check that all form fields are required to submit the contact form.
+- Check that the initial user data (username and email) are loaded into the form fields if the user is logged in.
 - Check that on successful submission of the form the user is redirected to the home page with the following success message displayed under the navbar "Thank you for your message, we will be in touch shortly!".
+- Review of all functionality and responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
+
+#### Test About
+- Check that the text is displaying correctly on the page.
+- Review responsiveness on mobile screen size by using [Responsinator](https://www.responsinator.com/).
 
 #### Known Issues
 It was observed during testing that it would be from a design stand point if the Drinks page didn't reload after clicking the "Add" button for an item. This results in the unfiltered Drinks page being reload instead of the filter applied by the user. This will be address in a future development sprint.
@@ -553,27 +594,32 @@ It was observed during testing that it would be from a design stand point if the
 
 #### Python Testing
 
-Using Django's built in TestCase Class 44 test were written in order to test views, form, model and app python files. 
-
-To ensure that at least 80% of this projects code was tested [Coverage.py](https://coverage.readthedocs.io/en/v4.5.x/#) was used.
+Using Django's built in TestCase Class, 44 test were written in order to test views, form, model and apps in each of the sites modules. 
 
 #### Coverage
-- To run coverage for this project type the following into the terminal:
+
+To ensure that at least 80% of this projects code was tested, [Coverage.py](https://coverage.readthedocs.io/en/v4.5.x/#) was used to measure the testing done. 
+
+The final project achieve Coverage of **86%** for it's code. 
+
+[Coverage.py](https://coverage.readthedocs.io/en/v4.5.x/#) is include in the projects [requirements.txt](requirements.txt) and is loaded with the other requirements when run. 
+
+To run [Coverage.py](https://coverage.readthedocs.io/en/v4.5.x/#) follow these steps:
+- Execute the following command in the CLI terminal:
 
     ```
     coverage run
     ``` 
 
-- On Gitpod to limit the results of coverage to just the relevent files the following command was executed:
+- On Gitpod to limit the results of coverage to just the relevant files the following command was executed:
 
     ```
     coverage run --omit=*/site-packages/*,*/migrations/* manage.py test
     ```
-- A report of the coverage of te testing in the project can then be generated using the following command:
+- A coverage report of the testing achieved in the project can then be generated using the following command:
     ```
     coverage report
     ```
-
 - The final report for project is summarized  below:
 
 <details>
@@ -650,12 +696,12 @@ To ensure that at least 80% of this projects code was tested [Coverage.py](https
 
 </details>
 
-- Represent the coverage report in html format for ease of viewing the following command was run after a report was generated.
+- To present the coverage report in html format (for ease of viewing) the following command was run after a report was generated:
 ```
 coverage html 
 ```
 
-- This command creates a folder called "htmlcov" which holds an "index.html" file. Running or previewing this file give a visual reprsentation of the code that is covered by the test written.
+- This command creates a folder called "htmlcov" which holds an "index.html" file. Running or previewing this file give a visual representation of the code that is covered by the test written.
 
 #### Travis
 In addition to TestCase and coverage.py tests, [Travis-CI](https://travis-ci.org/) was used to test Continuous Integration.
@@ -670,11 +716,10 @@ Please note that at the time of submission this badge was marked as passing.
 
 This project is currently live on Heroku : [BarTender](https://bartender-ms4.herokuapp.com/)
 
-It should be noted that during the course of the development of this project static and media files were not uploaded to  GitHub. This was achieve by adding the folder names to the .gitignore file. The reason for this is that heroku can't host these files. As this is the case they are hosted from an AWS S3-Bucket. These files were only push to this Github repository for the purposes of project assessment by Code Institute.
+It should be noted that during the course of the development of this project static and media files were not uploaded to  GitHub. This was achieve by adding the folder names to the .gitignore file. The reason for this is that Heroku can't host these files. As this is the case they are hosted from an AWS S3-Bucket. The static folder was only pushed to this GitHub repository for the purposes of project assessment by Code Institute.
 
 ### Local Deployment
-To run this project locally on any system the following will need to be installed
-
+To run this project locally on any system the following will need to be installed:
 - [Python3](https://www.python.org/downloads/) to run the app.py files and the application
 - [PIP](https://pip.pypa.io/en/stable/)
 - An IDE such as [Gitpod](https://gitpod.io/) or [Microsoft Visual Studio](https://code.visualstudio.com/)
@@ -689,35 +734,99 @@ To clone or copy this project from GitHub follow these steps:
 6. Type "git clone" into the GIT CLI terminal and then paste in the URL copied from GitHub in step 3 (i.e. git clone https://github.com/DarrenCoppinger/milestone-project-4.git )
 7. Hit enter and create your local drive.
 8. Install the necessary requirements from the requirements.txt file using the command `pip3 install -r requirements.txt`
-9. Sign up to the following freely available services:
-    - [stripe](http://stripe.com/)
-    - [Amazon AWS](http://aws.amazon.com/)
-    - [EmailJS](https://www.emailjs.com/)
-10. Generated a env.py file where you will store your environmental variables:
+9. Set up a free account on AWS to create an S3-Bucket to service the static files for the website. 
+    - Set the CORS configuration as follows:
+        ```
+        <?xml version="1.0" encoding="UTF-8"?>
+        <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+        <CORSRule>
+            <AllowedOrigin>*</AllowedOrigin>
+            <AllowedMethod>GET</AllowedMethod>
+            <AllowedMethod>HEAD</AllowedMethod>
+            <MaxAgeSeconds>3000</MaxAgeSeconds>
+            <AllowedHeader>Authorization</AllowedHeader>
+        </CORSRule>
+        </CORSConfiguration>
+
+        ```
+
+    - Create a "Bucket Policy" setting it equal to the following (Please note that you should replace the `arn:aws:s3:::bucket-name-example/*`  with your specific AWS bucket ARN. It is also important to keep the `/*` at the end of the address.):
+        ```
+        {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Sid": "PublicReadGetObject",
+                    "Effect": "Allow",
+                    "Principal": "*",
+                    "Action": "s3:GetObject",
+                    "Resource": "arn:aws:s3:::bucket-name-example/*"
+                }
+            ]
+        }
+        ```
+10. Go to the IAM application available in AWS. 
+    - Set up a new Group. 
+    - Associate the S3 Bucket you have created with this group.
+    - Create a new policy by importing the "AmazonS3FullAccess" Policy, then add the ARN from the S3-Bucket to the "Resource" list. The policy should follow the following example:
+        ```
+        {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Action": "s3:*",
+                    "Resource": ["arn:aws:s3:::bucket-name-example", "arn:aws:s3:::bucket-name-example/*"]
+                }
+            ]
+        }
+        ```
+    - Create a new User and associate this with the Group you have created. This will generate the following AWS access keys:
+        - AWS_ACCESS_KEY_ID
+        - AWS_SECRET_ACCESS_KEY
+
+11. To push all static and media files to the S3-Bucket, run the following in your CLI terminal:
+    ```
+    python3 manage.py collectstatic
+    ```
+12. Set up a free account on Stripe and in the developer section generate test API keys. These include:
+    - Publishable key = "pk_test_..."
+    - Secret key = "sk_test_..."
+13. Set up free account on EmailJS, add an email service (e.g. GMAIL) and create a template for your contact form. 
+    - Set the template fields equal to the following:
+        - To email = "<your_email_address>, {{from_email}}"
+        - From name = "{{from_name}}"
+        - From email = "{{from_email}}"
+        - Subject = "BarTender Contact Form - {{from_name}}"
+        - Content = "{{contact_request}}  {{from_name}} can be contacted at {{from_email}}."
+    - Then from the Installation section of EMAILJS copy user ID generated for you in the code snippet (<your_emailjs_user_id>). 
+14. Generated a env.py file where you will store your environmental variables:
     - SERCRET_KEY
     - STRIPE_PUBLISHABLE
     - STRIPE_SECRET
     - AWS_ACCESS_KEY_ID
     - AWS_SECRET_ACCESS_KEY
     - EMAILJS_USER
-11. Set the SERCRET_KEY to your preferred value. 
-12. Run the application by typing the following command into the CLI:
+15. Set the SERCRET_KEY to your preferred value. 
+16. Run the application by typing the following command into the CLI:
     ```
     python3 manage.py runserver
     ```
-13. Running Django should generate a SQLite3 database file "db.sqlite3".
-14. Migrate the structure of the database design for this project to the new database with teh following commands:
+17. Running Django should generate a SQLite3 database file "db.sqlite3".
+18. Migrate the structure of the database design for this project to the new database with the following commands:
     ```
     python3 manage.py makemigrations`
     python3 manage.py migrate
     ```
-15. Create a superuser as follows, in order to access the Django Admin Panel:
+19. Create a superuser as follows, in order to access the Django Admin Panel:
     ```
     python3 manage.py createsuperuser
     ```
 
 ### Remote Deployment on Heroku
-This app is currently deployed on heroku. The deployment is the code stored on the master branch of the project on GitHub. To deploy this project to Heroku required the following steps:
+This app is currently deployed on heroku. The deployment is the code stored on the master branch of the project on GitHub. 
+
+To deploy this project to Heroku required the following steps:
 1. Register for Heroku and once signed in click the "New" button on the dashboard to create a new app.
 2. In Heroku Name the app and specify the region (Europe in my case). 
 3. Create a requirement.txt file to allow Heroku to install the required dependencies to run the app. The CLI text to input is as follows 
@@ -727,47 +836,48 @@ This app is currently deployed on heroku. The deployment is the code stored on t
     - The requirements for this project can be found in this repositories files here: [requirements.txt](requirements.txt)
 4. Create a Procfile to inform Heroku what type of app is being deployed 
     ```
-    echo web: python run.py > Procfile
+    echo web: gunicorn <project_name>.wsgi:application
     ```
-5. On the deployment tab of your project in Heroku click the Heroku GIT method for deployment (alternatively you can click "Github", connect heroku directly to the repository and enable automatic deployments in the "Automatic deploys" section).
+    - This projects Procfile can be found here: [Procfile](Procfile)
+5. On the deployment tab of your project in Heroku click the Heroku GIT method for deployment (alternatively you can click "GitHub", connect Heroku directly to the repository and enable automatic deployments in the "Automatic deploys" section).
 6. In the CLI of you IDE input the following:
     ```
     $ heroku login
     $ heroku git:remote -a <BarTender>
     $ git push heroku master
     ```
-7. In the resources panel of Heroku type Postgres into the Add-ons search bar and then click the Provision button to add this as a resource. This will create the "DATABASE_URL" in the heroku setting section under the "Config Vars" subsection.
+7. In the resources panel of Heroku type Postgres into the Add-ons search bar and then click the Provision button to add this as a resource. This will create the "DATABASE_URL" variable in the Heroku setting section under the "Config Vars" subsection.
 8. Set up a free account on AWS to create an S3-Bucket to service the static files for the website. 
-- Set the CORS configuration as follows:
-    ```
-    <?xml version="1.0" encoding="UTF-8"?>
-    <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
-    <CORSRule>
-        <AllowedOrigin>*</AllowedOrigin>
-        <AllowedMethod>GET</AllowedMethod>
-        <AllowedMethod>HEAD</AllowedMethod>
-        <MaxAgeSeconds>3000</MaxAgeSeconds>
-        <AllowedHeader>Authorization</AllowedHeader>
-    </CORSRule>
-    </CORSConfiguration>
+    - Set the CORS configuration as follows:
+        ```
+        <?xml version="1.0" encoding="UTF-8"?>
+        <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+        <CORSRule>
+            <AllowedOrigin>*</AllowedOrigin>
+            <AllowedMethod>GET</AllowedMethod>
+            <AllowedMethod>HEAD</AllowedMethod>
+            <MaxAgeSeconds>3000</MaxAgeSeconds>
+            <AllowedHeader>Authorization</AllowedHeader>
+        </CORSRule>
+        </CORSConfiguration>
 
-    ```
+        ```
 
-- Create a "Bucket Policy" setting it equal to the following (Please note that you should replace the `arn:aws:s3:::bucket-name-example/*`  with your specific AWS bucket ARN. It is also important to keep the `/*` at the end of the address.):
-    ```
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Sid": "PublicReadGetObject",
-                "Effect": "Allow",
-                "Principal": "*",
-                "Action": "s3:GetObject",
-                "Resource": "arn:aws:s3:::bucket-name-example/*"
-            }
-        ]
-    }
-    ```
+    - Create a "Bucket Policy" setting it equal to the following (Please note that you should replace the `arn:aws:s3:::bucket-name-example/*`  with your specific AWS bucket ARN. It is also important to keep the `/*` at the end of the address.):
+        ```
+        {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Sid": "PublicReadGetObject",
+                    "Effect": "Allow",
+                    "Principal": "*",
+                    "Action": "s3:GetObject",
+                    "Resource": "arn:aws:s3:::bucket-name-example/*"
+                }
+            ]
+        }
+        ```
 9. Go to the IAM application available in AWS. 
     - Set up a new Group. 
     - Associate the S3 Bucket you have created with this group.
@@ -784,18 +894,25 @@ This app is currently deployed on heroku. The deployment is the code stored on t
             ]
         }
         ```
-    - Create a new User and assoicate this with the Group you have created. This will generate the following AWS access keys:
+    - Create a new User and associate this with the Group you have created. This will generate the following AWS access keys:
         - AWS_ACCESS_KEY_ID
         - AWS_SECRET_ACCESS_KEY
 
-10. To push all static and media files to the S3-Bucket run the following in your CLI terminal:
+10. To push all static and media files to the S3-Bucket, run the following in your CLI terminal:
     ```
     python3 manage.py collectstatic
     ```
-11. Set up free account on Stripe and in the developer section generate test API keys. These include:
-    - Publishable key = pk_test_key
-    - Secret key = sk_test_key 
-12. Set up free account on EmailJS, add an email service (e.g. GMAIL) and create a template for your contact form. Then from the Installation section of EMAILJS copy user ID generated for you in the code snippet (EMAILJS_USER). 
+11. Set up a free account on Stripe and in the developer section generate test API keys. These include:
+    - Publishable key = "pk_test_..."
+    - Secret key = "sk_test_..."
+12. Set up free account on EmailJS, add an email service (e.g. GMAIL) and create a template for your contact form. 
+    - Set the template fields equal to the following:
+        - To email = "<your_email_address>, {{from_email}}"
+        - From name = "{{from_name}}"
+        - From email = "{{from_email}}"
+        - Subject = "BarTender Contact Form - {{from_name}}"
+        - Content = "{{contact_request}}  {{from_name}} can be contacted at {{from_email}}."
+    - Then from the Installation section of EMAILJS copy user ID generated for you in the code snippet (<your_emailjs_user_id>). 
 13. In the Heroku settings tab, click on the "Real Config Vars" button to set environmental variables as follows:
  - AWS_ACCESS_KEY_ID: `<your_aws_key>`
  - AWS_SECRET_ACCESS_KEY: `<your_secret_aws_key>`
@@ -808,7 +925,16 @@ This app is currently deployed on heroku. The deployment is the code stored on t
  - STRIPE_SECRET: `<your_stripe_secret_key>`
  - EMAILJS_USER: `<your_emailjs_user_id>`
  
- 14. In the top right of the heroku dashboard press the "Open App" button to view your deployed Heroku app.
+14. Migrate the structure of the database design for this project to the new database with the following commands:
+    ```
+    python3 manage.py makemigrations`
+    python3 manage.py migrate
+    ```
+15. Create a superuser as follows, in order to access the Django Admin Panel:
+    ```
+    python3 manage.py createsuperuser
+    ```
+16. In the top right of the Heroku dashboard press the "Open App" button to view your deployed Heroku app.
 
 ## Credits
 ### Media
@@ -816,7 +942,7 @@ Images used in this site were sourced from the [Wikimedia Commons](https://commo
 
 ### Acknowledgements
 - [Antonio Rodriguez](https://github.com/AkaAnto) my Code Institute mentor for his supervision and input.
-- All the Code Institute Tutors for their help and support during the development of this project.
+- All the Code Institute Tutors for their help and support during the development of this project and my other milestone projects.
 
 ### Disclaimer
 This Website was produced for educational purposes only.
