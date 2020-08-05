@@ -594,7 +594,7 @@ It was observed during testing that it would be from a design standpoint if the 
 
 #### Python Testing
 
-Using Django's built in TestCase Class, 44 tests were written in order to test views, form, model and apps in each of the site's modules. 
+Using Django's built in TestCase Class, 43 tests were written in order to test views, form, model and apps in each of the site's modules. 
 
 #### Coverage
 

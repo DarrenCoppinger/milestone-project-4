@@ -11,6 +11,7 @@ from django.utils.html import strip_tags
 
 @login_required()
 def booking(request):
+    """Render booking.html page"""
     if request.method == "POST":
         reservation_form = ReservationForm(request.POST)
         if reservation_form.is_valid():

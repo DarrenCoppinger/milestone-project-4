@@ -9,6 +9,9 @@ from django.utils.html import strip_tags
 
 
 class ReservationAdmin(admin.ModelAdmin):
+    """
+    Send automatic emails when admin saves changes to reservation
+    """
     list_display = ('full_name', 'date', 'status')
     readonly_fields = ('full_name', 'phone_number', 'email')
 
