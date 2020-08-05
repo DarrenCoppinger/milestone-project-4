@@ -86,16 +86,16 @@ This website has a number of user and business aims. They are as follows:
 ### Aims
 #### User Aims
 The user aims for this website are to:
-- provide a booking system for customers to request a type of seat in the bar for a particular date and time
-- provide a drinks/products page to act as a complete menu of what is available to the customer (this removes the requirement of a physical menu)
+- provide a booking system for customers to request a type of seat in the bar for a particular date and time.
+- provide a drinks/products page to act as a complete menu of what is available to the customer (this removes the requirement of a physical menu).
 - provide a completely contactless way for customers to construct and place an order from the bar for a particular table.
-- provide a contactless way for a customer to pay for an order they have constructed
+- provide a contactless way for a customer to pay for an order they have constructed.
 
 #### Business Aims
 The business aims for this website are to:
 - provide a database of booking requests from customers for staff to review.
 - reduce staff workload creating a booking system that sends automatic emails to the customers when the status of their application changes.
-- provide a contactless payment mechanism to remove the requirement of processing payments through a card machines or cash.
+- provide a contactless payment mechanism to remove the requirement of processing payments through a credit card machines or using cash.
 - provide a mechanism for customers to make enquires through the website.
 
 ### Design Objectives
@@ -109,7 +109,7 @@ The audience for this website will be English speaking, technology savvy and wil
 
 Although the website will accommodate all visitors, its primary audience will be technology literate. Using the bootstrap framework means that this website has a mobile first approach to development. However, it will also perform well on larger screen sizes.
 
-#### Content Relevence and Accuracy
+#### Content Relevance and Accuracy
 The content to the site must be relevant to the site owners and their audience. 
 
 As such, the website operator/administrator can add products to the Drinks page through the backend of the site. Products can be edited and updated as required. This ensures that the content of the website is relevant.
@@ -386,11 +386,11 @@ Again, this is not an error but a result of the validator not recognising the te
 [JShint Validator](https://jshint.com/) was used to validate my JavaScript code. The follow feedback provided by the validators. However, each of the errors can be explained and so do not need to be acted on.
 - maps.js
     - Metrics: 
-        -There is only one function in this file. It takes no arguments. This function contains only one statement. Cyclomatic complexity number for this function is 1.
+        - There is only one function in this file. It takes no arguments. This function contains only one statement. Cyclomatic complexity number for this function is 1.
     - One undefined variable:
         - google (Used by Google Maps JS API)
     - Two unused variables:
-    	- markers (Used by GoogleMaps JS API)
+    	- markers (Used by Google Maps JS API)
         - initMap (Used by Google Maps JS API)
 - sendEmail.js
     - Metrics: There are 3 functions in this file. Function with the largest signature take 1 arguments, while the median is 1. Largest function has 2 statements in it, while the median is 2. The most complex function has a cyclomatic complexity value of 1 while the median is 1.

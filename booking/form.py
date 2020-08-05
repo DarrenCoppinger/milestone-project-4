@@ -17,6 +17,7 @@ class NumberInput(forms.NumberInput):
 
 
 class ReservationForm(forms.ModelForm):
+    """Form for user booking"""
     class Meta:
         model = Reservation
         fields = (
