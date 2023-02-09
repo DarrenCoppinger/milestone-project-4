@@ -23,8 +23,9 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 ALLOWED_HOSTS = [
     'localhost',
+    '127.0.0.1',
     '8000-e14692b1-a8a0-451c-b8dc-9bc94ecb0c70.ws-eu01.gitpod.io',
-    'bartender-ms4.herokuapp.com',
+    'bartender-ms4-2.herokuapp.com',
     ]
 
 
@@ -86,8 +87,16 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 if "DATABASE_URL" in os.environ:
+    print("Postgres URL found")
     DATABASES = {
-        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'railway',
+            'USER': 'postgres',
+            'PASSWORD': 'jxOvPUcHAcxWU5uqo6c9',
+            'HOST': 'containers-us-west-176.railway.app',
+            'PORT': '7388',
+        }
     }
 else:
     print("Postgres URL not found, using SQLite instead")
@@ -96,7 +105,20 @@ else:
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
             }
-        }
+    }
+
+# if "DATABASE_URL" in os.environ:
+#     DATABASES = {
+#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+#     }
+# else:
+#     print("Postgres URL not found, using SQLite instead")
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#             }
+#         }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
