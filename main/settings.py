@@ -89,14 +89,7 @@ WSGI_APPLICATION = 'main.wsgi.application'
 if "DATABASE_URL" in os.environ:
     print("Postgres URL found")
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'railway',
-            'USER': 'postgres',
-            'PASSWORD': 'jxOvPUcHAcxWU5uqo6c9',
-            'HOST': 'containers-us-west-176.railway.app',
-            'PORT': '7388',
-        }
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
     print("Postgres URL not found, using SQLite instead")
